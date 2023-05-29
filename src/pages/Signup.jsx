@@ -11,7 +11,6 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { Link as RouteLink } from "react-router-dom";
 
