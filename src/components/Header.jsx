@@ -1,6 +1,8 @@
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Container,
   Flex,
+  IconButton,
   Link,
   Menu,
   MenuButton,
@@ -18,13 +20,21 @@ function Header() {
       justify={"space-between"}
       alignItems={"center"}
       bgColor={"lightgray"}
+      position={"sticky"}
+      top={0}
+      zIndex={"sticky"}
     >
       <Flex>
         <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
           ExpenseCare
         </Text>
       </Flex>
-      <Flex gap={10} fontSize={"xl"} fontWeight={"normal"}>
+      <Flex
+        display={{ base: "none", md: "flex" }}
+        gap={10}
+        fontSize={"lg"}
+        fontWeight={"normal"}
+      >
         <Link as={RouteLink} to={"/dashboard"}>
           Dashboard
         </Link>
@@ -39,6 +49,24 @@ function Header() {
           <MenuList bgColor={"lightgray"}>
             <MenuItem bgColor={"lightgray"}>Profile</MenuItem>
             <MenuItem bgColor={"lightgray"}>Help</MenuItem>
+            <MenuItem bgColor={"lightgray"}>Logout</MenuItem>
+          </MenuList>
+        </Menu>
+      </Flex>
+      <Flex display={{ md: "none" }}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="options"
+            icon={<HamburgerIcon />}
+            color={"text"}
+            bgColor={"teal.600"}
+          />
+          <MenuList bgColor={"lightgray"}>
+            <MenuItem bgColor={"lightgray"}>Dashboard</MenuItem>
+            <MenuItem bgColor={"lightgray"}>All Expenses</MenuItem>
+            <MenuItem bgColor={"lightgray"}>Charts</MenuItem>
+            <MenuItem bgColor={"lightgray"}>Account</MenuItem>
             <MenuItem bgColor={"lightgray"}>Logout</MenuItem>
           </MenuList>
         </Menu>

@@ -6,7 +6,8 @@ import { wrap } from "framer-motion";
 import { AddIcon } from "@chakra-ui/icons";
 import TotalExpenseCard from "../components/TotalExpenseCard";
 import PieChartCard from "../components/PieChartCard";
-
+import TotalExpenseAccordion from "../components/TotalExpenseAccordion";
+import { Wrap, WrapItem } from "@chakra-ui/react";
 const categories = [
   { name: "Groceries", totalExpense: 4000 },
   { name: "Travel", totalExpense: 4000 },
@@ -20,18 +21,17 @@ function Dashboard() {
   return (
     <Flex flexDir={"column"} gap={2}>
       <Header />
-      <Flex gap={10}>
+      {/* <Flex gap={10} flexDir={{ base: "column", md: "row" }}>
         <TotalExpenseCard />
         <PieChartCard />
-      </Flex>
+      </Flex> */}
+      <TotalExpenseCard />
       <Flex
-        px={10}
-        py={5}
-        gap={20}
-        flexWrap={wrap}
-        flexFlow={"wrap"}
-        alignItems={"center"}
+        flexWrap={"wrap"}
         justifyContent={"center"}
+        alignItems={"center"}
+        gap={10}
+        p={10}
       >
         {categories.map((category) => (
           <ExpenseCard
