@@ -27,7 +27,7 @@ function TotalExpenseCard() {
     >
       <Text>Current Year: Rs. 150000</Text>
       <Text>Current Month: Rs. 50000</Text>
-      <Button rounded={"full"} colorScheme="pink">
+      <Button rounded={"lg"} colorScheme="pink">
         View Charts
       </Button>
     </Flex>
