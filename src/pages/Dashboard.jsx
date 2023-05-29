@@ -5,9 +5,8 @@ import ExpenseCard from "../components/ExpenseCard";
 import { wrap } from "framer-motion";
 import { AddIcon } from "@chakra-ui/icons";
 import TotalExpenseCard from "../components/TotalExpenseCard";
-import PieChartCard from "../components/PieChartCard";
-import TotalExpenseAccordion from "../components/TotalExpenseAccordion";
 import { Wrap, WrapItem } from "@chakra-ui/react";
+import AddCategoryButton from "../components/AddCategoryButton";
 const categories = [
   { name: "Groceries", totalExpense: 4000 },
   { name: "Travel", totalExpense: 4000 },
@@ -21,10 +20,6 @@ function Dashboard() {
   return (
     <Flex flexDir={"column"} gap={2}>
       <Header />
-      {/* <Flex gap={10} flexDir={{ base: "column", md: "row" }}>
-        <TotalExpenseCard />
-        <PieChartCard />
-      </Flex> */}
       <TotalExpenseCard />
       <Flex
         flexWrap={"wrap"}
@@ -35,22 +30,13 @@ function Dashboard() {
       >
         {categories.map((category) => (
           <ExpenseCard
+            key={category.name}
             name={category.name}
             totalExpense={category.totalExpense}
           />
         ))}
       </Flex>
-      <IconButton
-        rounded={"full"}
-        h={"4rem"}
-        w={"4rem"}
-        position={"fixed"}
-        bottom={"1rem"}
-        right={"1rem"}
-        colorScheme="teal"
-      >
-        <AddIcon />
-      </IconButton>
+      <AddCategoryButton />
     </Flex>
   );
 }

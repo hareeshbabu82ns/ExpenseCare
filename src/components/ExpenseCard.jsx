@@ -9,6 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import AddExpenseButton from "./AddExpenseButton";
 
 function ExpenseCard({ name, totalExpense }) {
   const [hover, setHover] = useState(false);
@@ -16,7 +17,7 @@ function ExpenseCard({ name, totalExpense }) {
   return (
     <Card
       h={"250px"}
-      w={"250px"}
+      w={{ base: "300px", md: "250px" }}
       bgColor={"blue.700"}
       textAlign={"center"}
       color={"text"}
@@ -32,14 +33,11 @@ function ExpenseCard({ name, totalExpense }) {
         Rs. {totalExpense}
       </CardBody>
       <CardFooter>
-        <Button
-          colorScheme="pink"
-          mx={"auto"}
-          w={"200px"}
-          display={hover ? "block" : "none"}
-        >
-          Add expense
-        </Button>
+        <AddExpenseButton
+          hover={hover}
+          setHover={setHover}
+          categoryName={name}
+        />
       </CardFooter>
     </Card>
   );

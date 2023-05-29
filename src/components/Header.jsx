@@ -1,5 +1,6 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
+  Button,
   Container,
   Flex,
   IconButton,
@@ -34,6 +35,7 @@ function Header() {
         gap={10}
         fontSize={"lg"}
         fontWeight={"normal"}
+        alignItems={"center"}
       >
         <Link as={RouteLink} to={"/dashboard"}>
           Dashboard
@@ -45,7 +47,16 @@ function Header() {
           Charts
         </Link>
         <Menu>
-          <MenuButton>Account</MenuButton>
+          <MenuButton
+            as={Button}
+            bg={"inherit"}
+            _hover={{ bg: "inherit" }}
+            rightIcon={<ChevronDownIcon />}
+            fontSize={"large"}
+            fontWeight={"semibold"}
+          >
+            Account
+          </MenuButton>
           <MenuList bgColor={"lightgray"}>
             <MenuItem bgColor={"lightgray"}>Profile</MenuItem>
             <MenuItem bgColor={"lightgray"}>Help</MenuItem>
