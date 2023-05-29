@@ -4,6 +4,8 @@ import { Card, Flex, IconButton } from "@chakra-ui/react";
 import ExpenseCard from "../components/ExpenseCard";
 import { wrap } from "framer-motion";
 import { AddIcon } from "@chakra-ui/icons";
+import TotalExpenseCard from "../components/TotalExpenseCard";
+import PieChartCard from "../components/PieChartCard";
 
 const categories = [
   { name: "Groceries", totalExpense: 4000 },
@@ -16,10 +18,15 @@ const categories = [
 
 function Dashboard() {
   return (
-    <>
+    <Flex flexDir={"column"} gap={2}>
       <Header />
+      <Flex gap={10}>
+        <TotalExpenseCard />
+        <PieChartCard />
+      </Flex>
       <Flex
-        p={20}
+        px={10}
+        py={5}
         gap={20}
         flexWrap={wrap}
         flexFlow={"wrap"}
@@ -44,7 +51,7 @@ function Dashboard() {
       >
         <AddIcon />
       </IconButton>
-    </>
+    </Flex>
   );
 }
 
