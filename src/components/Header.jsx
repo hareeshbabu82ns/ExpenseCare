@@ -20,7 +20,7 @@ function Header() {
       bgColor={"lightgray"}
     >
       <Flex>
-        <Text fontSize={"3xl"} fontWeight={"bold"} color={"primary"}>
+        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
           ExpenseCare
         </Text>
       </Flex>
