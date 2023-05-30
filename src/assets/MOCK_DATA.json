@@ -1,0 +1,4002 @@
+[
+  {
+    "id": 1,
+    "expenseName": "Higashimaru Usukuchi Soy",
+    "category": "travel",
+    "date": "04/03/2023",
+    "description": "",
+    "amount": 7181
+  },
+  {
+    "id": 2,
+    "expenseName": "Flour - Corn, Fine",
+    "category": "grocery",
+    "date": "24/05/2021",
+    "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+    "amount": 8180
+  },
+  {
+    "id": 3,
+    "expenseName": "Smoked Tongue",
+    "category": "subscriptions",
+    "date": "21/05/2022",
+    "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "amount": 8026
+  },
+  {
+    "id": 4,
+    "expenseName": "Cleaner - Bleach",
+    "category": "grocery",
+    "date": "05/07/2020",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "amount": 4182
+  },
+  {
+    "id": 5,
+    "expenseName": "Lamb - Rack",
+    "category": "rent",
+    "date": "07/04/2020",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 5592
+  },
+  {
+    "id": 6,
+    "expenseName": "Pastry - Banana Tea Loaf",
+    "category": "bill",
+    "date": "28/10/2022",
+    "description": "Etiam pretium iaculis justo.",
+    "amount": 7940
+  },
+  {
+    "id": 7,
+    "expenseName": "Edible Flower - Mixed",
+    "category": "subscriptions",
+    "date": "05/06/2020",
+    "description": "In eleifend quam a odio.",
+    "amount": 3094
+  },
+  {
+    "id": 8,
+    "expenseName": "Wine - Jackson Triggs Okonagan",
+    "category": "others",
+    "date": "03/06/2020",
+    "description": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 7588
+  },
+  {
+    "id": 9,
+    "expenseName": "Dried Apple",
+    "category": "grocery",
+    "date": "19/07/2022",
+    "description": "",
+    "amount": 6949
+  },
+  {
+    "id": 10,
+    "expenseName": "Scrubbie - Scotchbrite Hand Pad",
+    "category": "grocery",
+    "date": "16/03/2021",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 7792
+  },
+  {
+    "id": 11,
+    "expenseName": "Pastry - Carrot Muffin - Mini",
+    "category": "grocery",
+    "date": "12/10/2020",
+    "description": "Suspendisse potenti. Nullam porttitor lacus at turpis.",
+    "amount": 5136
+  },
+  {
+    "id": 12,
+    "expenseName": "Lamb - Rack",
+    "category": "rent",
+    "date": "07/03/2021",
+    "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+    "amount": 7618
+  },
+  {
+    "id": 13,
+    "expenseName": "Juice - Lagoon Mango",
+    "category": "travel",
+    "date": "25/06/2022",
+    "description": "",
+    "amount": 7554
+  },
+  {
+    "id": 14,
+    "expenseName": "Pasta - Orecchiette",
+    "category": "grocery",
+    "date": "20/05/2023",
+    "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
+    "amount": 9474
+  },
+  {
+    "id": 15,
+    "expenseName": "Clams - Canned",
+    "category": "others",
+    "date": "13/04/2022",
+    "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.",
+    "amount": 2476
+  },
+  {
+    "id": 16,
+    "expenseName": "Trout - Hot Smkd, Dbl Fillet",
+    "category": "bill",
+    "date": "02/10/2021",
+    "description": "Morbi porttitor lorem id ligula.",
+    "amount": 3848
+  },
+  {
+    "id": 17,
+    "expenseName": "Flax Seed",
+    "category": "grocery",
+    "date": "06/12/2020",
+    "description": "",
+    "amount": 5890
+  },
+  {
+    "id": 18,
+    "expenseName": "Nut - Pumpkin Seeds",
+    "category": "others",
+    "date": "16/02/2023",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+    "amount": 3677
+  },
+  {
+    "id": 19,
+    "expenseName": "Muffin Hinge Container 6",
+    "category": "others",
+    "date": "07/12/2022",
+    "description": "Aliquam non mauris.",
+    "amount": 1395
+  },
+  {
+    "id": 20,
+    "expenseName": "Beer - Original Organic Lager",
+    "category": "rent",
+    "date": "06/09/2022",
+    "description": "In eleifend quam a odio.",
+    "amount": 4710
+  },
+  {
+    "id": 21,
+    "expenseName": "Duck - Breast",
+    "category": "bill",
+    "date": "23/01/2022",
+    "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "amount": 9533
+  },
+  {
+    "id": 22,
+    "expenseName": "Sesame Seed",
+    "category": "travel",
+    "date": "01/03/2020",
+    "description": "",
+    "amount": 7162
+  },
+  {
+    "id": 23,
+    "expenseName": "Wine - Coteaux Du Tricastin Ac",
+    "category": "subscriptions",
+    "date": "04/09/2020",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 3993
+  },
+  {
+    "id": 24,
+    "expenseName": "Honey - Liquid",
+    "category": "subscriptions",
+    "date": "12/06/2022",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    "amount": 2424
+  },
+  {
+    "id": 25,
+    "expenseName": "Potatoes - Parissienne",
+    "category": "grocery",
+    "date": "10/03/2023",
+    "description": "Nulla facilisi.",
+    "amount": 9044
+  },
+  {
+    "id": 26,
+    "expenseName": "Dried Apple",
+    "category": "travel",
+    "date": "27/07/2022",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "amount": 198
+  },
+  {
+    "id": 27,
+    "expenseName": "Soup - Tomato Mush. Florentine",
+    "category": "travel",
+    "date": "02/08/2021",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices.",
+    "amount": 2030
+  },
+  {
+    "id": 28,
+    "expenseName": "Bagelers - Cinn / Brown",
+    "category": "rent",
+    "date": "05/11/2020",
+    "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
+    "amount": 4608
+  },
+  {
+    "id": 29,
+    "expenseName": "Skirt - 24 Foot",
+    "category": "bill",
+    "date": "19/01/2021",
+    "description": "Aenean auctor gravida sem.",
+    "amount": 5546
+  },
+  {
+    "id": 30,
+    "expenseName": "Molasses - Fancy",
+    "category": "grocery",
+    "date": "02/08/2022",
+    "description": "Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 4178
+  },
+  {
+    "id": 31,
+    "expenseName": "Muffin Mix - Lemon Cranberry",
+    "category": "grocery",
+    "date": "27/02/2020",
+    "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
+    "amount": 2736
+  },
+  {
+    "id": 32,
+    "expenseName": "Veal - Brisket, Provimi, Bone - In",
+    "category": "others",
+    "date": "01/06/2021",
+    "description": "Morbi a ipsum. Integer a nibh. In quis justo.",
+    "amount": 3174
+  },
+  {
+    "id": 33,
+    "expenseName": "Bread - Multigrain Oval",
+    "category": "rent",
+    "date": "27/10/2020",
+    "description": "Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "amount": 4316
+  },
+  {
+    "id": 34,
+    "expenseName": "Soup - Base Broth Chix",
+    "category": "grocery",
+    "date": "05/06/2022",
+    "description": "Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
+    "amount": 6803
+  },
+  {
+    "id": 35,
+    "expenseName": "Cheese - Pied De Vents",
+    "category": "grocery",
+    "date": "16/05/2020",
+    "description": "Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 4354
+  },
+  {
+    "id": 36,
+    "expenseName": "Flour - Strong",
+    "category": "rent",
+    "date": "01/03/2021",
+    "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 4495
+  },
+  {
+    "id": 37,
+    "expenseName": "Flavouring - Rum",
+    "category": "others",
+    "date": "27/05/2023",
+    "description": "Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+    "amount": 5316
+  },
+  {
+    "id": 38,
+    "expenseName": "Beef - Cooked, Corned",
+    "category": "others",
+    "date": "21/07/2020",
+    "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "amount": 7093
+  },
+  {
+    "id": 39,
+    "expenseName": "Vol Au Vents",
+    "category": "travel",
+    "date": "19/09/2022",
+    "description": "",
+    "amount": 4342
+  },
+  {
+    "id": 40,
+    "expenseName": "Flour - Semolina",
+    "category": "rent",
+    "date": "20/12/2021",
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
+    "amount": 1538
+  },
+  {
+    "id": 41,
+    "expenseName": "Soup - Campbells Beef Stew",
+    "category": "subscriptions",
+    "date": "16/11/2021",
+    "description": "",
+    "amount": 1245
+  },
+  {
+    "id": 42,
+    "expenseName": "Cheese - Stilton",
+    "category": "rent",
+    "date": "23/06/2020",
+    "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
+    "amount": 6523
+  },
+  {
+    "id": 43,
+    "expenseName": "Pastry - Baked Cinnamon Stick",
+    "category": "others",
+    "date": "22/02/2022",
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
+    "amount": 7396
+  },
+  {
+    "id": 44,
+    "expenseName": "Appetizer - Mango Chevre",
+    "category": "subscriptions",
+    "date": "11/08/2020",
+    "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "amount": 2590
+  },
+  {
+    "id": 45,
+    "expenseName": "Wine - White, Concha Y Toro",
+    "category": "bill",
+    "date": "02/11/2021",
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
+    "amount": 7306
+  },
+  {
+    "id": 46,
+    "expenseName": "Soup - Tomato Mush. Florentine",
+    "category": "bill",
+    "date": "20/12/2020",
+    "description": "Duis bibendum.",
+    "amount": 7063
+  },
+  {
+    "id": 47,
+    "expenseName": "Pasta - Spaghetti, Dry",
+    "category": "travel",
+    "date": "07/09/2022",
+    "description": "Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
+    "amount": 2307
+  },
+  {
+    "id": 48,
+    "expenseName": "Sea Bass - Whole",
+    "category": "grocery",
+    "date": "14/08/2020",
+    "description": "Aenean fermentum.",
+    "amount": 9844
+  },
+  {
+    "id": 49,
+    "expenseName": "Carbonated Water - Wildberry",
+    "category": "rent",
+    "date": "05/04/2020",
+    "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
+    "amount": 912
+  },
+  {
+    "id": 50,
+    "expenseName": "Mushrooms - Honey",
+    "category": "subscriptions",
+    "date": "12/02/2023",
+    "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "amount": 134
+  },
+  {
+    "id": 51,
+    "expenseName": "Dry Ice",
+    "category": "rent",
+    "date": "07/05/2020",
+    "description": "Quisque ut erat. Curabitur gravida nisi at nibh.",
+    "amount": 8171
+  },
+  {
+    "id": 52,
+    "expenseName": "Goulash Seasoning",
+    "category": "subscriptions",
+    "date": "20/01/2021",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "amount": 131
+  },
+  {
+    "id": 53,
+    "expenseName": "Chicken - Breast, 5 - 7 Oz",
+    "category": "bill",
+    "date": "27/02/2022",
+    "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
+    "amount": 981
+  },
+  {
+    "id": 54,
+    "expenseName": "Butter - Pod",
+    "category": "bill",
+    "date": "31/05/2020",
+    "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.",
+    "amount": 1918
+  },
+  {
+    "id": 55,
+    "expenseName": "Yogurt - Strawberry, 175 Gr",
+    "category": "rent",
+    "date": "03/07/2022",
+    "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "amount": 9527
+  },
+  {
+    "id": 56,
+    "expenseName": "Jagermeister",
+    "category": "travel",
+    "date": "05/10/2021",
+    "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+    "amount": 3967
+  },
+  {
+    "id": 57,
+    "expenseName": "Apples - Spartan",
+    "category": "subscriptions",
+    "date": "19/06/2020",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    "amount": 7163
+  },
+  {
+    "id": 58,
+    "expenseName": "Plums - Red",
+    "category": "others",
+    "date": "11/11/2022",
+    "description": "Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
+    "amount": 7137
+  },
+  {
+    "id": 59,
+    "expenseName": "Wine - Bouchard La Vignee Pinot",
+    "category": "others",
+    "date": "15/07/2022",
+    "description": "",
+    "amount": 1270
+  },
+  {
+    "id": 60,
+    "expenseName": "Wine - Puligny Montrachet A.",
+    "category": "subscriptions",
+    "date": "22/08/2020",
+    "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
+    "amount": 1211
+  },
+  {
+    "id": 61,
+    "expenseName": "Beer - Guiness",
+    "category": "subscriptions",
+    "date": "13/10/2020",
+    "description": "Integer ac leo.",
+    "amount": 721
+  },
+  {
+    "id": 62,
+    "expenseName": "Irish Cream - Baileys",
+    "category": "travel",
+    "date": "10/04/2022",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 2246
+  },
+  {
+    "id": 63,
+    "expenseName": "Spinach - Spinach Leaf",
+    "category": "grocery",
+    "date": "18/04/2022",
+    "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "amount": 3909
+  },
+  {
+    "id": 64,
+    "expenseName": "Cookies - Englishbay Chochip",
+    "category": "travel",
+    "date": "14/10/2022",
+    "description": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
+    "amount": 2338
+  },
+  {
+    "id": 65,
+    "expenseName": "Hot Chocolate - Individual",
+    "category": "rent",
+    "date": "29/07/2021",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
+    "amount": 9573
+  },
+  {
+    "id": 66,
+    "expenseName": "Vinegar - Tarragon",
+    "category": "subscriptions",
+    "date": "11/04/2023",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+    "amount": 889
+  },
+  {
+    "id": 67,
+    "expenseName": "Butter Balls Salted",
+    "category": "bill",
+    "date": "03/07/2021",
+    "description": "Donec ut mauris eget massa tempor convallis.",
+    "amount": 9311
+  },
+  {
+    "id": 68,
+    "expenseName": "Cookies - Amaretto",
+    "category": "grocery",
+    "date": "17/05/2022",
+    "description": "Proin eu mi.",
+    "amount": 4239
+  },
+  {
+    "id": 69,
+    "expenseName": "Wine - Sherry Dry Sack, William",
+    "category": "grocery",
+    "date": "13/07/2021",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
+    "amount": 7572
+  },
+  {
+    "id": 70,
+    "expenseName": "Wine - Magnotta - Pinot Gris Sr",
+    "category": "grocery",
+    "date": "25/01/2022",
+    "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+    "amount": 4709
+  },
+  {
+    "id": 71,
+    "expenseName": "Compound - Mocha",
+    "category": "others",
+    "date": "29/03/2021",
+    "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
+    "amount": 6881
+  },
+  {
+    "id": 72,
+    "expenseName": "Chinese Foods - Plain Fried Rice",
+    "category": "rent",
+    "date": "13/02/2020",
+    "description": "",
+    "amount": 475
+  },
+  {
+    "id": 73,
+    "expenseName": "Sweet Pea Sprouts",
+    "category": "grocery",
+    "date": "30/12/2022",
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "amount": 9817
+  },
+  {
+    "id": 74,
+    "expenseName": "Chicken - Wieners",
+    "category": "subscriptions",
+    "date": "07/04/2022",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.",
+    "amount": 269
+  },
+  {
+    "id": 75,
+    "expenseName": "Apple - Delicious, Red",
+    "category": "bill",
+    "date": "12/11/2021",
+    "description": "",
+    "amount": 4796
+  },
+  {
+    "id": 76,
+    "expenseName": "Cheese - La Sauvagine",
+    "category": "rent",
+    "date": "19/04/2021",
+    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+    "amount": 2548
+  },
+  {
+    "id": 77,
+    "expenseName": "Cheese - Pied De Vents",
+    "category": "bill",
+    "date": "06/01/2021",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "amount": 8956
+  },
+  {
+    "id": 78,
+    "expenseName": "Soup - Knorr, French Onion",
+    "category": "bill",
+    "date": "27/11/2022",
+    "description": "Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
+    "amount": 299
+  },
+  {
+    "id": 79,
+    "expenseName": "Wine - Vidal Icewine Magnotta",
+    "category": "bill",
+    "date": "10/07/2021",
+    "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
+    "amount": 579
+  },
+  {
+    "id": 80,
+    "expenseName": "Chocolate - Milk, Callets",
+    "category": "subscriptions",
+    "date": "06/03/2020",
+    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 9325
+  },
+  {
+    "id": 81,
+    "expenseName": "Cheese - Cambozola",
+    "category": "others",
+    "date": "22/09/2020",
+    "description": "Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 7835
+  },
+  {
+    "id": 82,
+    "expenseName": "Liners - Baking Cups",
+    "category": "subscriptions",
+    "date": "16/08/2022",
+    "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
+    "amount": 325
+  },
+  {
+    "id": 83,
+    "expenseName": "Ecolab Digiclean Mild Fm",
+    "category": "travel",
+    "date": "05/08/2020",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "amount": 3631
+  },
+  {
+    "id": 84,
+    "expenseName": "Ostrich - Fan Fillet",
+    "category": "bill",
+    "date": "29/03/2021",
+    "description": "",
+    "amount": 5784
+  },
+  {
+    "id": 85,
+    "expenseName": "Extract - Lemon",
+    "category": "rent",
+    "date": "03/03/2020",
+    "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.",
+    "amount": 3086
+  },
+  {
+    "id": 86,
+    "expenseName": "Pasta - Elbows, Macaroni, Dry",
+    "category": "travel",
+    "date": "02/09/2022",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "amount": 7751
+  },
+  {
+    "id": 87,
+    "expenseName": "Anchovy Fillets",
+    "category": "others",
+    "date": "25/03/2023",
+    "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "amount": 5564
+  },
+  {
+    "id": 88,
+    "expenseName": "Stock - Veal, Brown",
+    "category": "grocery",
+    "date": "28/05/2021",
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
+    "amount": 7971
+  },
+  {
+    "id": 89,
+    "expenseName": "Eggwhite Frozen",
+    "category": "others",
+    "date": "09/12/2020",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "amount": 1178
+  },
+  {
+    "id": 90,
+    "expenseName": "Lettuce - Arugula",
+    "category": "rent",
+    "date": "29/07/2021",
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.",
+    "amount": 5939
+  },
+  {
+    "id": 91,
+    "expenseName": "Beef - Shank",
+    "category": "grocery",
+    "date": "28/08/2021",
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "amount": 5378
+  },
+  {
+    "id": 92,
+    "expenseName": "Longan",
+    "category": "travel",
+    "date": "01/02/2020",
+    "description": "",
+    "amount": 4817
+  },
+  {
+    "id": 93,
+    "expenseName": "Pasta - Canelloni, Single Serve",
+    "category": "subscriptions",
+    "date": "26/11/2022",
+    "description": "",
+    "amount": 9797
+  },
+  {
+    "id": 94,
+    "expenseName": "Spic And Span All Purpose",
+    "category": "rent",
+    "date": "25/05/2022",
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
+    "amount": 6684
+  },
+  {
+    "id": 95,
+    "expenseName": "Macaroons - Homestyle Two Bit",
+    "category": "travel",
+    "date": "27/05/2021",
+    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 8909
+  },
+  {
+    "id": 96,
+    "expenseName": "Lettuce - Spring Mix",
+    "category": "rent",
+    "date": "13/11/2021",
+    "description": "Vestibulum sed magna at nunc commodo placerat.",
+    "amount": 2522
+  },
+  {
+    "id": 97,
+    "expenseName": "Currants",
+    "category": "travel",
+    "date": "15/10/2020",
+    "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "amount": 6959
+  },
+  {
+    "id": 98,
+    "expenseName": "Foil Wrap",
+    "category": "rent",
+    "date": "16/02/2022",
+    "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "amount": 6896
+  },
+  {
+    "id": 99,
+    "expenseName": "Lemon Balm - Fresh",
+    "category": "others",
+    "date": "15/03/2023",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
+    "amount": 2596
+  },
+  {
+    "id": 100,
+    "expenseName": "Blackberries",
+    "category": "others",
+    "date": "16/12/2021",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.",
+    "amount": 2031
+  },
+  {
+    "id": 101,
+    "expenseName": "Fiddlehead - Frozen",
+    "category": "grocery",
+    "date": "22/03/2021",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+    "amount": 9182
+  },
+  {
+    "id": 102,
+    "expenseName": "Mustard - Dijon",
+    "category": "bill",
+    "date": "25/10/2020",
+    "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "amount": 5321
+  },
+  {
+    "id": 103,
+    "expenseName": "Sausage - Blood Pudding",
+    "category": "others",
+    "date": "05/07/2020",
+    "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "amount": 9510
+  },
+  {
+    "id": 104,
+    "expenseName": "Shopper Bag - S - 4",
+    "category": "rent",
+    "date": "16/05/2022",
+    "description": "",
+    "amount": 3973
+  },
+  {
+    "id": 105,
+    "expenseName": "Pork - Loin, Center Cut",
+    "category": "others",
+    "date": "08/01/2020",
+    "description": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
+    "amount": 1093
+  },
+  {
+    "id": 106,
+    "expenseName": "Milk - Condensed",
+    "category": "subscriptions",
+    "date": "26/12/2020",
+    "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
+    "amount": 7854
+  },
+  {
+    "id": 107,
+    "expenseName": "Pepsi, 355 Ml",
+    "category": "rent",
+    "date": "03/07/2022",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+    "amount": 7805
+  },
+  {
+    "id": 108,
+    "expenseName": "Wine - Niagara Peninsula Vqa",
+    "category": "grocery",
+    "date": "25/07/2020",
+    "description": "",
+    "amount": 3462
+  },
+  {
+    "id": 109,
+    "expenseName": "Pineapple - Regular",
+    "category": "rent",
+    "date": "22/06/2020",
+    "description": "Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "amount": 5177
+  },
+  {
+    "id": 110,
+    "expenseName": "Wine - Magnotta, Merlot Sr Vqa",
+    "category": "bill",
+    "date": "21/08/2021",
+    "description": "",
+    "amount": 4943
+  },
+  {
+    "id": 111,
+    "expenseName": "Dooleys Toffee",
+    "category": "bill",
+    "date": "07/10/2022",
+    "description": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    "amount": 147
+  },
+  {
+    "id": 112,
+    "expenseName": "Bread Foccacia Whole",
+    "category": "bill",
+    "date": "13/11/2020",
+    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 9765
+  },
+  {
+    "id": 113,
+    "expenseName": "Basil - Fresh",
+    "category": "rent",
+    "date": "05/02/2021",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 8381
+  },
+  {
+    "id": 114,
+    "expenseName": "Tendrils - Baby Pea, Organic",
+    "category": "subscriptions",
+    "date": "17/09/2022",
+    "description": "Cras pellentesque volutpat dui.",
+    "amount": 8821
+  },
+  {
+    "id": 115,
+    "expenseName": "Onions - Red",
+    "category": "rent",
+    "date": "04/12/2021",
+    "description": "Sed ante.",
+    "amount": 6617
+  },
+  {
+    "id": 116,
+    "expenseName": "Pie Shells 10",
+    "category": "bill",
+    "date": "28/09/2021",
+    "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "amount": 1633
+  },
+  {
+    "id": 117,
+    "expenseName": "Wine - Pinot Noir Pond Haddock",
+    "category": "rent",
+    "date": "22/07/2020",
+    "description": "",
+    "amount": 3542
+  },
+  {
+    "id": 118,
+    "expenseName": "Pork - Bacon, Sliced",
+    "category": "subscriptions",
+    "date": "22/11/2022",
+    "description": "",
+    "amount": 2758
+  },
+  {
+    "id": 119,
+    "expenseName": "Liqueur - Melon",
+    "category": "grocery",
+    "date": "21/07/2022",
+    "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "amount": 8800
+  },
+  {
+    "id": 120,
+    "expenseName": "Wine - Red, Wolf Blass, Yellow",
+    "category": "subscriptions",
+    "date": "05/02/2023",
+    "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
+    "amount": 9707
+  },
+  {
+    "id": 121,
+    "expenseName": "Oysters - Smoked",
+    "category": "others",
+    "date": "01/01/2022",
+    "description": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+    "amount": 445
+  },
+  {
+    "id": 122,
+    "expenseName": "Sprouts - Pea",
+    "category": "subscriptions",
+    "date": "19/04/2023",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 1411
+  },
+  {
+    "id": 123,
+    "expenseName": "English Muffin",
+    "category": "bill",
+    "date": "10/06/2020",
+    "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices.",
+    "amount": 7748
+  },
+  {
+    "id": 124,
+    "expenseName": "Roe - Lump Fish, Black",
+    "category": "grocery",
+    "date": "27/09/2020",
+    "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "amount": 6487
+  },
+  {
+    "id": 125,
+    "expenseName": "Squash - Butternut",
+    "category": "travel",
+    "date": "24/01/2020",
+    "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.",
+    "amount": 5806
+  },
+  {
+    "id": 126,
+    "expenseName": "Vol Au Vents",
+    "category": "rent",
+    "date": "14/08/2022",
+    "description": "",
+    "amount": 8552
+  },
+  {
+    "id": 127,
+    "expenseName": "Veal - Shank, Pieces",
+    "category": "rent",
+    "date": "05/01/2022",
+    "description": "Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "amount": 7569
+  },
+  {
+    "id": 128,
+    "expenseName": "Bread Base - Toscano",
+    "category": "others",
+    "date": "13/04/2022",
+    "description": "",
+    "amount": 7023
+  },
+  {
+    "id": 129,
+    "expenseName": "Cassis",
+    "category": "others",
+    "date": "06/04/2021",
+    "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
+    "amount": 4091
+  },
+  {
+    "id": 130,
+    "expenseName": "Sugar - Brown, Individual",
+    "category": "rent",
+    "date": "07/02/2020",
+    "description": "Aliquam erat volutpat. In congue. Etiam justo.",
+    "amount": 7424
+  },
+  {
+    "id": 131,
+    "expenseName": "Pizza Pizza Dough",
+    "category": "others",
+    "date": "05/08/2020",
+    "description": "Duis ac nibh.",
+    "amount": 224
+  },
+  {
+    "id": 132,
+    "expenseName": "Sugar - Fine",
+    "category": "travel",
+    "date": "30/10/2021",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 6614
+  },
+  {
+    "id": 133,
+    "expenseName": "Sambuca - Opal Nera",
+    "category": "others",
+    "date": "16/12/2020",
+    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "amount": 690
+  },
+  {
+    "id": 134,
+    "expenseName": "Jameson Irish Whiskey",
+    "category": "bill",
+    "date": "21/11/2020",
+    "description": "Nulla tellus.",
+    "amount": 6043
+  },
+  {
+    "id": 135,
+    "expenseName": "Pepper - Chilli Seeds Mild",
+    "category": "rent",
+    "date": "23/09/2020",
+    "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "amount": 6437
+  },
+  {
+    "id": 136,
+    "expenseName": "Quail - Whole, Bone - In",
+    "category": "bill",
+    "date": "01/11/2021",
+    "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "amount": 4757
+  },
+  {
+    "id": 137,
+    "expenseName": "Icecream Cone - Areo Chocolate",
+    "category": "grocery",
+    "date": "13/09/2022",
+    "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
+    "amount": 3596
+  },
+  {
+    "id": 138,
+    "expenseName": "Pear - Halves",
+    "category": "travel",
+    "date": "31/10/2020",
+    "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "amount": 2359
+  },
+  {
+    "id": 139,
+    "expenseName": "Corn - Mini",
+    "category": "others",
+    "date": "14/05/2021",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    "amount": 1128
+  },
+  {
+    "id": 140,
+    "expenseName": "Beans - Navy, Dry",
+    "category": "grocery",
+    "date": "20/04/2022",
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus.",
+    "amount": 2101
+  },
+  {
+    "id": 141,
+    "expenseName": "Bread - Mini Hamburger Bun",
+    "category": "grocery",
+    "date": "04/04/2022",
+    "description": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "amount": 1569
+  },
+  {
+    "id": 142,
+    "expenseName": "Soup - Campbells Mushroom",
+    "category": "rent",
+    "date": "11/03/2022",
+    "description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 9760
+  },
+  {
+    "id": 143,
+    "expenseName": "Quinoa",
+    "category": "rent",
+    "date": "16/05/2023",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "amount": 8818
+  },
+  {
+    "id": 144,
+    "expenseName": "Veal - Sweetbread",
+    "category": "others",
+    "date": "15/08/2021",
+    "description": "Quisque porta volutpat erat.",
+    "amount": 7670
+  },
+  {
+    "id": 145,
+    "expenseName": "Instant Coffee",
+    "category": "travel",
+    "date": "06/05/2021",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+    "amount": 4606
+  },
+  {
+    "id": 146,
+    "expenseName": "Bread - Calabrese Baguette",
+    "category": "subscriptions",
+    "date": "05/09/2020",
+    "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "amount": 255
+  },
+  {
+    "id": 147,
+    "expenseName": "Rice - Brown",
+    "category": "grocery",
+    "date": "14/02/2022",
+    "description": "",
+    "amount": 5667
+  },
+  {
+    "id": 148,
+    "expenseName": "Yogurt - Raspberry, 175 Gr",
+    "category": "rent",
+    "date": "21/04/2020",
+    "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
+    "amount": 2700
+  },
+  {
+    "id": 149,
+    "expenseName": "Lemonade - Pineapple Passion",
+    "category": "grocery",
+    "date": "02/03/2023",
+    "description": "Aenean auctor gravida sem.",
+    "amount": 9724
+  },
+  {
+    "id": 150,
+    "expenseName": "Scrubbie - Scotchbrite Hand Pad",
+    "category": "travel",
+    "date": "30/04/2021",
+    "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.",
+    "amount": 6460
+  },
+  {
+    "id": 151,
+    "expenseName": "Wine - Casablanca Valley",
+    "category": "bill",
+    "date": "16/02/2021",
+    "description": "",
+    "amount": 7727
+  },
+  {
+    "id": 152,
+    "expenseName": "Cheese - Mozzarella",
+    "category": "bill",
+    "date": "25/02/2022",
+    "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "amount": 6467
+  },
+  {
+    "id": 153,
+    "expenseName": "Lettuce - California Mix",
+    "category": "others",
+    "date": "01/01/2022",
+    "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 7007
+  },
+  {
+    "id": 154,
+    "expenseName": "Flour - Pastry",
+    "category": "subscriptions",
+    "date": "01/11/2020",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 1122
+  },
+  {
+    "id": 155,
+    "expenseName": "Wine - White, Riesling, Semi - Dry",
+    "category": "rent",
+    "date": "24/10/2022",
+    "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+    "amount": 8551
+  },
+  {
+    "id": 156,
+    "expenseName": "Mousse - Passion Fruit",
+    "category": "travel",
+    "date": "18/05/2020",
+    "description": "",
+    "amount": 5230
+  },
+  {
+    "id": 157,
+    "expenseName": "Fond - Chocolate",
+    "category": "grocery",
+    "date": "10/10/2022",
+    "description": "Maecenas rhoncus aliquam lacus.",
+    "amount": 3173
+  },
+  {
+    "id": 158,
+    "expenseName": "Potatoes - Purple, Organic",
+    "category": "travel",
+    "date": "15/05/2020",
+    "description": "Fusce posuere felis sed lacus.",
+    "amount": 9832
+  },
+  {
+    "id": 159,
+    "expenseName": "Marjoram - Dried, Rubbed",
+    "category": "travel",
+    "date": "11/11/2021",
+    "description": "",
+    "amount": 8170
+  },
+  {
+    "id": 160,
+    "expenseName": "Pie Shell - 9",
+    "category": "others",
+    "date": "27/02/2020",
+    "description": "",
+    "amount": 5536
+  },
+  {
+    "id": 161,
+    "expenseName": "Mushroom - Shitake, Dry",
+    "category": "bill",
+    "date": "04/10/2021",
+    "description": "Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "amount": 6422
+  },
+  {
+    "id": 162,
+    "expenseName": "Longos - Assorted Sandwich",
+    "category": "travel",
+    "date": "25/04/2023",
+    "description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+    "amount": 784
+  },
+  {
+    "id": 163,
+    "expenseName": "Bag - Clear 7 Lb",
+    "category": "others",
+    "date": "15/07/2020",
+    "description": "Pellentesque ultrices mattis odio.",
+    "amount": 9126
+  },
+  {
+    "id": 164,
+    "expenseName": "Oil - Shortening - All - Purpose",
+    "category": "subscriptions",
+    "date": "04/12/2020",
+    "description": "In congue. Etiam justo.",
+    "amount": 9843
+  },
+  {
+    "id": 165,
+    "expenseName": "Pears - Fiorelle",
+    "category": "grocery",
+    "date": "02/09/2022",
+    "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "amount": 6702
+  },
+  {
+    "id": 166,
+    "expenseName": "Placemat - Scallop, White",
+    "category": "rent",
+    "date": "30/11/2022",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 8063
+  },
+  {
+    "id": 167,
+    "expenseName": "Juice - Apple, 341 Ml",
+    "category": "others",
+    "date": "07/03/2021",
+    "description": "",
+    "amount": 3692
+  },
+  {
+    "id": 168,
+    "expenseName": "Island Oasis - Banana Daiquiri",
+    "category": "bill",
+    "date": "26/06/2021",
+    "description": "In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "amount": 8926
+  },
+  {
+    "id": 169,
+    "expenseName": "Bread Crumbs - Panko",
+    "category": "rent",
+    "date": "21/01/2021",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+    "amount": 1475
+  },
+  {
+    "id": 170,
+    "expenseName": "Oven Mitt - 13 Inch",
+    "category": "grocery",
+    "date": "19/04/2020",
+    "description": "",
+    "amount": 549
+  },
+  {
+    "id": 171,
+    "expenseName": "Artichokes - Knobless, White",
+    "category": "others",
+    "date": "04/03/2022",
+    "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "amount": 929
+  },
+  {
+    "id": 172,
+    "expenseName": "Veal - Ground",
+    "category": "others",
+    "date": "19/06/2022",
+    "description": "",
+    "amount": 6764
+  },
+  {
+    "id": 173,
+    "expenseName": "Pepper - White, Whole",
+    "category": "bill",
+    "date": "04/02/2022",
+    "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+    "amount": 4729
+  },
+  {
+    "id": 174,
+    "expenseName": "Coffee - Decafenated",
+    "category": "others",
+    "date": "17/12/2021",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+    "amount": 1758
+  },
+  {
+    "id": 175,
+    "expenseName": "Bouillion - Fish",
+    "category": "others",
+    "date": "26/11/2020",
+    "description": "Nulla mollis molestie lorem.",
+    "amount": 200
+  },
+  {
+    "id": 176,
+    "expenseName": "Mints - Striped Red",
+    "category": "bill",
+    "date": "16/09/2021",
+    "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
+    "amount": 4663
+  },
+  {
+    "id": 177,
+    "expenseName": "Bar Nature Valley",
+    "category": "subscriptions",
+    "date": "17/03/2021",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+    "amount": 5302
+  },
+  {
+    "id": 178,
+    "expenseName": "Bread - Bistro White",
+    "category": "subscriptions",
+    "date": "16/06/2021",
+    "description": "Curabitur at ipsum ac tellus semper interdum.",
+    "amount": 6169
+  },
+  {
+    "id": 179,
+    "expenseName": "Bar - Sweet And Salty Chocolate",
+    "category": "grocery",
+    "date": "03/07/2020",
+    "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
+    "amount": 7042
+  },
+  {
+    "id": 180,
+    "expenseName": "Longos - Greek Salad",
+    "category": "grocery",
+    "date": "01/07/2022",
+    "description": "",
+    "amount": 4298
+  },
+  {
+    "id": 181,
+    "expenseName": "Sauce - White, Mix",
+    "category": "bill",
+    "date": "22/01/2020",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "amount": 9997
+  },
+  {
+    "id": 182,
+    "expenseName": "Bread - Malt",
+    "category": "travel",
+    "date": "18/12/2022",
+    "description": "Etiam justo. Etiam pretium iaculis justo.",
+    "amount": 2778
+  },
+  {
+    "id": 183,
+    "expenseName": "Wine - Chablis J Moreau Et Fils",
+    "category": "travel",
+    "date": "30/05/2022",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 138
+  },
+  {
+    "id": 184,
+    "expenseName": "Raisin - Dark",
+    "category": "bill",
+    "date": "02/03/2021",
+    "description": "",
+    "amount": 3661
+  },
+  {
+    "id": 185,
+    "expenseName": "Sauce - Soya, Dark",
+    "category": "others",
+    "date": "01/10/2022",
+    "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
+    "amount": 6747
+  },
+  {
+    "id": 186,
+    "expenseName": "Kiwano",
+    "category": "others",
+    "date": "05/07/2021",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
+    "amount": 1849
+  },
+  {
+    "id": 187,
+    "expenseName": "Jolt Cola",
+    "category": "others",
+    "date": "13/05/2020",
+    "description": "Vivamus vestibulum sagittis sapien.",
+    "amount": 1649
+  },
+  {
+    "id": 188,
+    "expenseName": "Pork - Backfat",
+    "category": "others",
+    "date": "22/05/2022",
+    "description": "Suspendisse potenti.",
+    "amount": 2181
+  },
+  {
+    "id": 189,
+    "expenseName": "Wine - Domaine Boyar Royal",
+    "category": "others",
+    "date": "17/11/2020",
+    "description": "",
+    "amount": 3502
+  },
+  {
+    "id": 190,
+    "expenseName": "Wine - Red, Pinot Noir, Chateau",
+    "category": "travel",
+    "date": "29/05/2023",
+    "description": "Suspendisse accumsan tortor quis turpis. Sed ante.",
+    "amount": 1426
+  },
+  {
+    "id": 191,
+    "expenseName": "Gherkin",
+    "category": "bill",
+    "date": "25/09/2022",
+    "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
+    "amount": 4078
+  },
+  {
+    "id": 192,
+    "expenseName": "Flour Pastry Super Fine",
+    "category": "others",
+    "date": "13/12/2021",
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "amount": 9853
+  },
+  {
+    "id": 193,
+    "expenseName": "Sprite - 355 Ml",
+    "category": "subscriptions",
+    "date": "26/01/2021",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "amount": 1422
+  },
+  {
+    "id": 194,
+    "expenseName": "Jicama",
+    "category": "rent",
+    "date": "08/03/2023",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
+    "amount": 2012
+  },
+  {
+    "id": 195,
+    "expenseName": "Easy Off Oven Cleaner",
+    "category": "others",
+    "date": "14/12/2022",
+    "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "amount": 925
+  },
+  {
+    "id": 196,
+    "expenseName": "Nantucket Orange Juice",
+    "category": "travel",
+    "date": "27/09/2021",
+    "description": "In quis justo.",
+    "amount": 6324
+  },
+  {
+    "id": 197,
+    "expenseName": "Apple - Northern Spy",
+    "category": "subscriptions",
+    "date": "24/11/2022",
+    "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "amount": 422
+  },
+  {
+    "id": 198,
+    "expenseName": "Pasta - Bauletti, Chicken White",
+    "category": "subscriptions",
+    "date": "05/07/2021",
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "amount": 4164
+  },
+  {
+    "id": 199,
+    "expenseName": "Water - Mineral, Natural",
+    "category": "rent",
+    "date": "31/03/2021",
+    "description": "",
+    "amount": 1015
+  },
+  {
+    "id": 200,
+    "expenseName": "Wine - Magnotta - Cab Franc",
+    "category": "rent",
+    "date": "27/12/2021",
+    "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.",
+    "amount": 7091
+  },
+  {
+    "id": 201,
+    "expenseName": "Chinese Foods - Pepper Beef",
+    "category": "rent",
+    "date": "24/11/2022",
+    "description": "Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque.",
+    "amount": 5799
+  },
+  {
+    "id": 202,
+    "expenseName": "Chocolate - Dark Callets",
+    "category": "others",
+    "date": "11/03/2021",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque.",
+    "amount": 8901
+  },
+  {
+    "id": 203,
+    "expenseName": "Beans - Turtle, Black, Dry",
+    "category": "subscriptions",
+    "date": "18/02/2022",
+    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "amount": 6716
+  },
+  {
+    "id": 204,
+    "expenseName": "Pails With Lids",
+    "category": "travel",
+    "date": "29/05/2021",
+    "description": "",
+    "amount": 3742
+  },
+  {
+    "id": 205,
+    "expenseName": "Pasta - Fusili Tri - Coloured",
+    "category": "travel",
+    "date": "28/01/2022",
+    "description": "",
+    "amount": 359
+  },
+  {
+    "id": 206,
+    "expenseName": "Russian Prince",
+    "category": "travel",
+    "date": "04/03/2023",
+    "description": "Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
+    "amount": 7417
+  },
+  {
+    "id": 207,
+    "expenseName": "Soup - Beef, Base Mix",
+    "category": "bill",
+    "date": "24/08/2020",
+    "description": "",
+    "amount": 5225
+  },
+  {
+    "id": 208,
+    "expenseName": "Carbonated Water - Wildberry",
+    "category": "others",
+    "date": "29/01/2023",
+    "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
+    "amount": 3147
+  },
+  {
+    "id": 209,
+    "expenseName": "Grapes - Red",
+    "category": "rent",
+    "date": "26/06/2022",
+    "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "amount": 4014
+  },
+  {
+    "id": 210,
+    "expenseName": "Salmon Steak - Cohoe 8 Oz",
+    "category": "grocery",
+    "date": "21/07/2022",
+    "description": "Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
+    "amount": 667
+  },
+  {
+    "id": 211,
+    "expenseName": "Cocoa Feuilletine",
+    "category": "travel",
+    "date": "08/11/2021",
+    "description": "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "amount": 4683
+  },
+  {
+    "id": 212,
+    "expenseName": "Lamb - Sausage Casings",
+    "category": "grocery",
+    "date": "11/07/2022",
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 1074
+  },
+  {
+    "id": 213,
+    "expenseName": "Star Anise, Whole",
+    "category": "grocery",
+    "date": "13/08/2022",
+    "description": "",
+    "amount": 9545
+  },
+  {
+    "id": 214,
+    "expenseName": "Pepper - White, Ground",
+    "category": "bill",
+    "date": "02/10/2020",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.",
+    "amount": 3112
+  },
+  {
+    "id": 215,
+    "expenseName": "Wine - Shiraz Wolf Blass Premium",
+    "category": "travel",
+    "date": "02/05/2021",
+    "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante.",
+    "amount": 9988
+  },
+  {
+    "id": 216,
+    "expenseName": "Coriander - Ground",
+    "category": "bill",
+    "date": "02/04/2023",
+    "description": "Sed ante. Vivamus tortor.",
+    "amount": 7718
+  },
+  {
+    "id": 217,
+    "expenseName": "Veal - Inside Round / Top, Lean",
+    "category": "subscriptions",
+    "date": "24/04/2022",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc.",
+    "amount": 8105
+  },
+  {
+    "id": 218,
+    "expenseName": "Cheese - Provolone",
+    "category": "grocery",
+    "date": "22/04/2021",
+    "description": "Ut tellus.",
+    "amount": 4641
+  },
+  {
+    "id": 219,
+    "expenseName": "Mcguinness - Blue Curacao",
+    "category": "grocery",
+    "date": "26/06/2022",
+    "description": "Fusce posuere felis sed lacus.",
+    "amount": 6003
+  },
+  {
+    "id": 220,
+    "expenseName": "Carbonated Water - Wildberry",
+    "category": "others",
+    "date": "29/10/2021",
+    "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 3432
+  },
+  {
+    "id": 221,
+    "expenseName": "Skewers - Bamboo",
+    "category": "bill",
+    "date": "03/08/2020",
+    "description": "Morbi non lectus.",
+    "amount": 6481
+  },
+  {
+    "id": 222,
+    "expenseName": "Beer - Upper Canada Light",
+    "category": "subscriptions",
+    "date": "22/10/2021",
+    "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
+    "amount": 6300
+  },
+  {
+    "id": 223,
+    "expenseName": "Rhubarb",
+    "category": "rent",
+    "date": "18/10/2020",
+    "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
+    "amount": 180
+  },
+  {
+    "id": 224,
+    "expenseName": "Pepper - Pablano",
+    "category": "rent",
+    "date": "30/01/2021",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 931
+  },
+  {
+    "id": 225,
+    "expenseName": "Heavy Duty Dust Pan",
+    "category": "bill",
+    "date": "09/09/2022",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
+    "amount": 5922
+  },
+  {
+    "id": 226,
+    "expenseName": "The Pop Shoppe - Lime Rickey",
+    "category": "rent",
+    "date": "06/01/2023",
+    "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "amount": 5029
+  },
+  {
+    "id": 227,
+    "expenseName": "Carrots - Mini, Stem On",
+    "category": "subscriptions",
+    "date": "08/01/2022",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.",
+    "amount": 844
+  },
+  {
+    "id": 228,
+    "expenseName": "Toamtoes 6x7 Select",
+    "category": "travel",
+    "date": "13/04/2023",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 5132
+  },
+  {
+    "id": 229,
+    "expenseName": "Bacardi Limon",
+    "category": "travel",
+    "date": "21/05/2023",
+    "description": "Nullam molestie nibh in lectus.",
+    "amount": 2971
+  },
+  {
+    "id": 230,
+    "expenseName": "Island Oasis - Peach Daiquiri",
+    "category": "others",
+    "date": "21/06/2022",
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 2905
+  },
+  {
+    "id": 231,
+    "expenseName": "Kellogs Cereal In A Cup",
+    "category": "bill",
+    "date": "18/06/2022",
+    "description": "Donec ut mauris eget massa tempor convallis.",
+    "amount": 7584
+  },
+  {
+    "id": 232,
+    "expenseName": "Wine - Mas Chicet Rose, Vintage",
+    "category": "grocery",
+    "date": "25/12/2022",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
+    "amount": 5150
+  },
+  {
+    "id": 233,
+    "expenseName": "Fennel",
+    "category": "grocery",
+    "date": "02/07/2020",
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
+    "amount": 6353
+  },
+  {
+    "id": 234,
+    "expenseName": "Wine - Harrow Estates, Vidal",
+    "category": "others",
+    "date": "25/08/2021",
+    "description": "",
+    "amount": 4071
+  },
+  {
+    "id": 235,
+    "expenseName": "Frangelico",
+    "category": "travel",
+    "date": "08/10/2020",
+    "description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "amount": 2475
+  },
+  {
+    "id": 236,
+    "expenseName": "Coffee - French Vanilla Frothy",
+    "category": "subscriptions",
+    "date": "11/05/2023",
+    "description": "Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+    "amount": 5118
+  },
+  {
+    "id": 237,
+    "expenseName": "Foil - Round Foil",
+    "category": "grocery",
+    "date": "27/02/2021",
+    "description": "Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+    "amount": 3722
+  },
+  {
+    "id": 238,
+    "expenseName": "Juice - Orange, 341 Ml",
+    "category": "bill",
+    "date": "05/06/2022",
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
+    "amount": 4899
+  },
+  {
+    "id": 239,
+    "expenseName": "Salmon - Whole, 4 - 6 Pounds",
+    "category": "subscriptions",
+    "date": "31/03/2021",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+    "amount": 7470
+  },
+  {
+    "id": 240,
+    "expenseName": "Creme De Cacao White",
+    "category": "bill",
+    "date": "15/05/2020",
+    "description": "Aenean fermentum.",
+    "amount": 8443
+  },
+  {
+    "id": 241,
+    "expenseName": "Muffin - Mix - Mango Sour Cherry",
+    "category": "others",
+    "date": "18/11/2020",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "amount": 6535
+  },
+  {
+    "id": 242,
+    "expenseName": "Wine - Sauvignon Blanc Oyster",
+    "category": "bill",
+    "date": "18/10/2021",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "amount": 1677
+  },
+  {
+    "id": 243,
+    "expenseName": "Coffee - 10oz Cup 92961",
+    "category": "travel",
+    "date": "26/05/2022",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 9433
+  },
+  {
+    "id": 244,
+    "expenseName": "Cookies - Fortune",
+    "category": "subscriptions",
+    "date": "06/01/2020",
+    "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "amount": 5491
+  },
+  {
+    "id": 245,
+    "expenseName": "Ham - Virginia",
+    "category": "travel",
+    "date": "05/01/2022",
+    "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
+    "amount": 2041
+  },
+  {
+    "id": 246,
+    "expenseName": "Cheese - Victor Et Berthold",
+    "category": "rent",
+    "date": "23/06/2022",
+    "description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "amount": 5546
+  },
+  {
+    "id": 247,
+    "expenseName": "Lobster - Cooked",
+    "category": "bill",
+    "date": "15/04/2020",
+    "description": "Suspendisse ornare consequat lectus.",
+    "amount": 7732
+  },
+  {
+    "id": 248,
+    "expenseName": "Appetizer - Escargot Puff",
+    "category": "bill",
+    "date": "03/05/2020",
+    "description": "",
+    "amount": 8082
+  },
+  {
+    "id": 249,
+    "expenseName": "Beer - Mill St Organic",
+    "category": "grocery",
+    "date": "20/12/2022",
+    "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
+    "amount": 8918
+  },
+  {
+    "id": 250,
+    "expenseName": "Sponge Cake Mix - Chocolate",
+    "category": "subscriptions",
+    "date": "26/01/2023",
+    "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
+    "amount": 9360
+  },
+  {
+    "id": 251,
+    "expenseName": "Pork - Back, Short Cut, Boneless",
+    "category": "grocery",
+    "date": "16/01/2023",
+    "description": "Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "amount": 1797
+  },
+  {
+    "id": 252,
+    "expenseName": "Cream - 35%",
+    "category": "travel",
+    "date": "04/03/2020",
+    "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+    "amount": 9870
+  },
+  {
+    "id": 253,
+    "expenseName": "Garam Marsala",
+    "category": "others",
+    "date": "26/11/2022",
+    "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "amount": 6347
+  },
+  {
+    "id": 254,
+    "expenseName": "Petit Baguette",
+    "category": "others",
+    "date": "26/10/2021",
+    "description": "",
+    "amount": 3272
+  },
+  {
+    "id": 255,
+    "expenseName": "Thyme - Dried",
+    "category": "bill",
+    "date": "19/04/2020",
+    "description": "Fusce posuere felis sed lacus.",
+    "amount": 3730
+  },
+  {
+    "id": 256,
+    "expenseName": "Chevril",
+    "category": "others",
+    "date": "11/05/2023",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 2285
+  },
+  {
+    "id": 257,
+    "expenseName": "Spinach - Spinach Leaf",
+    "category": "grocery",
+    "date": "05/05/2023",
+    "description": "",
+    "amount": 429
+  },
+  {
+    "id": 258,
+    "expenseName": "Pork - Suckling Pig",
+    "category": "bill",
+    "date": "17/07/2021",
+    "description": "",
+    "amount": 6931
+  },
+  {
+    "id": 259,
+    "expenseName": "Nut - Pumpkin Seeds",
+    "category": "rent",
+    "date": "02/12/2022",
+    "description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
+    "amount": 5581
+  },
+  {
+    "id": 260,
+    "expenseName": "Napkin - Dinner, White",
+    "category": "others",
+    "date": "18/01/2023",
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.",
+    "amount": 6783
+  },
+  {
+    "id": 261,
+    "expenseName": "Lemonade - Pineapple Passion",
+    "category": "travel",
+    "date": "21/07/2022",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "amount": 3974
+  },
+  {
+    "id": 262,
+    "expenseName": "Wine - Masi Valpolocell",
+    "category": "others",
+    "date": "28/01/2022",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.",
+    "amount": 7672
+  },
+  {
+    "id": 263,
+    "expenseName": "Raisin - Dark",
+    "category": "rent",
+    "date": "23/06/2020",
+    "description": "In blandit ultrices enim.",
+    "amount": 3258
+  },
+  {
+    "id": 264,
+    "expenseName": "Beets - Mini Golden",
+    "category": "grocery",
+    "date": "08/09/2020",
+    "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt.",
+    "amount": 6705
+  },
+  {
+    "id": 265,
+    "expenseName": "Juice - V8, Tomato",
+    "category": "rent",
+    "date": "07/07/2020",
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
+    "amount": 8057
+  },
+  {
+    "id": 266,
+    "expenseName": "Rappini - Andy Boy",
+    "category": "travel",
+    "date": "26/05/2023",
+    "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "amount": 5804
+  },
+  {
+    "id": 267,
+    "expenseName": "Container - Clear 16 Oz",
+    "category": "subscriptions",
+    "date": "22/01/2022",
+    "description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.",
+    "amount": 8906
+  },
+  {
+    "id": 268,
+    "expenseName": "Wine - White, Mosel Gold",
+    "category": "rent",
+    "date": "21/04/2023",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
+    "amount": 8288
+  },
+  {
+    "id": 269,
+    "expenseName": "Anchovy Fillets",
+    "category": "rent",
+    "date": "25/10/2022",
+    "description": "In eleifend quam a odio.",
+    "amount": 6682
+  },
+  {
+    "id": 270,
+    "expenseName": "Soup - Campbells Broccoli",
+    "category": "grocery",
+    "date": "12/02/2023",
+    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "amount": 8721
+  },
+  {
+    "id": 271,
+    "expenseName": "Onions - White",
+    "category": "bill",
+    "date": "24/01/2022",
+    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
+    "amount": 6368
+  },
+  {
+    "id": 272,
+    "expenseName": "Pork - Bones",
+    "category": "bill",
+    "date": "09/11/2020",
+    "description": "Maecenas rhoncus aliquam lacus.",
+    "amount": 1891
+  },
+  {
+    "id": 273,
+    "expenseName": "Lamb - Shanks",
+    "category": "grocery",
+    "date": "13/09/2022",
+    "description": "",
+    "amount": 8543
+  },
+  {
+    "id": 274,
+    "expenseName": "Crackers - Melba Toast",
+    "category": "others",
+    "date": "06/05/2022",
+    "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+    "amount": 3457
+  },
+  {
+    "id": 275,
+    "expenseName": "Chicken - Leg, Fresh",
+    "category": "others",
+    "date": "15/04/2020",
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+    "amount": 8299
+  },
+  {
+    "id": 276,
+    "expenseName": "Asparagus - Mexican",
+    "category": "rent",
+    "date": "14/10/2022",
+    "description": "",
+    "amount": 3679
+  },
+  {
+    "id": 277,
+    "expenseName": "Pie Shell - 5",
+    "category": "bill",
+    "date": "12/05/2022",
+    "description": "Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 2598
+  },
+  {
+    "id": 278,
+    "expenseName": "Pickles - Gherkins",
+    "category": "grocery",
+    "date": "03/08/2021",
+    "description": "",
+    "amount": 1370
+  },
+  {
+    "id": 279,
+    "expenseName": "Chinese Foods - Chicken",
+    "category": "grocery",
+    "date": "15/03/2023",
+    "description": "",
+    "amount": 574
+  },
+  {
+    "id": 280,
+    "expenseName": "Baking Powder",
+    "category": "travel",
+    "date": "07/01/2021",
+    "description": "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 5048
+  },
+  {
+    "id": 281,
+    "expenseName": "Beef - Bones, Marrow",
+    "category": "subscriptions",
+    "date": "27/09/2022",
+    "description": "",
+    "amount": 5569
+  },
+  {
+    "id": 282,
+    "expenseName": "Salad Dressing",
+    "category": "subscriptions",
+    "date": "04/11/2021",
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.",
+    "amount": 2511
+  },
+  {
+    "id": 283,
+    "expenseName": "Mikes Hard Lemonade",
+    "category": "others",
+    "date": "02/02/2023",
+    "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
+    "amount": 3805
+  },
+  {
+    "id": 284,
+    "expenseName": "Baking Powder",
+    "category": "travel",
+    "date": "07/03/2020",
+    "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.",
+    "amount": 9270
+  },
+  {
+    "id": 285,
+    "expenseName": "Cheese - Sheep Milk",
+    "category": "grocery",
+    "date": "29/10/2021",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.",
+    "amount": 3130
+  },
+  {
+    "id": 286,
+    "expenseName": "Beans - Fava Fresh",
+    "category": "others",
+    "date": "22/02/2022",
+    "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "amount": 87
+  },
+  {
+    "id": 287,
+    "expenseName": "Garlic - Elephant",
+    "category": "bill",
+    "date": "14/04/2020",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+    "amount": 7584
+  },
+  {
+    "id": 288,
+    "expenseName": "Shrimp - Black Tiger 26/30",
+    "category": "travel",
+    "date": "15/01/2022",
+    "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "amount": 3527
+  },
+  {
+    "id": 289,
+    "expenseName": "Onions - White",
+    "category": "travel",
+    "date": "05/01/2021",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+    "amount": 9968
+  },
+  {
+    "id": 290,
+    "expenseName": "Haggis",
+    "category": "bill",
+    "date": "09/02/2020",
+    "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "amount": 4140
+  },
+  {
+    "id": 291,
+    "expenseName": "Food Colouring - Pink",
+    "category": "others",
+    "date": "08/01/2021",
+    "description": "Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
+    "amount": 1115
+  },
+  {
+    "id": 292,
+    "expenseName": "Pail - 4l White, With Handle",
+    "category": "rent",
+    "date": "06/07/2022",
+    "description": "Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+    "amount": 2634
+  },
+  {
+    "id": 293,
+    "expenseName": "Cleaner - Pine Sol",
+    "category": "subscriptions",
+    "date": "15/02/2022",
+    "description": "Etiam faucibus cursus urna. Ut tellus.",
+    "amount": 2441
+  },
+  {
+    "id": 294,
+    "expenseName": "Carbonated Water - Raspberry",
+    "category": "rent",
+    "date": "07/11/2020",
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
+    "amount": 4197
+  },
+  {
+    "id": 295,
+    "expenseName": "Spinach - Spinach Leaf",
+    "category": "subscriptions",
+    "date": "20/09/2022",
+    "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "amount": 6788
+  },
+  {
+    "id": 296,
+    "expenseName": "Plate Foam Laminated 9in Blk",
+    "category": "subscriptions",
+    "date": "19/11/2021",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "amount": 4975
+  },
+  {
+    "id": 297,
+    "expenseName": "Maple Syrup",
+    "category": "bill",
+    "date": "02/04/2020",
+    "description": "",
+    "amount": 7133
+  },
+  {
+    "id": 298,
+    "expenseName": "Wine - Semi Dry Riesling Vineland",
+    "category": "travel",
+    "date": "02/03/2023",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+    "amount": 7477
+  },
+  {
+    "id": 299,
+    "expenseName": "Bacardi Mojito",
+    "category": "rent",
+    "date": "11/05/2022",
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+    "amount": 4601
+  },
+  {
+    "id": 300,
+    "expenseName": "Chicken - Base",
+    "category": "rent",
+    "date": "27/01/2022",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.",
+    "amount": 2111
+  },
+  {
+    "id": 301,
+    "expenseName": "Cheese - Brick With Onion",
+    "category": "grocery",
+    "date": "18/11/2020",
+    "description": "Integer a nibh. In quis justo.",
+    "amount": 3931
+  },
+  {
+    "id": 302,
+    "expenseName": "Beef - Rib Roast, Capless",
+    "category": "bill",
+    "date": "30/03/2022",
+    "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 3931
+  },
+  {
+    "id": 303,
+    "expenseName": "Capon - Breast, Double, Wing On",
+    "category": "travel",
+    "date": "16/01/2021",
+    "description": "",
+    "amount": 6546
+  },
+  {
+    "id": 304,
+    "expenseName": "Flax Seed",
+    "category": "bill",
+    "date": "02/07/2021",
+    "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    "amount": 655
+  },
+  {
+    "id": 305,
+    "expenseName": "Energy - Boo - Koo",
+    "category": "grocery",
+    "date": "18/08/2020",
+    "description": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "amount": 7724
+  },
+  {
+    "id": 306,
+    "expenseName": "Nut - Pine Nuts, Whole",
+    "category": "rent",
+    "date": "09/05/2022",
+    "description": "Maecenas tincidunt lacus at velit.",
+    "amount": 6194
+  },
+  {
+    "id": 307,
+    "expenseName": "Plastic Arrow Stir Stick",
+    "category": "others",
+    "date": "27/01/2020",
+    "description": "",
+    "amount": 8030
+  },
+  {
+    "id": 308,
+    "expenseName": "Nantucket Orange Juice",
+    "category": "others",
+    "date": "20/08/2022",
+    "description": "",
+    "amount": 659
+  },
+  {
+    "id": 309,
+    "expenseName": "Beef - Cow Feet Split",
+    "category": "others",
+    "date": "13/06/2020",
+    "description": "",
+    "amount": 8470
+  },
+  {
+    "id": 310,
+    "expenseName": "Tea - Earl Grey",
+    "category": "grocery",
+    "date": "23/06/2022",
+    "description": "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "amount": 8724
+  },
+  {
+    "id": 311,
+    "expenseName": "Mace",
+    "category": "subscriptions",
+    "date": "28/12/2020",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "amount": 1044
+  },
+  {
+    "id": 312,
+    "expenseName": "Wine - Balbach Riverside",
+    "category": "others",
+    "date": "21/07/2022",
+    "description": "",
+    "amount": 5980
+  },
+  {
+    "id": 313,
+    "expenseName": "Tomatoes - Vine Ripe, Red",
+    "category": "bill",
+    "date": "07/10/2021",
+    "description": "",
+    "amount": 3728
+  },
+  {
+    "id": 314,
+    "expenseName": "Cup - 3.5oz, Foam",
+    "category": "others",
+    "date": "17/05/2020",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "amount": 3243
+  },
+  {
+    "id": 315,
+    "expenseName": "Squash - Pepper",
+    "category": "others",
+    "date": "12/08/2022",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 2420
+  },
+  {
+    "id": 316,
+    "expenseName": "Club Soda - Schweppes, 355 Ml",
+    "category": "bill",
+    "date": "02/07/2021",
+    "description": "Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "amount": 1848
+  },
+  {
+    "id": 317,
+    "expenseName": "Creme De Menthe Green",
+    "category": "subscriptions",
+    "date": "23/02/2022",
+    "description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 6289
+  },
+  {
+    "id": 318,
+    "expenseName": "Muffin Chocolate Individual Wrap",
+    "category": "bill",
+    "date": "08/08/2021",
+    "description": "Nunc nisl.",
+    "amount": 1881
+  },
+  {
+    "id": 319,
+    "expenseName": "Bonito Flakes - Toku Katsuo",
+    "category": "others",
+    "date": "06/10/2021",
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "amount": 6506
+  },
+  {
+    "id": 320,
+    "expenseName": "Triple Sec - Mcguinness",
+    "category": "subscriptions",
+    "date": "16/10/2022",
+    "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 4279
+  },
+  {
+    "id": 321,
+    "expenseName": "Longan",
+    "category": "rent",
+    "date": "23/05/2022",
+    "description": "",
+    "amount": 7816
+  },
+  {
+    "id": 322,
+    "expenseName": "Beer - Original Organic Lager",
+    "category": "rent",
+    "date": "27/01/2022",
+    "description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+    "amount": 7763
+  },
+  {
+    "id": 323,
+    "expenseName": "Pepper - Gypsy Pepper",
+    "category": "bill",
+    "date": "14/04/2021",
+    "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+    "amount": 7024
+  },
+  {
+    "id": 324,
+    "expenseName": "Beef - Bones, Cut - Up",
+    "category": "rent",
+    "date": "31/01/2020",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
+    "amount": 6341
+  },
+  {
+    "id": 325,
+    "expenseName": "Ocean Spray - Ruby Red",
+    "category": "bill",
+    "date": "27/04/2023",
+    "description": "Proin risus.",
+    "amount": 5893
+  },
+  {
+    "id": 326,
+    "expenseName": "Ice Cream - Strawberry",
+    "category": "subscriptions",
+    "date": "09/09/2021",
+    "description": "Pellentesque viverra pede ac diam.",
+    "amount": 9582
+  },
+  {
+    "id": 327,
+    "expenseName": "Cheese - Brick With Onion",
+    "category": "others",
+    "date": "11/04/2022",
+    "description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
+    "amount": 5833
+  },
+  {
+    "id": 328,
+    "expenseName": "Kiwi Gold Zespri",
+    "category": "grocery",
+    "date": "22/07/2020",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.",
+    "amount": 210
+  },
+  {
+    "id": 329,
+    "expenseName": "Dry Ice",
+    "category": "grocery",
+    "date": "03/10/2020",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+    "amount": 594
+  },
+  {
+    "id": 330,
+    "expenseName": "Soup - Campbells",
+    "category": "others",
+    "date": "11/10/2021",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
+    "amount": 4991
+  },
+  {
+    "id": 331,
+    "expenseName": "Icecream - Dstk Cml And Fdg",
+    "category": "grocery",
+    "date": "02/12/2021",
+    "description": "Mauris ullamcorper purus sit amet nulla.",
+    "amount": 9952
+  },
+  {
+    "id": 332,
+    "expenseName": "Yogurt - Raspberry, 175 Gr",
+    "category": "grocery",
+    "date": "09/10/2022",
+    "description": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
+    "amount": 2404
+  },
+  {
+    "id": 333,
+    "expenseName": "Chocolate Bar - Reese Pieces",
+    "category": "subscriptions",
+    "date": "27/01/2022",
+    "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+    "amount": 6259
+  },
+  {
+    "id": 334,
+    "expenseName": "Cod - Black Whole Fillet",
+    "category": "travel",
+    "date": "08/03/2020",
+    "description": "Aliquam erat volutpat.",
+    "amount": 1411
+  },
+  {
+    "id": 335,
+    "expenseName": "Cranberry Foccacia",
+    "category": "rent",
+    "date": "17/02/2021",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
+    "amount": 3506
+  },
+  {
+    "id": 336,
+    "expenseName": "Carbonated Water - Raspberry",
+    "category": "others",
+    "date": "03/04/2021",
+    "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.",
+    "amount": 8949
+  },
+  {
+    "id": 337,
+    "expenseName": "Beans - Butter Lrg Lima",
+    "category": "grocery",
+    "date": "19/12/2021",
+    "description": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
+    "amount": 6733
+  },
+  {
+    "id": 338,
+    "expenseName": "Water - Evian 355 Ml",
+    "category": "grocery",
+    "date": "18/09/2021",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "amount": 957
+  },
+  {
+    "id": 339,
+    "expenseName": "Asparagus - Green, Fresh",
+    "category": "travel",
+    "date": "27/04/2020",
+    "description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+    "amount": 2503
+  },
+  {
+    "id": 340,
+    "expenseName": "Soup Campbells Turkey Veg.",
+    "category": "grocery",
+    "date": "02/12/2022",
+    "description": "",
+    "amount": 9924
+  },
+  {
+    "id": 341,
+    "expenseName": "Yogurt - Peach, 175 Gr",
+    "category": "rent",
+    "date": "06/04/2021",
+    "description": "Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "amount": 772
+  },
+  {
+    "id": 342,
+    "expenseName": "Chicken - Wings, Tip Off",
+    "category": "travel",
+    "date": "04/07/2021",
+    "description": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula.",
+    "amount": 6014
+  },
+  {
+    "id": 343,
+    "expenseName": "Wine - Saint - Bris 2002, Sauv",
+    "category": "bill",
+    "date": "10/02/2023",
+    "description": "",
+    "amount": 9359
+  },
+  {
+    "id": 344,
+    "expenseName": "Water - Mineral, Natural",
+    "category": "travel",
+    "date": "05/05/2023",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 5706
+  },
+  {
+    "id": 345,
+    "expenseName": "Scrubbie - Scotchbrite Hand Pad",
+    "category": "grocery",
+    "date": "11/05/2022",
+    "description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
+    "amount": 2776
+  },
+  {
+    "id": 346,
+    "expenseName": "Scallops - In Shell",
+    "category": "travel",
+    "date": "13/01/2022",
+    "description": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "amount": 3425
+  },
+  {
+    "id": 347,
+    "expenseName": "Wine - White, Concha Y Toro",
+    "category": "travel",
+    "date": "12/10/2022",
+    "description": "",
+    "amount": 6465
+  },
+  {
+    "id": 348,
+    "expenseName": "Pork - Backs - Boneless",
+    "category": "others",
+    "date": "04/10/2021",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+    "amount": 8059
+  },
+  {
+    "id": 349,
+    "expenseName": "Island Oasis - Sweet And Sour Mix",
+    "category": "subscriptions",
+    "date": "06/04/2021",
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.",
+    "amount": 1855
+  },
+  {
+    "id": 350,
+    "expenseName": "Lamb Tenderloin Nz Fr",
+    "category": "travel",
+    "date": "02/08/2022",
+    "description": "Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "amount": 123
+  },
+  {
+    "id": 351,
+    "expenseName": "Cheese - Brick With Pepper",
+    "category": "subscriptions",
+    "date": "14/08/2021",
+    "description": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.",
+    "amount": 8476
+  },
+  {
+    "id": 352,
+    "expenseName": "Quiche Assorted",
+    "category": "bill",
+    "date": "23/07/2021",
+    "description": "Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "amount": 8466
+  },
+  {
+    "id": 353,
+    "expenseName": "Onions Granulated",
+    "category": "subscriptions",
+    "date": "15/05/2021",
+    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "amount": 7336
+  },
+  {
+    "id": 354,
+    "expenseName": "Lettuce - Baby Salad Greens",
+    "category": "grocery",
+    "date": "17/04/2023",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 9276
+  },
+  {
+    "id": 355,
+    "expenseName": "Salami - Genova",
+    "category": "rent",
+    "date": "05/02/2020",
+    "description": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+    "amount": 7041
+  },
+  {
+    "id": 356,
+    "expenseName": "Cabbage - Red",
+    "category": "subscriptions",
+    "date": "25/03/2022",
+    "description": "In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "amount": 569
+  },
+  {
+    "id": 357,
+    "expenseName": "Parsley - Dried",
+    "category": "travel",
+    "date": "25/03/2023",
+    "description": "Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 8337
+  },
+  {
+    "id": 358,
+    "expenseName": "Pasta - Elbows, Macaroni, Dry",
+    "category": "subscriptions",
+    "date": "11/03/2023",
+    "description": "",
+    "amount": 2324
+  },
+  {
+    "id": 359,
+    "expenseName": "Soup - Campbells",
+    "category": "grocery",
+    "date": "19/02/2022",
+    "description": "Donec semper sapien a libero.",
+    "amount": 4575
+  },
+  {
+    "id": 360,
+    "expenseName": "Salad Dressing",
+    "category": "travel",
+    "date": "17/09/2020",
+    "description": "",
+    "amount": 1478
+  },
+  {
+    "id": 361,
+    "expenseName": "Quinoa",
+    "category": "grocery",
+    "date": "19/03/2020",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+    "amount": 1485
+  },
+  {
+    "id": 362,
+    "expenseName": "Clams - Canned",
+    "category": "rent",
+    "date": "21/12/2020",
+    "description": "Etiam justo.",
+    "amount": 9412
+  },
+  {
+    "id": 363,
+    "expenseName": "Beef - Tender Tips",
+    "category": "bill",
+    "date": "29/03/2022",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
+    "amount": 5155
+  },
+  {
+    "id": 364,
+    "expenseName": "Cognac - Courvaisier",
+    "category": "travel",
+    "date": "12/07/2022",
+    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
+    "amount": 7440
+  },
+  {
+    "id": 365,
+    "expenseName": "Wine - Sogrape Mateus Rose",
+    "category": "rent",
+    "date": "05/04/2023",
+    "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "amount": 3030
+  },
+  {
+    "id": 366,
+    "expenseName": "Sea Urchin",
+    "category": "subscriptions",
+    "date": "10/06/2021",
+    "description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+    "amount": 3144
+  },
+  {
+    "id": 367,
+    "expenseName": "Scallops - U - 10",
+    "category": "bill",
+    "date": "14/02/2020",
+    "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "amount": 7524
+  },
+  {
+    "id": 368,
+    "expenseName": "Carbonated Water - Lemon Lime",
+    "category": "bill",
+    "date": "12/05/2022",
+    "description": "In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
+    "amount": 3425
+  },
+  {
+    "id": 369,
+    "expenseName": "Beets - Golden",
+    "category": "travel",
+    "date": "17/02/2021",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.",
+    "amount": 7694
+  },
+  {
+    "id": 370,
+    "expenseName": "Wine - Sherry Dry Sack, William",
+    "category": "bill",
+    "date": "12/09/2021",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 247
+  },
+  {
+    "id": 371,
+    "expenseName": "Coriander - Ground",
+    "category": "travel",
+    "date": "23/04/2020",
+    "description": "",
+    "amount": 6136
+  },
+  {
+    "id": 372,
+    "expenseName": "Pork - Kidney",
+    "category": "subscriptions",
+    "date": "13/03/2023",
+    "description": "",
+    "amount": 3940
+  },
+  {
+    "id": 373,
+    "expenseName": "Pepper - Cayenne",
+    "category": "grocery",
+    "date": "01/12/2020",
+    "description": "",
+    "amount": 9388
+  },
+  {
+    "id": 374,
+    "expenseName": "Wine - Magnotta - Cab Sauv",
+    "category": "travel",
+    "date": "05/03/2020",
+    "description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "amount": 9613
+  },
+  {
+    "id": 375,
+    "expenseName": "Gherkin - Sour",
+    "category": "rent",
+    "date": "12/04/2022",
+    "description": "",
+    "amount": 3366
+  },
+  {
+    "id": 376,
+    "expenseName": "Brandy Apricot",
+    "category": "others",
+    "date": "23/09/2022",
+    "description": "",
+    "amount": 529
+  },
+  {
+    "id": 377,
+    "expenseName": "Bread - Italian Corn Meal Poly",
+    "category": "grocery",
+    "date": "09/09/2022",
+    "description": "Praesent blandit. Nam nulla.",
+    "amount": 4228
+  },
+  {
+    "id": 378,
+    "expenseName": "Tomato - Tricolor Cherry",
+    "category": "rent",
+    "date": "10/04/2020",
+    "description": "In hac habitasse platea dictumst.",
+    "amount": 9603
+  },
+  {
+    "id": 379,
+    "expenseName": "Yogurt - Assorted Pack",
+    "category": "grocery",
+    "date": "26/04/2021",
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 962
+  },
+  {
+    "id": 380,
+    "expenseName": "Pepper - Paprika, Hungarian",
+    "category": "grocery",
+    "date": "23/07/2020",
+    "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+    "amount": 6007
+  },
+  {
+    "id": 381,
+    "expenseName": "Versatainer Nc - 888",
+    "category": "bill",
+    "date": "10/02/2020",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
+    "amount": 6616
+  },
+  {
+    "id": 382,
+    "expenseName": "7up Diet, 355 Ml",
+    "category": "rent",
+    "date": "02/06/2020",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.",
+    "amount": 8325
+  },
+  {
+    "id": 383,
+    "expenseName": "Sauce - Cranberry",
+    "category": "travel",
+    "date": "05/09/2021",
+    "description": "Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "amount": 9344
+  },
+  {
+    "id": 384,
+    "expenseName": "Wine - Chianti Classica Docg",
+    "category": "bill",
+    "date": "21/08/2021",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.",
+    "amount": 9976
+  },
+  {
+    "id": 385,
+    "expenseName": "Wine La Vielle Ferme Cote Du",
+    "category": "bill",
+    "date": "09/09/2020",
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "amount": 1194
+  },
+  {
+    "id": 386,
+    "expenseName": "Guava",
+    "category": "grocery",
+    "date": "13/12/2022",
+    "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "amount": 2576
+  },
+  {
+    "id": 387,
+    "expenseName": "Grand Marnier",
+    "category": "subscriptions",
+    "date": "19/09/2020",
+    "description": "",
+    "amount": 7690
+  },
+  {
+    "id": 388,
+    "expenseName": "Kiwi Gold Zespri",
+    "category": "others",
+    "date": "24/04/2023",
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "amount": 9282
+  },
+  {
+    "id": 389,
+    "expenseName": "Pasta - Lasagna, Dry",
+    "category": "grocery",
+    "date": "08/08/2022",
+    "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+    "amount": 6688
+  },
+  {
+    "id": 390,
+    "expenseName": "Yogurt - Banana, 175 Gr",
+    "category": "rent",
+    "date": "07/03/2023",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "amount": 8582
+  },
+  {
+    "id": 391,
+    "expenseName": "Split Peas - Green, Dry",
+    "category": "subscriptions",
+    "date": "19/09/2021",
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.",
+    "amount": 1656
+  },
+  {
+    "id": 392,
+    "expenseName": "Tuna - Yellowfin",
+    "category": "others",
+    "date": "18/02/2023",
+    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "amount": 6597
+  },
+  {
+    "id": 393,
+    "expenseName": "Bread Sour Rolls",
+    "category": "travel",
+    "date": "09/05/2020",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "amount": 6329
+  },
+  {
+    "id": 394,
+    "expenseName": "Salt - Table",
+    "category": "travel",
+    "date": "26/03/2022",
+    "description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "amount": 4301
+  },
+  {
+    "id": 395,
+    "expenseName": "Crackers - Trio",
+    "category": "travel",
+    "date": "12/04/2020",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "amount": 6659
+  },
+  {
+    "id": 396,
+    "expenseName": "Pail - 4l White, With Handle",
+    "category": "travel",
+    "date": "24/02/2021",
+    "description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
+    "amount": 5321
+  },
+  {
+    "id": 397,
+    "expenseName": "Taro Root",
+    "category": "travel",
+    "date": "25/11/2022",
+    "description": "",
+    "amount": 3091
+  },
+  {
+    "id": 398,
+    "expenseName": "Muffin Mix - Oatmeal",
+    "category": "bill",
+    "date": "14/07/2020",
+    "description": "Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.",
+    "amount": 3467
+  },
+  {
+    "id": 399,
+    "expenseName": "French Kiss Vanilla",
+    "category": "others",
+    "date": "26/03/2021",
+    "description": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "amount": 5129
+  },
+  {
+    "id": 400,
+    "expenseName": "Coconut Milk - Unsweetened",
+    "category": "subscriptions",
+    "date": "29/07/2022",
+    "description": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "amount": 212
+  },
+  {
+    "id": 401,
+    "expenseName": "Cake - Pancake",
+    "category": "travel",
+    "date": "14/10/2022",
+    "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum.",
+    "amount": 1943
+  },
+  {
+    "id": 402,
+    "expenseName": "Lamb - Leg, Boneless",
+    "category": "others",
+    "date": "19/02/2023",
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+    "amount": 3356
+  },
+  {
+    "id": 403,
+    "expenseName": "Quail - Whole, Bone - In",
+    "category": "others",
+    "date": "18/12/2021",
+    "description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "amount": 5802
+  },
+  {
+    "id": 404,
+    "expenseName": "Ecolab - Hobart Upr Prewash Arm",
+    "category": "others",
+    "date": "18/07/2022",
+    "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 4526
+  },
+  {
+    "id": 405,
+    "expenseName": "Bar Special K",
+    "category": "grocery",
+    "date": "16/06/2020",
+    "description": "Vivamus in felis eu sapien cursus vestibulum.",
+    "amount": 8106
+  },
+  {
+    "id": 406,
+    "expenseName": "Apple - Northern Spy",
+    "category": "bill",
+    "date": "30/04/2023",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum.",
+    "amount": 6906
+  },
+  {
+    "id": 407,
+    "expenseName": "Muffin - Carrot Individual Wrap",
+    "category": "subscriptions",
+    "date": "05/02/2023",
+    "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "amount": 2020
+  },
+  {
+    "id": 408,
+    "expenseName": "Wine - White, French Cross",
+    "category": "travel",
+    "date": "28/04/2020",
+    "description": "Nullam varius.",
+    "amount": 9077
+  },
+  {
+    "id": 409,
+    "expenseName": "Beer - Paulaner Hefeweisse",
+    "category": "others",
+    "date": "15/02/2020",
+    "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "amount": 3504
+  },
+  {
+    "id": 410,
+    "expenseName": "Salt - Celery",
+    "category": "travel",
+    "date": "18/08/2020",
+    "description": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 1844
+  },
+  {
+    "id": 411,
+    "expenseName": "Island Oasis - Wildberry",
+    "category": "bill",
+    "date": "01/02/2021",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 9256
+  },
+  {
+    "id": 412,
+    "expenseName": "Wine - Red, Harrow Estates, Cab",
+    "category": "grocery",
+    "date": "27/02/2021",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
+    "amount": 2754
+  },
+  {
+    "id": 413,
+    "expenseName": "Lemon Balm - Fresh",
+    "category": "subscriptions",
+    "date": "02/12/2022",
+    "description": "",
+    "amount": 4547
+  },
+  {
+    "id": 414,
+    "expenseName": "Island Oasis - Ice Cream Mix",
+    "category": "rent",
+    "date": "01/06/2022",
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+    "amount": 1829
+  },
+  {
+    "id": 415,
+    "expenseName": "Lychee",
+    "category": "rent",
+    "date": "06/05/2020",
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+    "amount": 6546
+  },
+  {
+    "id": 416,
+    "expenseName": "Rice - Sushi",
+    "category": "grocery",
+    "date": "05/02/2023",
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique.",
+    "amount": 1153
+  },
+  {
+    "id": 417,
+    "expenseName": "Blouse / Shirt / Sweater",
+    "category": "travel",
+    "date": "10/03/2023",
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+    "amount": 4137
+  },
+  {
+    "id": 418,
+    "expenseName": "Tea - Herbal Orange Spice",
+    "category": "bill",
+    "date": "09/10/2021",
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+    "amount": 982
+  },
+  {
+    "id": 419,
+    "expenseName": "Crab Meat Claw Pasteurise",
+    "category": "grocery",
+    "date": "21/06/2021",
+    "description": "",
+    "amount": 4739
+  },
+  {
+    "id": 420,
+    "expenseName": "Bread - Pita",
+    "category": "rent",
+    "date": "25/06/2022",
+    "description": "Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+    "amount": 978
+  },
+  {
+    "id": 421,
+    "expenseName": "Muffin - Mix - Creme Brule 15l",
+    "category": "grocery",
+    "date": "04/09/2020",
+    "description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 6349
+  },
+  {
+    "id": 422,
+    "expenseName": "Buffalo - Tenderloin",
+    "category": "bill",
+    "date": "07/11/2020",
+    "description": "",
+    "amount": 4789
+  },
+  {
+    "id": 423,
+    "expenseName": "Chicken - Leg, Fresh",
+    "category": "grocery",
+    "date": "16/08/2021",
+    "description": "Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
+    "amount": 2224
+  },
+  {
+    "id": 424,
+    "expenseName": "Coffee - Ristretto Coffee Capsule",
+    "category": "others",
+    "date": "23/02/2022",
+    "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
+    "amount": 4128
+  },
+  {
+    "id": 425,
+    "expenseName": "Veal - Striploin",
+    "category": "travel",
+    "date": "26/07/2021",
+    "description": "",
+    "amount": 4776
+  },
+  {
+    "id": 426,
+    "expenseName": "Beef - Flank Steak",
+    "category": "others",
+    "date": "02/09/2020",
+    "description": "Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+    "amount": 429
+  },
+  {
+    "id": 427,
+    "expenseName": "Butter - Salted, Micro",
+    "category": "others",
+    "date": "05/12/2022",
+    "description": "Nulla tellus.",
+    "amount": 4639
+  },
+  {
+    "id": 428,
+    "expenseName": "Veal - Kidney",
+    "category": "grocery",
+    "date": "05/02/2022",
+    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.",
+    "amount": 986
+  },
+  {
+    "id": 429,
+    "expenseName": "Eel Fresh",
+    "category": "rent",
+    "date": "03/08/2022",
+    "description": "Donec ut mauris eget massa tempor convallis.",
+    "amount": 7750
+  },
+  {
+    "id": 430,
+    "expenseName": "Ice Cream Bar - Drumstick",
+    "category": "rent",
+    "date": "24/07/2020",
+    "description": "Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+    "amount": 8630
+  },
+  {
+    "id": 431,
+    "expenseName": "Salt - Seasoned",
+    "category": "subscriptions",
+    "date": "22/10/2022",
+    "description": "",
+    "amount": 9310
+  },
+  {
+    "id": 432,
+    "expenseName": "Filter - Coffee",
+    "category": "rent",
+    "date": "12/09/2020",
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.",
+    "amount": 7464
+  },
+  {
+    "id": 433,
+    "expenseName": "Lamb - Rack",
+    "category": "rent",
+    "date": "13/11/2021",
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo.",
+    "amount": 7205
+  },
+  {
+    "id": 434,
+    "expenseName": "Lobster - Base",
+    "category": "travel",
+    "date": "05/03/2021",
+    "description": "Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
+    "amount": 7219
+  },
+  {
+    "id": 435,
+    "expenseName": "Stock - Chicken, White",
+    "category": "travel",
+    "date": "08/05/2023",
+    "description": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "amount": 1271
+  },
+  {
+    "id": 436,
+    "expenseName": "Beer - Blue",
+    "category": "others",
+    "date": "09/09/2020",
+    "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "amount": 6071
+  },
+  {
+    "id": 437,
+    "expenseName": "Ecolab - Hobart Washarm End Cap",
+    "category": "rent",
+    "date": "21/12/2022",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "amount": 8914
+  },
+  {
+    "id": 438,
+    "expenseName": "Wine - Jafflin Bourgongone",
+    "category": "travel",
+    "date": "24/04/2021",
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+    "amount": 430
+  },
+  {
+    "id": 439,
+    "expenseName": "Ham Black Forest",
+    "category": "subscriptions",
+    "date": "17/09/2021",
+    "description": "Cras in purus eu magna vulputate luctus.",
+    "amount": 6938
+  },
+  {
+    "id": 440,
+    "expenseName": "Vinegar - Balsamic",
+    "category": "bill",
+    "date": "16/09/2022",
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
+    "amount": 2988
+  },
+  {
+    "id": 441,
+    "expenseName": "Beef - Ox Tongue",
+    "category": "travel",
+    "date": "06/02/2023",
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+    "amount": 5542
+  },
+  {
+    "id": 442,
+    "expenseName": "Guinea Fowl",
+    "category": "travel",
+    "date": "03/09/2021",
+    "description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "amount": 67
+  },
+  {
+    "id": 443,
+    "expenseName": "Lid Coffeecup 12oz D9542b",
+    "category": "travel",
+    "date": "17/09/2022",
+    "description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
+    "amount": 383
+  },
+  {
+    "id": 444,
+    "expenseName": "Beef Flat Iron Steak",
+    "category": "subscriptions",
+    "date": "20/11/2022",
+    "description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "amount": 7449
+  },
+  {
+    "id": 445,
+    "expenseName": "Spinach - Spinach Leaf",
+    "category": "subscriptions",
+    "date": "26/02/2022",
+    "description": "",
+    "amount": 3206
+  },
+  {
+    "id": 446,
+    "expenseName": "Turkey - Breast, Boneless Sk On",
+    "category": "travel",
+    "date": "29/07/2021",
+    "description": "",
+    "amount": 9038
+  },
+  {
+    "id": 447,
+    "expenseName": "Caviar - Salmon",
+    "category": "rent",
+    "date": "12/07/2021",
+    "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.",
+    "amount": 7251
+  },
+  {
+    "id": 448,
+    "expenseName": "Nantucket Orange Juice",
+    "category": "others",
+    "date": "24/12/2022",
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "amount": 2059
+  },
+  {
+    "id": 449,
+    "expenseName": "Chocolate - Feathers",
+    "category": "grocery",
+    "date": "25/10/2020",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+    "amount": 3107
+  },
+  {
+    "id": 450,
+    "expenseName": "Canada Dry",
+    "category": "others",
+    "date": "16/09/2021",
+    "description": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+    "amount": 2579
+  },
+  {
+    "id": 451,
+    "expenseName": "Miso - Soy Bean Paste",
+    "category": "bill",
+    "date": "05/10/2021",
+    "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "amount": 6568
+  },
+  {
+    "id": 452,
+    "expenseName": "Lemonade - Strawberry, 591 Ml",
+    "category": "travel",
+    "date": "03/09/2020",
+    "description": "Proin risus.",
+    "amount": 8367
+  },
+  {
+    "id": 453,
+    "expenseName": "Star Anise, Whole",
+    "category": "others",
+    "date": "11/09/2022",
+    "description": "Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+    "amount": 1841
+  },
+  {
+    "id": 454,
+    "expenseName": "Bay Leaf Fresh",
+    "category": "grocery",
+    "date": "20/05/2020",
+    "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "amount": 9293
+  },
+  {
+    "id": 455,
+    "expenseName": "Monkfish - Fresh",
+    "category": "others",
+    "date": "13/06/2022",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+    "amount": 7548
+  },
+  {
+    "id": 456,
+    "expenseName": "Beer - Guiness",
+    "category": "subscriptions",
+    "date": "29/11/2022",
+    "description": "",
+    "amount": 7033
+  },
+  {
+    "id": 457,
+    "expenseName": "Beef - Top Butt Aaa",
+    "category": "rent",
+    "date": "25/04/2021",
+    "description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "amount": 7780
+  },
+  {
+    "id": 458,
+    "expenseName": "Cake Sheet Combo Party Pack",
+    "category": "grocery",
+    "date": "07/08/2020",
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
+    "amount": 5641
+  },
+  {
+    "id": 459,
+    "expenseName": "Wine - Red, Pelee Island Merlot",
+    "category": "grocery",
+    "date": "22/11/2021",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum.",
+    "amount": 8126
+  },
+  {
+    "id": 460,
+    "expenseName": "Oregano - Dry, Rubbed",
+    "category": "grocery",
+    "date": "06/01/2020",
+    "description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+    "amount": 2742
+  },
+  {
+    "id": 461,
+    "expenseName": "Crackers - Soda / Saltins",
+    "category": "grocery",
+    "date": "12/05/2022",
+    "description": "Suspendisse ornare consequat lectus.",
+    "amount": 6968
+  },
+  {
+    "id": 462,
+    "expenseName": "Pomello",
+    "category": "bill",
+    "date": "05/02/2020",
+    "description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "amount": 4199
+  },
+  {
+    "id": 463,
+    "expenseName": "Lidsoupcont Rp12dn",
+    "category": "rent",
+    "date": "17/10/2021",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices.",
+    "amount": 671
+  },
+  {
+    "id": 464,
+    "expenseName": "Carrots - Purple, Organic",
+    "category": "bill",
+    "date": "24/01/2022",
+    "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit.",
+    "amount": 2651
+  },
+  {
+    "id": 465,
+    "expenseName": "Whmis Spray Bottle Graduated",
+    "category": "rent",
+    "date": "18/05/2023",
+    "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
+    "amount": 6782
+  },
+  {
+    "id": 466,
+    "expenseName": "Cleaner - Bleach",
+    "category": "subscriptions",
+    "date": "13/06/2022",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+    "amount": 8942
+  },
+  {
+    "id": 467,
+    "expenseName": "Cream - 10%",
+    "category": "bill",
+    "date": "15/04/2022",
+    "description": "Nullam varius. Nulla facilisi.",
+    "amount": 1705
+  },
+  {
+    "id": 468,
+    "expenseName": "Mangostein",
+    "category": "others",
+    "date": "07/02/2020",
+    "description": "Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+    "amount": 1917
+  },
+  {
+    "id": 469,
+    "expenseName": "Corn Kernels - Frozen",
+    "category": "others",
+    "date": "24/10/2021",
+    "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "amount": 3318
+  },
+  {
+    "id": 470,
+    "expenseName": "Duck - Fat",
+    "category": "rent",
+    "date": "20/12/2020",
+    "description": "Praesent lectus.",
+    "amount": 5399
+  },
+  {
+    "id": 471,
+    "expenseName": "Lid - 0090 Clear",
+    "category": "travel",
+    "date": "08/11/2022",
+    "description": "",
+    "amount": 7308
+  },
+  {
+    "id": 472,
+    "expenseName": "Wine - Magnotta - Belpaese",
+    "category": "travel",
+    "date": "09/03/2021",
+    "description": "",
+    "amount": 3882
+  },
+  {
+    "id": 473,
+    "expenseName": "Pepper - Chipotle, Canned",
+    "category": "rent",
+    "date": "14/11/2022",
+    "description": "",
+    "amount": 1500
+  },
+  {
+    "id": 474,
+    "expenseName": "Snapple - Mango Maddness",
+    "category": "subscriptions",
+    "date": "13/08/2022",
+    "description": "",
+    "amount": 3817
+  },
+  {
+    "id": 475,
+    "expenseName": "Wine - Puligny Montrachet A.",
+    "category": "others",
+    "date": "29/05/2022",
+    "description": "Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.",
+    "amount": 4676
+  },
+  {
+    "id": 476,
+    "expenseName": "Puree - Mango",
+    "category": "subscriptions",
+    "date": "10/12/2020",
+    "description": "Aliquam erat volutpat. In congue.",
+    "amount": 3984
+  },
+  {
+    "id": 477,
+    "expenseName": "Cake Circle, Paprus",
+    "category": "subscriptions",
+    "date": "22/12/2022",
+    "description": "",
+    "amount": 6143
+  },
+  {
+    "id": 478,
+    "expenseName": "Lid Tray - 12in Dome",
+    "category": "bill",
+    "date": "02/05/2020",
+    "description": "Mauris ullamcorper purus sit amet nulla.",
+    "amount": 3835
+  },
+  {
+    "id": 479,
+    "expenseName": "Bread Fig And Almond",
+    "category": "others",
+    "date": "11/12/2022",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
+    "amount": 2621
+  },
+  {
+    "id": 480,
+    "expenseName": "Coffee Cup 8oz 5338cd",
+    "category": "subscriptions",
+    "date": "27/07/2021",
+    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
+    "amount": 5448
+  },
+  {
+    "id": 481,
+    "expenseName": "Sauce - Soya, Dark",
+    "category": "travel",
+    "date": "23/03/2020",
+    "description": "Pellentesque ultrices mattis odio.",
+    "amount": 9868
+  },
+  {
+    "id": 482,
+    "expenseName": "Scotch - Queen Anne",
+    "category": "others",
+    "date": "17/03/2023",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.",
+    "amount": 2649
+  },
+  {
+    "id": 483,
+    "expenseName": "Bread - Multigrain, Loaf",
+    "category": "subscriptions",
+    "date": "22/11/2020",
+    "description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "amount": 5782
+  },
+  {
+    "id": 484,
+    "expenseName": "Swordfish Loin Portions",
+    "category": "bill",
+    "date": "08/02/2022",
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "amount": 9403
+  },
+  {
+    "id": 485,
+    "expenseName": "Syrup - Golden, Lyles",
+    "category": "subscriptions",
+    "date": "10/08/2022",
+    "description": "Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
+    "amount": 3364
+  },
+  {
+    "id": 486,
+    "expenseName": "Ecolab Silver Fusion",
+    "category": "bill",
+    "date": "14/12/2022",
+    "description": "Nunc rhoncus dui vel sem.",
+    "amount": 4366
+  },
+  {
+    "id": 487,
+    "expenseName": "Anisette - Mcguiness",
+    "category": "travel",
+    "date": "02/11/2022",
+    "description": "Suspendisse accumsan tortor quis turpis.",
+    "amount": 2269
+  },
+  {
+    "id": 488,
+    "expenseName": "Mushroom Morel Fresh",
+    "category": "subscriptions",
+    "date": "08/02/2023",
+    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+    "amount": 421
+  },
+  {
+    "id": 489,
+    "expenseName": "Mayonnaise - Individual Pkg",
+    "category": "rent",
+    "date": "24/05/2021",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "amount": 3450
+  },
+  {
+    "id": 490,
+    "expenseName": "Soup Campbells Beef With Veg",
+    "category": "subscriptions",
+    "date": "01/11/2022",
+    "description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
+    "amount": 8757
+  },
+  {
+    "id": 491,
+    "expenseName": "Buttons",
+    "category": "others",
+    "date": "08/08/2022",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+    "amount": 7381
+  },
+  {
+    "id": 492,
+    "expenseName": "Petite Baguette",
+    "category": "travel",
+    "date": "02/08/2021",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+    "amount": 6855
+  },
+  {
+    "id": 493,
+    "expenseName": "Bread - Ciabatta Buns",
+    "category": "travel",
+    "date": "18/12/2020",
+    "description": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "amount": 6570
+  },
+  {
+    "id": 494,
+    "expenseName": "Wine - Sogrape Mateus Rose",
+    "category": "grocery",
+    "date": "09/09/2021",
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
+    "amount": 1611
+  },
+  {
+    "id": 495,
+    "expenseName": "Yogurt - Plain",
+    "category": "subscriptions",
+    "date": "03/08/2022",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.",
+    "amount": 1710
+  },
+  {
+    "id": 496,
+    "expenseName": "Broom - Corn",
+    "category": "travel",
+    "date": "24/02/2023",
+    "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "amount": 3826
+  },
+  {
+    "id": 497,
+    "expenseName": "Kirsch - Schloss",
+    "category": "travel",
+    "date": "09/04/2020",
+    "description": "Integer ac neque. Duis bibendum.",
+    "amount": 5537
+  },
+  {
+    "id": 498,
+    "expenseName": "Lettuce - Lambs Mash",
+    "category": "travel",
+    "date": "03/02/2023",
+    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+    "amount": 3173
+  },
+  {
+    "id": 499,
+    "expenseName": "Potatoes - Instant, Mashed",
+    "category": "others",
+    "date": "13/09/2020",
+    "description": "",
+    "amount": 9786
+  },
+  {
+    "id": 500,
+    "expenseName": "Veal - Tenderloin, Untrimmed",
+    "category": "bill",
+    "date": "07/04/2023",
+    "description": "Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "amount": 2678
+  }
+]

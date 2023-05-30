@@ -37,23 +37,35 @@ function Header() {
         fontWeight={"normal"}
         alignItems={"center"}
       >
-        <Link as={RouteLink} to={"/dashboard"}>
+        <Link
+          as={RouteLink}
+          _hover={{ textDecor: "none", fontWeight: "medium" }}
+          to={"/dashboard"}
+        >
           Dashboard
         </Link>
-        <Link as={RouteLink} to={"/all-expenses"}>
+        <Link
+          as={RouteLink}
+          _hover={{ textDecor: "none", fontWeight: "medium" }}
+          to={"/all-expenses"}
+        >
           All Expenses
         </Link>
-        <Link as={RouteLink} to={"/charts"}>
+        <Link
+          as={RouteLink}
+          _hover={{ textDecor: "none", fontWeight: "medium" }}
+          to={"/charts"}
+        >
           Charts
         </Link>
         <Menu>
           <MenuButton
             as={Button}
-            bg={"inherit"}
-            _hover={{ bg: "inherit" }}
+            bgColor={"inherit"}
+            _hover={{ bg: "inherit", fontWeight: "medium" }}
             rightIcon={<ChevronDownIcon />}
-            fontSize={"large"}
-            fontWeight={"semibold"}
+            fontSize={"large "}
+            fontWeight={"normal"}
           >
             Account
           </MenuButton>
