@@ -68,7 +68,11 @@ function ExpenseTable() {
                       header.column.columnDef.header,
                       header.getContext()
                     )}
-                    {[header.column.getIsSorted() ?? null]}
+                    {
+                      { asc: " 🔼", desc: " 🔽" }[
+                        header.column.getIsSorted() ?? null
+                      ]
+                    }
                   </div>
                 </Th>
               ))}

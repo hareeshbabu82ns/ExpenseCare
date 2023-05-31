@@ -14,11 +14,14 @@
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-table": "^8.9.1",
     "framer-motion": "^10.12.16",
+    "lucide-react": "^0.224.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.1",
+    "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
