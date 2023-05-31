@@ -1,7 +1,8 @@
-import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, ChevronUpIcon, SearchIcon } from "@chakra-ui/icons";
 import {
   Button,
   Checkbox,
+  Container,
   Flex,
   FormControl,
   FormLabel,
@@ -14,7 +15,7 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { categories } from "../pages/Dashboard";
 import { useDispatch } from "react-redux";
 import { filterActions } from "../store/filterSlice";
@@ -82,14 +83,33 @@ const months = [
 
 function Filters() {
   const dispatch = useDispatch();
+  const searchRef = useRef("");
+  const [filtersVisibility, setFiltersVisibility] = useState(false);
+
+  function searchHandler() {
+    console.log(searchRef.current.value);
+  }
 
   return (
     <>
       <FormControl my={"2rem"} maxW={"90%"} mx={"auto"}>
+        <Flex justifyContent={"center"}>
+          <Button
+            my={"1rem"}
+            display={{ md: "none" }}
+            w={"100%"}
+            colorScheme="blue"
+            onClick={() => setFiltersVisibility((prev) => !prev)}
+          >
+            Filter Data{" "}
+            {filtersVisibility ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          </Button>
+        </Flex>
         <Flex
+          display={{ base: filtersVisibility ? "flex" : "none", md: "flex" }}
           flexDir={{ base: "column", md: "row" }}
           justifyContent={{ base: "center", md: "space-around" }}
-          gap={10}
+          gap={{ base: 5, md: 10 }}
           border={"solid"}
           borderWidth={"thin"}
           borderRadius={"lg"}
@@ -97,6 +117,7 @@ function Filters() {
           bg={"lightgray"}
           alignItems={"center"}
         >
+          {/* Category Select */}
           <Select
             placeholder="Select Category"
             w={"225px"}
@@ -112,6 +133,7 @@ function Filters() {
             ))}
           </Select>
 
+          {/* Price Range Select */}
           <Select
             placeholder="Price Range"
             w={"225px"}
@@ -124,6 +146,8 @@ function Filters() {
               </option>
             ))}
           </Select>
+
+          {/* Year Select */}
           <Select
             placeholder="Year"
             w={"225px"}
@@ -136,6 +160,8 @@ function Filters() {
               </option>
             ))}
           </Select>
+
+          {/* Month Select */}
           <Select
             placeholder="Month"
             w={"225px"}
@@ -156,18 +182,26 @@ function Filters() {
       </FormControl>
 
       <Flex w={"90%"} mx={"auto"} my={"2rem"} justify={"space-between"}>
+        {/* Search Input and Button */}
         <Flex>
           <Input
             placeholder="Search Expense Name"
             w={{ base: "150px", md: "250px" }}
             rounded={"none"}
             borderColor={"primary"}
+            defaultValue=""
+            ref={searchRef}
           />
-          <IconButton colorScheme="pink" rounded={"none"}>
+          <IconButton
+            colorScheme="pink"
+            rounded={"none"}
+            onClick={searchHandler}
+          >
             <SearchIcon />
           </IconButton>
         </Flex>
 
+        {/* Category and Date Checkbox */}
         <Flex justifyContent={"center"} gap={2} alignItems={"center"}>
           <Checkbox colorScheme="pink">Show Category and Date</Checkbox>
         </Flex>

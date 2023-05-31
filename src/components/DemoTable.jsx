@@ -16,14 +16,14 @@ import { BoxSelect, BoxSelectIcon } from "lucide-react";
 
 function DemoTable() {
   return (
-    <TableContainer maxW={"90%"} mx={"auto"}>
+    <TableContainer w={"90%"} mx={"auto"}>
       <Table>
         <Thead>
           <Tr>
             <Th>EXPENSE NAME</Th>
             <Th>AMOUNT</Th>
-            <Th>CATEGORY</Th>
-            <Th>DATE</Th>
+            <Th display={{ base: "none", md: "table-cell" }}>CATEGORY</Th>
+            <Th display={{ base: "none", md: "table-cell" }}>DATE</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -31,8 +31,10 @@ function DemoTable() {
             <Tr key={row.id}>
               <Td>{row.expenseName}</Td>
               <Td>{row.amount}</Td>
-              <Td>{row.category}</Td>
-              <Td>{row.date}</Td>
+              <Td display={{ base: "none", md: "table-cell" }}>
+                {row.category}
+              </Td>
+              <Td display={{ base: "none", md: "table-cell" }}>{row.date}</Td>
             </Tr>
           ))}
         </Tbody>
