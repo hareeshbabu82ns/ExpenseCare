@@ -11,7 +11,9 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-import { Link as RouteLink } from "react-router-dom";
+import { NavLink, Link as RouteLink } from "react-router-dom";
+
+const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
 
 function Header() {
   return (
@@ -37,27 +39,30 @@ function Header() {
         fontWeight={"normal"}
         alignItems={"center"}
       >
-        <Link
+        <NavLink
           as={RouteLink}
           _hover={{ textDecor: "none", fontWeight: "medium" }}
           to={"/dashboard"}
+          className={activeClassName}
         >
           Dashboard
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           as={RouteLink}
           _hover={{ textDecor: "none", fontWeight: "medium" }}
           to={"/all-expenses"}
+          className={activeClassName}
         >
           All Expenses
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           as={RouteLink}
           _hover={{ textDecor: "none", fontWeight: "medium" }}
           to={"/charts"}
+          className={activeClassName}
         >
           Charts
-        </Link>
+        </NavLink>
         <Menu>
           <MenuButton
             as={Button}
@@ -87,31 +92,34 @@ function Header() {
           />
           <MenuList bgColor={"lightgray"}>
             <MenuItem bgColor={"lightgray"}>
-              <Link
+              <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
                 to={"/dashboard"}
+                className={activeClassName}
               >
                 Dashboard
-              </Link>
+              </NavLink>
             </MenuItem>
             <MenuItem bgColor={"lightgray"}>
-              <Link
+              <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
                 to={"/all-expenses"}
+                className={activeClassName}
               >
                 All Expenses
-              </Link>
+              </NavLink>
             </MenuItem>
             <MenuItem bgColor={"lightgray"}>
-              <Link
+              <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
                 to={"/charts"}
+                className={activeClassName}
               >
                 Charts
-              </Link>
+              </NavLink>
             </MenuItem>
             <MenuItem bgColor={"lightgray"}>Account</MenuItem>
             <MenuItem bgColor={"lightgray"}>Logout</MenuItem>

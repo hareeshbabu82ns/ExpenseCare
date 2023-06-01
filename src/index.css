@@ -3,3 +3,9 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-color: teal;
+}
