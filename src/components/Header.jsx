@@ -86,9 +86,33 @@ function Header() {
             bgColor={"teal.600"}
           />
           <MenuList bgColor={"lightgray"}>
-            <MenuItem bgColor={"lightgray"}>Dashboard</MenuItem>
-            <MenuItem bgColor={"lightgray"}>All Expenses</MenuItem>
-            <MenuItem bgColor={"lightgray"}>Charts</MenuItem>
+            <MenuItem bgColor={"lightgray"}>
+              <Link
+                as={RouteLink}
+                _hover={{ textDecor: "none", fontWeight: "medium" }}
+                to={"/dashboard"}
+              >
+                Dashboard
+              </Link>
+            </MenuItem>
+            <MenuItem bgColor={"lightgray"}>
+              <Link
+                as={RouteLink}
+                _hover={{ textDecor: "none", fontWeight: "medium" }}
+                to={"/all-expenses"}
+              >
+                All Expenses
+              </Link>
+            </MenuItem>
+            <MenuItem bgColor={"lightgray"}>
+              <Link
+                as={RouteLink}
+                _hover={{ textDecor: "none", fontWeight: "medium" }}
+                to={"/charts"}
+              >
+                Charts
+              </Link>
+            </MenuItem>
             <MenuItem bgColor={"lightgray"}>Account</MenuItem>
             <MenuItem bgColor={"lightgray"}>Logout</MenuItem>
           </MenuList>
