@@ -8,11 +8,14 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function TotalExpenseCard() {
   return (
     <Flex
-      bg={"teal.600"}
+      bgColor={"lightgray"}
+      border={"solid"}
+      borderWidth={"thin"}
       rounded={"lg"}
       w={"80%"}
       justify={"space-around"}
@@ -27,9 +30,9 @@ function TotalExpenseCard() {
     >
       <Text>Current Year: Rs. 150000</Text>
       <Text>Current Month: Rs. 50000</Text>
-      {/* <Button rounded={"lg"} colorScheme="pink">
-        View Charts
-      </Button> */}
+      <Button as={Link} to="/charts" rounded={"lg"} colorScheme="pink">
+        Current Month's Charts
+      </Button>
     </Flex>
   );
 }

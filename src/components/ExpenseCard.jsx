@@ -27,7 +27,7 @@ function ExpenseCard({ name, totalExpense }) {
       <Card
         h={"250px"}
         w={{ base: "300px", md: "250px" }}
-        bgColor={"blue.700"}
+        bgColor={"blue.600"}
         textAlign={"center"}
         color={"text"}
         p={2}

@@ -26,7 +26,7 @@ function Header() {
       zIndex={"sticky"}
     >
       <Flex>
-        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
+        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.500"}>
           ExpenseCare
         </Text>
       </Flex>
@@ -83,7 +83,7 @@ function Header() {
             aria-label="options"
             icon={<HamburgerIcon />}
             color={"text"}
-            bgColor={"teal.600"}
+            bgColor={"teal.500"}
           />
           <MenuList bgColor={"lightgray"}>
             <MenuItem bgColor={"lightgray"}>

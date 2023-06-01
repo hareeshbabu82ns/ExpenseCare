@@ -30,7 +30,7 @@ function AddCategoryButton() {
         position={"fixed"}
         bottom={"1rem"}
         right={"1rem"}
-        colorScheme="teal"
+        colorScheme="pink"
         onClick={onOpen}
       >
         <AddIcon />
