@@ -6,37 +6,40 @@ import Login from "./pages/Login";
 import AllExpenses from "./pages/AllExpenses";
 import Charts from "./pages/Charts";
 import { Container } from "@chakra-ui/react";
+import Error from "./components/Error";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       Component: Root,
-    },
-    {
-      index: true,
-      path: "dashboard",
-      Component: Dashboard,
-    },
-    {
-      path: "signup",
-      Component: Signup,
-    },
-    {
-      path: "login",
-      Component: Login,
-    },
-    {
-      path: "dashboard",
-      Component: Dashboard,
-    },
-    {
-      path: "all-expenses",
-      Component: AllExpenses,
-    },
-    {
-      path: "charts",
-      Component: Charts,
+      errorElement: <Error />,
+      children: [
+        {
+          index: true,
+          Component: Dashboard,
+        },
+        {
+          path: "signup",
+          Component: Signup,
+        },
+        {
+          path: "login",
+          Component: Login,
+        },
+        {
+          path: "dashboard",
+          Component: Dashboard,
+        },
+        {
+          path: "all-expenses",
+          Component: AllExpenses,
+        },
+        {
+          path: "charts",
+          Component: Charts,
+        },
+      ],
     },
   ]);
 
