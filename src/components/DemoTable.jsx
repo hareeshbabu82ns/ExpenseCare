@@ -1,8 +1,6 @@
 import React from "react";
 import data from "../assets/MOCK_DATA.json";
 import {
-  Checkbox,
-  Select,
   Table,
   TableContainer,
   Tbody,
@@ -12,12 +10,11 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { BoxSelect, BoxSelectIcon } from "lucide-react";
 
 function DemoTable() {
   return (
     <TableContainer w={"90%"} mx={"auto"}>
-      <Table>
+      <Table border={"solid"} borderWidth={"4px"} borderColor={"blue.600"}>
         <Thead>
           <Tr>
             <Th>EXPENSE NAME</Th>

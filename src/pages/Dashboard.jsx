@@ -7,6 +7,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import TotalExpenseCard from "../components/TotalExpenseCard";
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import AddCategoryButton from "../components/AddCategoryButton";
+
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },
   { name: "Travel", totalExpense: 4000 },
