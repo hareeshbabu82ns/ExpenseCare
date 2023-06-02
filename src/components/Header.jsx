@@ -28,7 +28,7 @@ function Header() {
       zIndex={"sticky"}
     >
       <Flex>
-        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.500"}>
+        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
           ExpenseCare
         </Text>
       </Flex>

@@ -86,7 +86,7 @@ function Signup() {
         gap={8}
       >
         {/* Heading */}
-        <Heading color={"primary"} textAlign={"center"} size={"3xl"}>
+        <Heading color={"teal.400"} textAlign={"center"} size={"3xl"}>
           ExpenseCare
         </Heading>
 
@@ -156,7 +156,7 @@ function Signup() {
             </FormControl>
 
             {/* Signup button */}
-            <Button colorScheme="teal" width={"full"} type="submit" my={2}>
+            <Button colorScheme="pink" width={"full"} type="submit" my={2}>
               Signup
             </Button>
             <Text textAlign={"center"}>Or</Text>
@@ -168,12 +168,12 @@ function Signup() {
 
             {/* Link to Login */}
 
-            <Text textAlign={"center"}>
+            <Text textAlign={"center"} fontSize={"large"}>
               Already a User?{" "}
               <Link
                 as={RouteLink}
                 to={"/login"}
-                color={"primary"}
+                color={"teal.400"}
                 fontWeight={"semibold"}
               >
                 Login
