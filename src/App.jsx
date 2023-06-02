@@ -7,6 +7,7 @@ import AllExpenses from "./pages/AllExpenses";
 import Charts from "./pages/Charts";
 import { Container } from "@chakra-ui/react";
 import Error from "./components/Error";
+import { account } from "./appwrite/appwrite-config";
 
 function App() {
   const router = createBrowserRouter([
