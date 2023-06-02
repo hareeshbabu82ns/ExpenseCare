@@ -14,7 +14,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { Link as RouteLink } from "react-router-dom";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
+import { account } from "../appwrite/appwrite-config";
 
 function Login() {
   const {
@@ -31,8 +32,31 @@ function Login() {
     },
   });
 
-  function submitHandler(values) {
+  const navigate = useNavigate();
+
+  async function loginHandler(values) {
     console.log(values);
+
+    const promise = account.createEmailSession(values.email, values.password);
+
+    promise.then(
+      (response) => {
+        // verifyEmail();
+        navigate("/dashboard");
+      },
+      (error) => console.log(error)
+    );
+
+    // async function verifyEmail() {
+    //   const promise = account.createVerification(
+    //     "http://localhost:3000/dashboard"
+    //   );
+
+    //   promise.then(
+    //     (response) => console.log(response),
+    //     (error) => console.log(error)
+    //   );
+    // }
   }
 
   return (
@@ -57,7 +81,7 @@ function Login() {
 
         {/* Form */}
 
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form onSubmit={handleSubmit(loginHandler)}>
           {/* email */}
           <Flex
             flexDir={"column"}
