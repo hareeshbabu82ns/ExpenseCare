@@ -10,9 +10,12 @@ import {
   Input,
   Link,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import { Link as RouteLink } from "react-router-dom";
+import { Link as RouteLink, useNavigate } from "react-router-dom";
+import { account } from "../appwrite/appwrite-config";
+import { ID } from "appwrite";
 
 function Signup() {
   const {
@@ -29,8 +32,42 @@ function Signup() {
     },
   });
 
-  function submitHandler(values) {
-    console.log(values);
+  const toast = useToast();
+  const navigate = useNavigate();
+
+  async function submitHandler(values) {
+    const promise = account.create(ID.unique(), values.email, values.password);
+
+    promise.then(
+      (response) => {
+        console.log(response);
+        toast({
+          title: "Account Created Successfully",
+          description: "Email Verification will be required in future",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          position: "top-right",
+        });
+
+        const loginPromise = account.createEmailSession(
+          values.email,
+          values.password
+        );
+        loginPromise.then(
+          (response) => navigate("/dashboard"),
+          (error) => console.log(error)
+        );
+      },
+      (error) => console.log(error)
+    );
+
+    const verify = account.createVerification("http://localhost:3000/verify");
+
+    verify.then(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
   }
 
   return (
