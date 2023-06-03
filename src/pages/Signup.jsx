@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
-import { account } from "../appwrite/appwrite-config";
+import { account, databases } from "../appwrite/appwrite-config";
 import { ID } from "appwrite";
 
 function Signup() {
@@ -39,8 +39,8 @@ function Signup() {
     const promise = account.create(ID.unique(), values.email, values.password);
 
     promise.then(
-      (response) => {
-        console.log(response);
+      (user) => {
+        console.log(user);
         toast({
           title: "Account Created Successfully",
           description: "Email Verification will be required in future",
@@ -55,19 +55,34 @@ function Signup() {
           values.password
         );
         loginPromise.then(
-          (response) => navigate("/dashboard"),
+          (response) => {
+            console.log(response);
+            createUserDocument(user.$id, user.email);
+            navigate("/dashboard");
+          },
           (error) => console.log(error)
         );
       },
       (error) => console.log(error)
     );
 
-    const verify = account.createVerification("http://localhost:3000/verify");
+    // const verify = account.createVerification("http://localhost:3000/verify");
 
-    verify.then(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+    // verify.then(
+    //   (response) => console.log(response),
+    //   (error) => console.log(error)
+    // );
+
+    async function createUserDocument(userId, userEmail) {
+      await databases.createDocument(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_DB_USER_ID,
+        userId,
+        {
+          email: userEmail,
+        }
+      );
+    }
   }
 
   return (

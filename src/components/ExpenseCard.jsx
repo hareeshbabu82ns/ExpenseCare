@@ -7,6 +7,7 @@ import {
   CardHeader,
   Fade,
   Flex,
+  GridItem,
   Icon,
   IconButton,
   Text,

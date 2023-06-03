@@ -12,14 +12,54 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Toast,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { account, databases } from "../appwrite/appwrite-config";
+import { ID } from "appwrite";
 
 function AddCategoryButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [categoryName, setCategoryName] = useState("");
+
   const initialRef = useRef(null);
+
+  const toast = useToast();
+
+  async function createCategoryHandler(e) {
+    e.preventDefault();
+    console.log(categoryName);
+
+    const promise = account.get();
+
+    promise.then(
+      async (user) => {
+        console.log(user);
+        console.log(categoryName);
+
+        const userDocument = await databases.getDocument(
+          import.meta.env.VITE_DB_ID,
+          import.meta.env.VITE_DB_USER_ID,
+          user.$id
+        );
+
+        await databases.updateDocument(
+          import.meta.env.VITE_DB_ID,
+          import.meta.env.VITE_DB_USER_ID,
+          user.$id,
+          {
+            category: [...userDocument.category, { name: categoryName }],
+          }
+        );
+      },
+      (error) => console.log(error)
+    );
+
+    onClose();
+  }
 
   return (
     <>
@@ -45,27 +85,38 @@ function AddCategoryButton() {
         <ModalContent bgColor={"lightgray"}>
           <ModalHeader>Create your account</ModalHeader>
           <ModalCloseButton />
-          <ModalBody pb={6}>
-            <FormControl>
-              <FormLabel ref={initialRef}>Category</FormLabel>
-              <Input placeholder="Category Name" />
-            </FormControl>
-          </ModalBody>
+          <form>
+            <ModalBody pb={6}>
+              <FormControl>
+                <FormLabel>Category</FormLabel>
+                <Input
+                  ref={initialRef}
+                  onChange={(e) => setCategoryName(e.target.value)}
+                  placeholder="Category Name"
+                />
+              </FormControl>
+            </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="pink" mr={3} onClick={onClose}>
-              Create
-            </Button>
-            <Button
-              border={"1px"}
-              color={"lightgray"}
-              bgColor={"whiteAlpha.800"}
-              onClick={onClose}
-              _hover={{ bgColor: "whiteAlpha.700" }}
-            >
-              Cancel
-            </Button>
-          </ModalFooter>
+            <ModalFooter>
+              <Button
+                colorScheme="pink"
+                mr={3}
+                type="submit"
+                onClick={(e) => createCategoryHandler(e)}
+              >
+                Create
+              </Button>
+              <Button
+                border={"1px"}
+                color={"lightgray"}
+                bgColor={"whiteAlpha.800"}
+                onClick={onClose}
+                _hover={{ bgColor: "whiteAlpha.700" }}
+              >
+                Cancel
+              </Button>
+            </ModalFooter>
+          </form>
         </ModalContent>
       </Modal>
     </>
