@@ -7,6 +7,8 @@ const initialState = {
   month: 0,
 };
 
+// filters required for the expense table to show data
+
 const filterSlice = createSlice({
   name: "filter",
   initialState: initialState,
