@@ -16,9 +16,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
-import { categories } from "../pages/Dashboard";
+import { categories } from "../../pages/Dashboard";
 import { useDispatch } from "react-redux";
-import { filterActions } from "../store/filterSlice";
+import { filterActions } from "../../store/filter-slice";
 
 const priceRange = [
   { option: "0 - 100", value: 0 },

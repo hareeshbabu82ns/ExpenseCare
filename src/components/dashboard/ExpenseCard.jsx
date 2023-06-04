@@ -1,26 +1,10 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Fade,
-  Flex,
-  GridItem,
-  Icon,
-  IconButton,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Card, CardBody, CardFooter, CardHeader, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import AddExpenseButton from "./AddExpenseButton";
-import MoreVertical from "../assets/icons/MoreVertical";
-import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
-import DeleteExpenseButton from "./DeleteExpenseButton";
-import EditExpenseNameButton from "./EditExpenseNameButton";
+import DeleteExpenseButton from "../utility/DeleteExpenseButton";
+import EditExpenseNameButton from "../utility/EditExpenseNameButton";
 
-function ExpenseCard({ name, totalExpense }) {
+function ExpenseCard({ name, totalAmount }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -47,7 +31,7 @@ function ExpenseCard({ name, totalExpense }) {
           <Text>{name}</Text>
         </CardHeader>
         <CardBody fontSize={"xl"} fontWeight={"semibold"}>
-          Rs. {totalExpense}
+          Rs. {totalAmount}
         </CardBody>
         <CardFooter>
           <AddExpenseButton

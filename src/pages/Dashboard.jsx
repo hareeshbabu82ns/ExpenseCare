@@ -8,12 +8,12 @@ import {
   IconButton,
   SimpleGrid,
 } from "@chakra-ui/react";
-import ExpenseCard from "../components/ExpenseCard";
+import ExpenseCard from "../components/dashboard/ExpenseCard";
 import { wrap } from "framer-motion";
 import { AddIcon } from "@chakra-ui/icons";
-import TotalExpenseCard from "../components/TotalExpenseCard";
+import TotalExpenseCard from "../components/dashboard/TotalExpenseCard";
 import { Wrap, WrapItem } from "@chakra-ui/react";
-import AddCategoryButton from "../components/AddCategoryButton";
+import AddCategoryButton from "../components/dashboard/AddCategoryButton";
 import { Box } from "lucide-react";
 import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";

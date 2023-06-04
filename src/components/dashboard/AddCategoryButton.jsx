@@ -17,7 +17,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
-import { account, databases } from "../appwrite/appwrite-config";
+import { account, databases } from "../../appwrite/appwrite-config";
 import { ID } from "appwrite";
 
 function AddCategoryButton() {
@@ -37,14 +37,31 @@ function AddCategoryButton() {
 
     promise.then(
       async (user) => {
-        console.log(user);
-        console.log(categoryName);
+        console.log("user", user);
+        console.log("category", categoryName);
 
         const userDocument = await databases.getDocument(
           import.meta.env.VITE_DB_ID,
           import.meta.env.VITE_DB_USER_ID,
           user.$id
         );
+
+        const categoryExists = userDocument.category.filter(
+          (category) => category.name === categoryName
+        );
+
+        console.log("categoryExists", categoryExists);
+
+        if (categoryExists.length !== 0) {
+          toast({
+            title: "Unable to create category",
+            description: "Category with the same name already exists",
+            status: "error",
+            duration: 9000,
+          });
+
+          return;
+        }
 
         await databases.updateDocument(
           import.meta.env.VITE_DB_ID,

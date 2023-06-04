@@ -1,6 +1,6 @@
 import { Button, Flex, FormControl, Select } from "@chakra-ui/react";
 import React from "react";
-import { yearRange, months } from "../Filters";
+import { yearRange, months } from "../table/Filters";
 
 function ExpenseChartFilter() {
   return (

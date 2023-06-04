@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import data from "../assets/MOCK_DATA.json";
+import data from "../../assets/MOCK_DATA.json";
 import {
   useReactTable,
   flexRender,

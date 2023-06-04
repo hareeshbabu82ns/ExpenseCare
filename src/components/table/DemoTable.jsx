@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../assets/MOCK_DATA.json";
+import data from "../../assets/MOCK_DATA.json";
 import {
   Checkbox,
   IconButton,
