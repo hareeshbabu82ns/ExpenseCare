@@ -12,6 +12,14 @@ import { account } from "./appwrite/appwrite-config";
 function App() {
   const router = createBrowserRouter([
     {
+      path: "/signup",
+      Component: Signup,
+    },
+    {
+      path: "/login",
+      Component: Login,
+    },
+    {
       path: "/",
       Component: Root,
       errorElement: <Error />,
@@ -19,14 +27,6 @@ function App() {
         {
           index: true,
           Component: Dashboard,
-        },
-        {
-          path: "signup",
-          Component: Signup,
-        },
-        {
-          path: "login",
-          Component: Login,
         },
         {
           path: "dashboard",

@@ -18,6 +18,7 @@ import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account } from "../appwrite/appwrite-config";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/auth-slice";
+import { dataActions, fetchData } from "../store/data-slice";
 
 function Login() {
   const {
@@ -45,6 +46,7 @@ function Login() {
         // verifyEmail();
         dispatch(authActions.setUserId(response.userId));
         dispatch(authActions.setUserEmail(response.providerUid));
+        dispatch(fetchData(response.userId));
         navigate("/dashboard");
       },
       (error) => console.log(error)

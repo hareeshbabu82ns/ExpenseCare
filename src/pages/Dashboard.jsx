@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Header from "../components/Header";
 import {
   Card,
@@ -17,6 +17,7 @@ import AddCategoryButton from "../components/dashboard/AddCategoryButton";
 import { Box } from "lucide-react";
 import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";
+import { useSelector } from "react-redux";
 
 // export const categories = [
 //   { name: "Groceries", totalExpense: 4000 },
@@ -29,22 +30,7 @@ import { Query } from "appwrite";
 export const categories = [];
 
 function Dashboard() {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const promise = account.get();
-
-    promise.then(async (user) => {
-      const userDocs = await databases.listDocuments(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_DB_USER_ID,
-        [Query.equal("email", user.email)]
-      );
-
-      console.log(userDocs.documents[0].category);
-      setCategories(userDocs.documents[0].category);
-    });
-  }, []);
+  const categories = useSelector((state) => state.data.categories);
 
   return (
     <Flex flexDir={"column"} gap={2} w={"100vw"} justifyContent={"center"}>
