@@ -16,13 +16,13 @@ import {
 import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account } from "../appwrite/appwrite-config";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/auth-slice";
 
 function Login() {
   const {
     handleSubmit,
     register,
-    reset,
-    resetField,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -33,6 +33,7 @@ function Login() {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   async function loginHandler(values) {
     console.log(values);
@@ -42,6 +43,8 @@ function Login() {
     promise.then(
       (response) => {
         // verifyEmail();
+        dispatch(authActions.setUserId(response.userId));
+        dispatch(authActions.setUserEmail(response.providerUid));
         navigate("/dashboard");
       },
       (error) => console.log(error)
