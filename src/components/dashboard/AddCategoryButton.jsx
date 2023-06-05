@@ -19,6 +19,8 @@ import {
 import React, { useRef, useState } from "react";
 import { account, databases } from "../../appwrite/appwrite-config";
 import { ID } from "appwrite";
+import { useDispatch, useSelector } from "react-redux";
+import { addCategory } from "../../store/data-actions";
 
 function AddCategoryButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -27,54 +29,14 @@ function AddCategoryButton() {
 
   const initialRef = useRef(null);
 
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.auth.userId);
+
   const toast = useToast();
 
-  async function createCategoryHandler(e) {
+  function createCategoryHandler(e) {
     e.preventDefault();
-    console.log(categoryName);
-
-    const promise = account.get();
-
-    promise.then(
-      async (user) => {
-        console.log("user", user);
-        console.log("category", categoryName);
-
-        const userDocument = await databases.getDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_USER_ID,
-          user.$id
-        );
-
-        const categoryExists = userDocument.category.filter(
-          (category) => category.name === categoryName
-        );
-
-        console.log("categoryExists", categoryExists);
-
-        if (categoryExists.length !== 0) {
-          toast({
-            title: "Unable to create category",
-            description: "Category with the same name already exists",
-            status: "error",
-            duration: 9000,
-          });
-
-          return;
-        }
-
-        await databases.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_USER_ID,
-          user.$id,
-          {
-            category: [...userDocument.category, { name: categoryName }],
-          }
-        );
-      },
-      (error) => console.log(error)
-    );
-
+    dispatch(addCategory(userId, categoryName));
     onClose();
   }
 

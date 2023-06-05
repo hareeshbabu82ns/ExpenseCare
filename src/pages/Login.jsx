@@ -18,7 +18,7 @@ import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account } from "../appwrite/appwrite-config";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/auth-slice";
-import { dataActions, fetchData } from "../store/data-slice";
+import { fetchData } from "../store/data-actions";
 
 function Login() {
   const {

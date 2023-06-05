@@ -4,7 +4,7 @@ import AddExpenseButton from "./AddExpenseButton";
 import DeleteExpenseButton from "../utility/DeleteExpenseButton";
 import EditExpenseNameButton from "../utility/EditExpenseNameButton";
 
-function ExpenseCard({ name, totalAmount }) {
+function ExpenseCard({ name, totalAmount, categoryId }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -38,6 +38,7 @@ function ExpenseCard({ name, totalAmount }) {
             hover={hover}
             setHover={setHover}
             categoryName={name}
+            categoryId={categoryId}
           />
         </CardFooter>
       </Card>

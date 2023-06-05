@@ -50,6 +50,7 @@ function Dashboard() {
             key={category.$id}
             name={category.name}
             totalAmount={category.totalAmount}
+            categoryId={category.$id}
           />
         ))}
       </Flex>
