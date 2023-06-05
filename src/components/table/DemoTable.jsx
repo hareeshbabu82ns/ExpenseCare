@@ -17,6 +17,7 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import { MoreVertical } from "lucide-react";
+import { useSelector } from "react-redux";
 
 function DropdownActions({ expenseId, expenseName }) {
   return (
@@ -38,6 +39,9 @@ function DropdownActions({ expenseId, expenseName }) {
 }
 
 function DemoTable() {
+  const data = useSelector((state) => state.data.expenses);
+  console.log(data);
+
   return (
     <TableContainer w={"90%"} mx={"auto"}>
       <Table>
@@ -54,21 +58,23 @@ function DemoTable() {
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((row) => (
-            <Tr key={row.id}>
+          {data.map((expense) => (
+            <Tr key={expense.$id}>
               <Td>
                 <Checkbox colorScheme="teal" />
               </Td>
-              <Td>{row.expenseName}</Td>
-              <Td>{row.amount}</Td>
+              <Td>{expense.name}</Td>
+              <Td>{expense.amount}</Td>
               <Td display={{ base: "none", md: "table-cell" }}>
-                {row.category}
+                {expense.category.name}
               </Td>
-              <Td display={{ base: "none", md: "table-cell" }}>{row.date}</Td>
+              <Td display={{ base: "none", md: "table-cell" }}>
+                {expense.$createdAt}
+              </Td>
               <Td>
                 <DropdownActions
-                  expenseId={row.id}
-                  expenseName={row.expenseName}
+                  expenseId={expense.$id}
+                  expenseName={expense.name}
                 />
               </Td>
             </Tr>

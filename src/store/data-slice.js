@@ -13,8 +13,8 @@ const dataSlice = createSlice({
   reducers: {
     /* sets the fetched data received in payload to the state */
     setCartData(state, action) {
-      state.categories = action.payload.category;
-      state.expenses = action.payload.expense;
+      state.categories = action.payload.categories;
+      state.expenses = action.payload.expenses;
     },
   },
 });

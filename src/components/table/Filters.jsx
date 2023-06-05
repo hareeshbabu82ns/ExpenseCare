@@ -81,10 +81,17 @@ export const months = [
   },
 ];
 
+// const initialState = {
+//   category: "",
+//   price
+// }
+
 function Filters() {
   const dispatch = useDispatch();
   const searchRef = useRef("");
   const [filtersVisibility, setFiltersVisibility] = useState(false);
+
+  const [filterInputs, setFilterInputs] = useState({});
 
   function searchHandler() {
     console.log(searchRef.current.value);

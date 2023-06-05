@@ -35,7 +35,7 @@ export function addCategory(userId, categoryName) {
 
     promise.then(
       (userDocument) => {
-        const categoryExists = userDocument.category.find(
+        const categoryExists = userDocument.categories.find(
           (category) =>
             category.name.toLowerCase() === categoryName.toLowerCase()
         );
@@ -123,7 +123,7 @@ export function reEvaluateCategoryTotalAmount(categoryId) {
 
     promise.then((categoryDocument) => {
       const initialValue = 0;
-      const totalAmount = categoryDocument.expense.reduce(
+      const totalAmount = categoryDocument.expenses.reduce(
         (toalExpense, currExpense) =>
           toalExpense + parseInt(currExpense.amount),
         initialValue
