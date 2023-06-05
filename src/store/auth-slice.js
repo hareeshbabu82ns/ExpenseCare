@@ -5,7 +5,7 @@ const initialState = {
   userEmail: null,
 };
 
-// user will be equal to the logge in user object
+/* State to provide and set the logged in user's userId and email */
 
 const authSlice = createSlice({
   name: "auth",

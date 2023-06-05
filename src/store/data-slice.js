@@ -5,10 +5,13 @@ const initialState = {
   expenses: [],
 };
 
+/* State to provide and set the updated categories and expenses data to all the app components */
+
 const dataSlice = createSlice({
   name: "data",
   initialState: initialState,
   reducers: {
+    /* sets the fetched data received in payload to the state */
     setCartData(state, action) {
       state.categories = action.payload.category;
       state.expenses = action.payload.expense;
