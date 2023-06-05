@@ -7,15 +7,22 @@ import {
   AlertDialogHeader,
   AlertDialogOverlay,
   Button,
-  Container,
-  IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCategory } from "../../store/data-actions";
 
-function DeleteExpenseButton({ hover, setHover }) {
+function DeleteExpenseButton({ hover, setHover, categoryId }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.auth.userId);
+
+  function deleteCategoryHandler() {
+    dispatch(deleteCategory(userId, categoryId));
+    onClose();
+  }
 
   return (
     <>
@@ -61,7 +68,7 @@ function DeleteExpenseButton({ hover, setHover }) {
               >
                 Cancel
               </Button>
-              <Button colorScheme="red" onClick={onClose} ml={3}>
+              <Button colorScheme="red" onClick={deleteCategoryHandler} ml={3}>
                 Delete
               </Button>
             </AlertDialogFooter>

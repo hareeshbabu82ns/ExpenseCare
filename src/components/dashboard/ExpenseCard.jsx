@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AddExpenseButton from "./AddExpenseButton";
 import DeleteExpenseButton from "../utility/DeleteExpenseButton";
 import EditExpenseNameButton from "../utility/EditExpenseNameButton";
+import { useSelector } from "react-redux";
 
 function ExpenseCard({ name, totalAmount, categoryId }) {
   const [hover, setHover] = useState(false);
@@ -20,7 +21,11 @@ function ExpenseCard({ name, totalAmount, categoryId }) {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <DeleteExpenseButton hover={hover} setHover={setHover} />
+        <DeleteExpenseButton
+          hover={hover}
+          setHover={setHover}
+          categoryId={categoryId}
+        />
         <EditExpenseNameButton
           hover={hover}
           setHover={setHover}

@@ -85,6 +85,26 @@ export function editCategoryName(categoryId, newCategoryName) {
   };
 }
 
+export function deleteCategory(userId, categoryId) {
+  return function (dispatch) {
+    const promise = databases.deleteDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_CATEGORY_ID,
+      categoryId
+    );
+
+    promise.then(
+      function (response) {
+        console.log(response);
+        dispatch(fetchData(userId));
+      },
+      function (error) {
+        console.log(error);
+      }
+    );
+  };
+}
+
 export function addExpense(userId, categoryId, expenseDetails) {
   return function (dispatch) {
     const { amount, name, description } = expenseDetails;
