@@ -9,14 +9,14 @@ function AllExpenses() {
   return (
     <>
       <Header />
-      <Text
+      {/* <Text
         fontSize={"3xl"}
         fontWeight={"semibold"}
         textAlign={"center"}
         mt={5}
       >
         All Expenses
-      </Text>
+      </Text> */}
       <Filters />
       {/* <ExpenseTable /> */}
       {/* <DataTable /> */}

@@ -22,7 +22,14 @@ import { useSelector } from "react-redux";
 function DropdownActions({ expenseId, expenseName }) {
   return (
     <Menu>
-      <MenuButton as={IconButton} icon={<MoreVertical />} bgColor={"inherit"} />
+      <MenuButton
+        as={IconButton}
+        icon={<MoreVertical />}
+        bgColor={"inherit"}
+        _hover={{ bgColor: "lightgray" }}
+        _focus={{ bgColor: "lightgray" }}
+        _active={{ bgColor: "lightgray" }}
+      />
       <MenuList bgColor={"lightgray"}>
         <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.600" }}>
           Edit
@@ -47,11 +54,11 @@ function DemoTable() {
       <Table>
         <Thead>
           <Tr>
-            <Th>
+            {/* <Th>
               <Checkbox>Select</Checkbox>
-            </Th>
+            </Th> */}
             <Th>EXPENSE NAME</Th>
-            <Th>AMOUNT</Th>
+            <Th>AMOUNT (Rs.)</Th>
             <Th display={{ base: "none", md: "table-cell" }}>CATEGORY</Th>
             <Th display={{ base: "none", md: "table-cell" }}>DATE</Th>
             <Th>Actions</Th>
@@ -60,16 +67,16 @@ function DemoTable() {
         <Tbody>
           {data.map((expense) => (
             <Tr key={expense.$id}>
-              <Td>
+              {/* <Td>
                 <Checkbox colorScheme="teal" />
-              </Td>
+              </Td> */}
               <Td>{expense.name}</Td>
               <Td>{expense.amount}</Td>
               <Td display={{ base: "none", md: "table-cell" }}>
                 {expense.category.name}
               </Td>
               <Td display={{ base: "none", md: "table-cell" }}>
-                {expense.$createdAt}
+                {expense.date}
               </Td>
               <Td>
                 <DropdownActions
@@ -80,13 +87,13 @@ function DemoTable() {
             </Tr>
           ))}
         </Tbody>
-        <Tfoot>
+        {/* <Tfoot>
           <Tr>
             <Th>To convert</Th>
             <Th>into</Th>
             <Th isNumeric>multiply by</Th>
           </Tr>
-        </Tfoot>
+        </Tfoot> */}
       </Table>
     </TableContainer>
   );

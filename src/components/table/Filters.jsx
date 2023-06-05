@@ -17,8 +17,9 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { categories } from "../../pages/Dashboard";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { filterActions } from "../../store/filter-slice";
+import { SlidersHorizontal } from "lucide-react";
 
 const priceRange = [
   { option: "0 - 100", value: 0 },
@@ -93,6 +94,8 @@ function Filters() {
 
   const [filterInputs, setFilterInputs] = useState({});
 
+  const categories = useSelector((state) => state.data.categories);
+
   function searchHandler() {
     console.log(searchRef.current.value);
   }
@@ -125,8 +128,8 @@ function Filters() {
           alignItems={"center"}
         >
           {/* Category Select */}
-          <Select
-            placeholder="Select Category"
+          {/* <Select
+            placeholder="Category"
             w={"225px"}
             variant={"outline"}
             onChange={(e) =>
@@ -138,10 +141,38 @@ function Filters() {
                 {category.name}
               </option>
             ))}
-          </Select>
+          </Select> */}
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _focus={{ bgColor: "dark" }}
+              _hover={{ bgColor: "dark" }}
+              _active={{ bgColor: "dark" }}
+              variant={"outline"}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              // w={"max-content"}
+              w={"225px"}
+            >
+              Category
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              {categories.map((category) => (
+                <MenuItem
+                  _hover={{ bgColor: "blue.600" }}
+                  key={category.name}
+                  value={category.name}
+                  bgColor={"lightgray"}
+                  onClick={(e) => console.log(e.target.value)}
+                >
+                  {category.name}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
 
           {/* Price Range Select */}
-          <Select
+          {/* <Select
             placeholder="Price Range"
             w={"225px"}
             variant={"outline"}
@@ -152,10 +183,38 @@ function Filters() {
                 {price.option}
               </option>
             ))}
-          </Select>
+          </Select> */}
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _focus={{ bgColor: "dark" }}
+              _hover={{ bgColor: "dark" }}
+              _active={{ bgColor: "dark" }}
+              variant={"outline"}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              // w={"max-content"}
+              w={"225px"}
+            >
+              Price
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              {priceRange.map((price) => (
+                <MenuItem
+                  _hover={{ bgColor: "blue.600" }}
+                  key={price.value}
+                  value={price.value}
+                  bgColor={"lightgray"}
+                  onClick={(e) => console.log(e.target.value)}
+                >
+                  {price.value}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
 
           {/* Year Select */}
-          <Select
+          {/* <Select
             placeholder="Year"
             w={"225px"}
             variant={"outline"}
@@ -166,10 +225,39 @@ function Filters() {
                 {year}
               </option>
             ))}
-          </Select>
+          </Select> */}
+
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _focus={{ bgColor: "dark" }}
+              _hover={{ bgColor: "dark" }}
+              _active={{ bgColor: "dark" }}
+              variant={"outline"}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              // w={"max-content"}
+              w={"225px"}
+            >
+              Year
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              {yearRange.map((year) => (
+                <MenuItem
+                  _hover={{ bgColor: "blue.600" }}
+                  key={year}
+                  value={year}
+                  bgColor={"lightgray"}
+                  onClick={(e) => console.log(e.target.value)}
+                >
+                  {year}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
 
           {/* Month Select */}
-          <Select
+          {/* <Select
             placeholder="Month"
             w={"225px"}
             variant={"outline"}
@@ -180,10 +268,39 @@ function Filters() {
                 {month.option}
               </option>
             ))}
-          </Select>
+          </Select> */}
 
-          <Button colorScheme="pink" maxW={"225px"}>
-            Apply Filters
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _focus={{ bgColor: "dark" }}
+              _hover={{ bgColor: "dark" }}
+              _active={{ bgColor: "dark" }}
+              variant={"outline"}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              // w={"max-content"}
+              w={"225px"}
+            >
+              Month
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              {months.map((month) => (
+                <MenuItem
+                  _hover={{ bgColor: "blue.600" }}
+                  key={month.option}
+                  value={month.option}
+                  bgColor={"lightgray"}
+                  onClick={(e) => console.log(e.target.value)}
+                >
+                  {month.option}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
+
+          <Button colorScheme="pink" maxW={"225px"} px={"8%"}>
+            Filter
           </Button>
         </Flex>
       </FormControl>
@@ -210,7 +327,31 @@ function Filters() {
 
         {/* Category and Date Checkbox */}
         <Flex justifyContent={"center"} gap={2} alignItems={"center"}>
-          <Checkbox colorScheme="pink">Show Category and Date</Checkbox>
+          {/* <Checkbox colorScheme="pink">Show Category and Date</Checkbox> */}
+
+          {/* Sort by Select Menu */}
+
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _focus={{ bgColor: "dark" }}
+              _hover={{ bgColor: "dark" }}
+              _active={{ bgColor: "dark" }}
+              variant={"outline"}
+              as={Button}
+              rightIcon={<SlidersHorizontal />}
+            >
+              View
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              <MenuItem _hover={{ bgColor: "primary" }} bgColor={"lightgray"}>
+                Category
+              </MenuItem>
+              <MenuItem _hover={{ bgColor: "primary" }} bgColor={"lightgray"}>
+                Date
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Flex>
       </Flex>
     </>

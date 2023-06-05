@@ -183,6 +183,11 @@ export function addExpense(userId, categoryId, expenseDetails) {
         amount,
         name,
         description,
+        date: new Date().toLocaleDateString(undefined, {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }),
         category: categoryId,
         user: userId,
       }
