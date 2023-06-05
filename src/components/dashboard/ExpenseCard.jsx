@@ -11,7 +11,7 @@ function ExpenseCard({ name, totalAmount, categoryId }) {
     <>
       <Card
         h={"250px"}
-        w={{ base: "300px", md: "250px" }}
+        w={{ base: "300px", md: "300px" }}
         bgColor={"blue.600"}
         textAlign={"center"}
         color={"text"}
@@ -25,6 +25,7 @@ function ExpenseCard({ name, totalAmount, categoryId }) {
           hover={hover}
           setHover={setHover}
           categoryName={name}
+          categoryId={categoryId}
         />
 
         <CardHeader fontSize={"3xl"} fontWeight={"semibold"}>

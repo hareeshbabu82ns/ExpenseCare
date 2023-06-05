@@ -32,7 +32,7 @@ export function addCategory(userId, categoryName) {
       (userDocument) => {
         const categoryExists = userDocument.category.find(
           (category) =>
-            category.name.toLowercase() === categoryName.toLowercase()
+            category.name.toLowerCase() === categoryName.toLowerCase()
         );
 
         if (categoryExists) {
@@ -40,53 +40,13 @@ export function addCategory(userId, categoryName) {
           return userDocument;
         }
 
-        const promise = databases.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_USER_ID,
-          userId,
-          {
-            category: [...userDocument.category, { name: categoryName }],
-          }
-        );
-
-        promise.then(
-          (updatedDocument) => {
-            console.log(updatedDocument);
-            dispatch(dataActions.setCartData(updatedDocument));
-          },
-          (error) => console.log(error)
-        );
-      },
-      (error) => console.log(error)
-    );
-  };
-}
-
-export function addExpense(userId, categoryId, expenseDetails) {
-  return function (dispatch) {
-    const promise = databases.getDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_DB_CATEGORY_ID,
-      categoryId
-    );
-
-    promise.then(
-      (categoryDocument) => {
-        console.log(categoryDocument);
-
-        const { amount } = expenseDetails;
-
-        const promise = databases.updateDocument(
+        const promise = databases.createDocument(
           import.meta.env.VITE_DB_ID,
           import.meta.env.VITE_DB_CATEGORY_ID,
-          categoryId,
+          ID.unique(),
           {
-            expense: [
-              ...categoryDocument.expense,
-              { ...expenseDetails, user: userId },
-            ],
-            totalAmount:
-              parseInt(categoryDocument.totalAmount) + parseInt(amount),
+            name: categoryName,
+            user: userId,
           }
         );
 
@@ -101,4 +61,115 @@ export function addExpense(userId, categoryId, expenseDetails) {
       (error) => console.log(error)
     );
   };
+}
+
+export function editCategoryName(categoryId, newCategoryName) {
+  return function (dispatch) {
+    const promise = databases.updateDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_CATEGORY_ID,
+      categoryId,
+      {
+        name: newCategoryName,
+      }
+    );
+
+    promise.then(
+      (updatedCategoryDocument) => {
+        console.log(updatedCategoryDocument);
+        const userId = updatedCategoryDocument.user.$id;
+        dispatch(fetchData(userId));
+      },
+      (error) => console.log(error)
+    );
+  };
+}
+
+export function addExpense(userId, categoryId, expenseDetails) {
+  return function (dispatch) {
+    const { amount, name, description } = expenseDetails;
+    const promise = databases.createDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_EXPENSE_ID,
+      ID.unique(),
+      {
+        amount,
+        name,
+        description,
+        category: categoryId,
+        user: userId,
+      }
+    );
+
+    promise.then(
+      (updatedExpenseDocument) => {
+        console.log(updatedExpenseDocument);
+        dispatch(reEvaluateCategoryTotalAmount(categoryId));
+      },
+      (error) => console.log(error)
+    );
+  };
+}
+
+export function reEvaluateCategoryTotalAmount(categoryId) {
+  return function (dispatch) {
+    const promise = databases.getDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_CATEGORY_ID,
+      categoryId
+    );
+
+    promise.then((categoryDocument) => {
+      const initialValue = 0;
+      const totalAmount = categoryDocument.expense.reduce(
+        (toalExpense, currExpense) =>
+          toalExpense + parseInt(currExpense.amount),
+        initialValue
+      );
+      const userId = categoryDocument.user.$id;
+
+      const promise = databases.updateDocument(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_DB_CATEGORY_ID,
+        categoryId,
+        {
+          totalAmount: totalAmount,
+        }
+      );
+
+      promise.then(
+        (updatedCategoryDocument) => {
+          console.log(updatedCategoryDocument);
+          dispatch(fetchData(userId));
+        },
+        (error) => console.log(error)
+      );
+    });
+  };
+}
+
+export function editExpense(expenseId, expenseDetails) {
+  return function (dispatch) {
+    const promise = databases.updateDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_EXPENSE_ID,
+      expenseId,
+      {
+        ...expenseDetails,
+      }
+    );
+
+    promise.then(
+      (updatedExpenseDocument) => {
+        console.log(updatedExpenseDocument);
+        const categoryId = updatedExpenseDocument.category.$id;
+        dispatch(reEvaluateCategoryTotalAmount(categoryId));
+      },
+      (error) => console.log(error)
+    );
+  };
+}
+
+export function deleteExpense() {
+  return function (dispatch) {};
 }
