@@ -19,15 +19,15 @@ import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";
 import { useSelector } from "react-redux";
 
-// export const categories = [
-//   { name: "Groceries", totalExpense: 4000 },
-//   { name: "Travel", totalExpense: 4000 },
-//   { name: "Rent", totalExpense: 15000 },
-//   { name: "Bills", totalExpense: 5000 },
-//   { name: "Subscriptions", totalExpense: 1000 },
-//   { name: "Others", totalExpense: 2000 },
-// ];
-export const categories = [];
+export const categories = [
+  { name: "Groceries", totalExpense: 4000 },
+  { name: "Travel", totalExpense: 4000 },
+  { name: "Rent", totalExpense: 15000 },
+  { name: "Bills", totalExpense: 5000 },
+  { name: "Subscriptions", totalExpense: 1000 },
+  { name: "Others", totalExpense: 2000 },
+];
+// export const categories = [];
 
 function Dashboard() {
   const categories = useSelector((state) => state.data.categories);

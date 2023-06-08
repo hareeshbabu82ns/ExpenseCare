@@ -1,0 +1,21 @@
+{
+    "projectId": "64726c3cc1a19aee8adc",
+    "projectName": "expense-care",
+    "functions": [
+        {
+            "$id": "6481788f8eaa2d8405a9",
+            "name": "updateCategoryTotalAmount",
+            "runtime": "node-16.0",
+            "path": "functions/updateCategoryTotalAmount",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
+        }
+    ]
+}

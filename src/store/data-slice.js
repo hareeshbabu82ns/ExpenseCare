@@ -12,7 +12,7 @@ const dataSlice = createSlice({
   initialState: initialState,
   reducers: {
     /* sets the fetched data received in payload to the state */
-    setCartData(state, action) {
+    setData(state, action) {
       state.categories = action.payload.categories;
       state.expenses = action.payload.expenses;
     },

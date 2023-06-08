@@ -17,6 +17,12 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpense } from "../../store/data-actions";
 
+const initialState = {
+  name: "",
+  amount: 0,
+  description: "",
+};
+
 function AddExpenseButton({ hover, categoryName, setHover, categoryId }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -33,7 +39,7 @@ function AddExpenseButton({ hover, categoryName, setHover, categoryId }) {
   function addExpenseHandler(e) {
     e.preventDefault();
     dispatch(addExpense(userId, categoryId, expenseInputData));
-
+    setExpenseInputData(initialState);
     onClose();
   }
 

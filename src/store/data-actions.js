@@ -17,7 +17,7 @@ export function fetchData(userId) {
     promise.then(
       (userDocument) => {
         console.log(userDocument);
-        dispatch(dataActions.setCartData(userDocument));
+        dispatch(dataActions.setData(userDocument));
       },
       (error) => console.log(error)
     );
@@ -175,6 +175,17 @@ export function reEvaluateCategoriesMonthAmount(userId) {
 export function addExpense(userId, categoryId, expenseDetails) {
   return function (dispatch) {
     const { amount, name, description } = expenseDetails;
+
+    let date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth();
+
+    date = date.toLocaleDateString(undefined, {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+
     const promise = databases.createDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_EXPENSE_ID,
@@ -183,11 +194,9 @@ export function addExpense(userId, categoryId, expenseDetails) {
         amount,
         name,
         description,
-        date: new Date().toLocaleDateString(undefined, {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        }),
+        date,
+        year,
+        month,
         category: categoryId,
         user: userId,
       }
@@ -230,3 +239,55 @@ export function editExpense(expenseId, expenseDetails) {
 export function deleteExpense() {
   return function (dispatch) {};
 }
+
+// Appwrite Cloud functions
+
+/*
+On Adding an expense
+  Pass 
+  {
+    categoryId,
+    expenseAmount
+  }
+
+On Removing an expense
+  Pass
+  {
+    categoryId,
+    expenseAmount
+  }
+
+On Editing an expense
+  Pass
+  {
+    categoryId,
+  }
+*/
+
+/*
+  Update User's Total Expense
+
+  On Adding, removing or editing of an expense
+
+    compute currMonthExpense and currYearExpense again
+
+  On Deleting a Category
+
+    compute currMonthExpense and currYearExpense again
+
+*/
+
+/*
+  On Every Login
+
+    Check and if required update currMonth and currYear
+
+      if currMonth Changes
+        currMonthExpense of all categories of the user updates to zero
+        currMonthExpense of the user also updates to zero
+
+      if currYear Changes
+        currYearExpense and currMonthExpense of all categories of the user updates to zero
+        currYearExpense and currMonthExpense of the user also updates to zero
+        
+*/
