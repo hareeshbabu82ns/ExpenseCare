@@ -52,25 +52,18 @@ module.exports = async function (req, res) {
         ];
         const { amount } = data;
 
-        switch (action) {
-          case "ON_ADD_EXPENSE":
-            updatedCurrYearExpense += amount;
-            updatedCurrMonthExpense += amount;
-            break;
-
-          case "ON_REMOVE_EXPENSE":
-            updatedCurrYearExpense -= amount;
-            updatedCurrMonthExpense -= amount;
-            break;
-
-          case "ON_EDIT_EXPENSE":
-            const { editedAmount } = data;
-            updatedCurrYearExpense += editedAmount - amount;
+        if (action === "ON_ADD_EXPENSE") {
+          updatedCurrYearExpense += amount;
+          updatedCurrMonthExpense += amount;
+        } else if (action === "ON_REMOVE_EXPENSE") {
+          const { updateYearAmount, updateMonthAmount } = data;
+          if (updateYearAmount) updatedCurrYearExpense -= amount;
+          if (updateMonthAmount) updatedCurrMonthExpense -= amount;
+        } else if (action === "ON_EDIT_EXPENSE") {
+          const { editedAmount, updateYearAmount, updateMonthAmount } = data;
+          if (updateYearAmount) updatedCurrYearExpense += editedAmount - amount;
+          if (updateMonthAmount)
             updatedCurrMonthExpense += editedAmount - amount;
-            break;
-
-          default:
-            break;
         }
 
         const promise = database.updateDocument(
