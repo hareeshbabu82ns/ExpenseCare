@@ -1,6 +1,12 @@
 import { ID } from "appwrite";
-import { databases } from "../appwrite/appwrite-config";
+import { databases, functions } from "../appwrite/appwrite-config";
 import { dataActions } from "./data-slice";
+
+const actions = {
+  ON_ADD_EXPENSE: "ON_ADD_EXPENSE",
+  ON_REMOVE_EXPENSE: "ON_REMOVE_EXPENSE",
+  ON_EDIT_EXPENSE: "ON_EDIT_EXPENSE",
+};
 
 /* To fetch data after any changes in the database or to fetch data into state on login*/
 export function fetchData(userId) {
@@ -203,9 +209,29 @@ export function addExpense(userId, categoryId, expenseDetails) {
     );
 
     promise.then(
-      (updatedExpenseDocument) => {
-        console.log(updatedExpenseDocument);
-        dispatch(reEvaluateCategoryTotalAmount(categoryId));
+      (createdExpenseDocument) => {
+        // updating total amount in category db
+
+        console.log(createdExpenseDocument);
+
+        functions
+          .createExecution(
+            import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
+            JSON.stringify({
+              action: actions.ON_ADD_EXPENSE,
+              categoryId: categoryId,
+              amount: amount,
+            }),
+            true
+          )
+          .then(
+            (updatedCategoryDocument) => {
+              console.log(updatedCategoryDocument);
+            },
+            (error) => console.log(error)
+          );
+
+        // updating total amount in user db
       },
       (error) => console.log(error)
     );
@@ -240,54 +266,102 @@ export function deleteExpense() {
   return function (dispatch) {};
 }
 
-// Appwrite Cloud functions
-
+// utility functions
 /*
-On Adding an expense
-  Pass 
-  {
-    categoryId,
-    expenseAmount
-  }
-
-On Removing an expense
-  Pass
-  {
-    categoryId,
-    expenseAmount
-  }
-
-On Editing an expense
-  Pass
-  {
-    categoryId,
-  }
+to update category currMonthExpense and currYearExpense on add, edit and remove of an expense.
+ if adding or removing, data required is expense amount and categoryId
+ if editing, data required is categoryId and old and new expense amount
 */
 
-/*
-  Update User's Total Expense
+export function updateCategoryTotalExpense(action, data) {
+  return function (dispatch) {
+    const { categoryId } = data;
 
-  On Adding, removing or editing of an expense
+    const promise = databases.getDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_CATEGORY_ID,
+      categoryId
+    );
 
-    compute currMonthExpense and currYearExpense again
+    promise.then((categoryDocument) => {
+      const { currYearExpense, currMonthExpense } = categoryDocument;
+      let updatedCurrYearExpense = currYearExpense;
+      let updatedcurrMonthExpense = currMonthExpense;
 
-  On Deleting a Category
+      if (action === "ON_ADD_EXPENSE") {
+        const { amount } = data;
 
-    compute currMonthExpense and currYearExpense again
+        updatedCurrYearExpense += amount;
+        updatedcurrMonthExpense += amount;
+      } else if (action === "ON_REMOVE_EXPENSE") {
+        const currYear = new Date().getFullYear();
 
-*/
+        // if(currYear !== )
+        const currMonth = new Date().getMonth();
+      }
 
-/*
-  On Every Login
+      if (action === "ON_ADD_EXPENSE") {
+        const { amount } = data;
 
-    Check and if required update currMonth and currYear
+        const promise = databases.updateDocument(
+          import.meta.env.VITE_DB_ID,
+          import.meta.env.VITE_DB_CATEGORY_ID,
+          categoryId,
+          {
+            currYearExpense: currYearExpense + amount,
+            currMonthExpense: currMonthExpense + amount,
+          }
+        );
 
-      if currMonth Changes
-        currMonthExpense of all categories of the user updates to zero
-        currMonthExpense of the user also updates to zero
+        promise.then(
+          () => {},
+          (error) => console.log(error)
+        );
+      } else if (action === "ON_EDIT_EXPENSE") {
+        const { oldAmount, newAmount } = data;
 
-      if currYear Changes
-        currYearExpense and currMonthExpense of all categories of the user updates to zero
-        currYearExpense and currMonthExpense of the user also updates to zero
-        
-*/
+        const promise = databases.updateDocument(
+          import.meta.env.VITE_DB_ID,
+          import.meta.env.VITE_DB_CATEGORY_ID,
+          categoryId,
+          {
+            currMonthExpense: currMonthExpense - oldAmount + newAmount,
+            currYearExpense: currYearExpense - oldAmount + newAmount,
+          }
+        );
+
+        promise.then(
+          (updatedDocument) => {},
+          (error) => console.log(error)
+        );
+      } else if (action === "ON_REMOVE_EXPENSE") {
+        const { amount } = data;
+        const currYear = new Date().getFullYear();
+        const currMonth = new Date().getMonth();
+
+        if (currYear !== categoryDocument.year) {
+          return;
+        }
+
+        let updatedcurrYearExpense = currYearExpense - amount;
+        let updatedcurrMonthExpense = currMonthExpense;
+
+        if (currMonth === categoryDocument.month) {
+          updatedcurrMonthExpense += amount;
+        }
+
+        const promise = databases.updateDocument(
+          import.meta.env.VITE_DB_ID,
+          import.meta.env.VITE_DB_CATEGORY_ID,
+          categoryId,
+          {
+            currMonthExpense: updatedcurrMonthExpense,
+            currYearExpense: updatedcurrYearExpense,
+          }
+        );
+      }
+    });
+  };
+}
+
+export function updateUserTotalExpense(action, data) {}

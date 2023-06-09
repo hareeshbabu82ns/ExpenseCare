@@ -1,4 +1,4 @@
-import { Client, Account, ID, Databases } from "appwrite";
+import { Client, Account, ID, Databases, Functions } from "appwrite";
 
 const client = new Client()
   .setEndpoint("http://localhost/v1") // Your API Endpoint
@@ -7,3 +7,5 @@ const client = new Client()
 export const account = new Account(client);
 
 export const databases = new Databases(client, import.meta.env.VITE_DB_ID);
+
+export const functions = new Functions(client);

@@ -1,5 +1,3 @@
-import { Query } from "appwrite";
-
 const sdk = require("node-appwrite");
 
 /*
@@ -19,10 +17,9 @@ module.exports = async function (req, res) {
   const client = new sdk.Client();
 
   // You can remove services you don't use
-  const account = new sdk.Account(client);
   const database = new sdk.Databases(client);
 
-  const categoryId = req.payload.categoryId;
+  const data = JSON.parse(req.payload);
 
   if (
     !req.variables["APPWRITE_FUNCTION_ENDPOINT"] ||
@@ -38,78 +35,69 @@ module.exports = async function (req, res) {
       .setKey(req.variables["APPWRITE_FUNCTION_API_KEY"])
       .setSelfSigned(true);
 
-    if (req.type === "ON_ADD_EXPENSE" || req.type === "ON_REMOVE_EXPENSE") {
-      const expenseAmount = req.payload?.amount || 0;
+    const { action, categoryId } = data;
 
-      const promise = database.getDocument(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_DB_CATEGORY_ID,
-        categoryId
-      );
+    const promise = database.getDocument(
+      req.variables["APPWRITE_DB_ID"],
+      req.variables["APPWRITE_DB_CATEGORY_ID"],
+      categoryId
+    );
 
-      promise.then(
-        (categoryDocument) => {
-          const currMonthExpense = categoryDocument.currMonthExpense;
+    promise.then(
+      (categoryDocument) => {
+        const { currYearExpense, currMonthExpense } = categoryDocument;
+        let [updatedCurrYearExpense, updatedCurrMonthExpense] = [
+          currYearExpense,
+          currMonthExpense,
+        ];
+        const { amount } = data;
 
-          const promise = database.updateDocument(
-            import.meta.env.VITE_DB_ID,
-            import.meta.env.VITE_DB_CATEGORY_ID,
-            categoryId,
-            {
-              currMonthExpense:
-                req.type === "ON_ADD_EXPENSE"
-                  ? currMonthExpense + expenseAmount
-                  : currMonthExpense - expenseAmount,
-            }
-          );
+        switch (action) {
+          case "ON_ADD_EXPENSE":
+            updatedCurrYearExpense += amount;
+            updatedCurrMonthExpense += amount;
+            break;
 
-          promise.then(
-            (updateDocument) => {},
-            (error) => console.log(error)
-          );
-        },
-        (error) => console.log(error)
-      );
-    } else if (req.type === "ON_EDIT_EXPENSE") {
-      const { userId } = req.payload;
+          case "ON_REMOVE_EXPENSE":
+            updatedCurrYearExpense -= amount;
+            updatedCurrMonthExpense -= amount;
+            break;
 
-      const currYear = new Date().getFullYear();
-      const currMonth = new Date().getMonth();
+          case "ON_EDIT_EXPENSE":
+            const { editedAmount } = data;
+            updatedCurrYearExpense += editedAmount - amount;
+            updatedCurrMonthExpense += editedAmount - amount;
+            break;
 
-      const promise = database.listDocuments(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_DB_EXPENSE_ID,
-        [
-          Query.equal("userId", userId),
-          Query.equal("categoryId", categoryId),
-          Query.equal("year", currYear),
-          Query.equal("month", currMonth),
-        ]
-      );
+          default:
+            break;
+        }
 
-      promise.then((documentsList) => {
-        const currMonthCategoryExpense = documentsList.reduce(
-          (acc, expense) => acc + expense.amount,
-          0
-        );
         const promise = database.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_CATEGORY_ID,
+          req.variables["APPWRITE_DB_ID"],
+          req.variables["APPWRITE_DB_CATEGORY_ID"],
           categoryId,
           {
-            currMonthExpense: currMonthCategoryExpense,
+            currYearExpense: updatedCurrYearExpense,
+            currMonthExpense: updatedCurrMonthExpense,
           }
         );
 
         promise.then(
-          () => {},
-          (error) => console.log(error)
+          (updatedDocument) => {
+            console.log(updatedDocument);
+            return res.json(updatedDocument);
+          },
+          (error) => {
+            console.log(error);
+            return res.json({ error });
+          }
         );
-      });
-    }
+      },
+      (error) => {
+        console.log(error);
+        return res.json({ error });
+      }
+    );
   }
-
-  res.json({
-    areDevelopersAwesome: true,
-  });
 };
