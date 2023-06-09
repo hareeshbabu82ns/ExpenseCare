@@ -1,5 +1,5 @@
 import { ID } from "appwrite";
-import { databases, functions } from "../appwrite/appwrite-config";
+import { account, databases, functions } from "../appwrite/appwrite-config";
 import { dataActions } from "./data-slice";
 
 const actions = {
@@ -109,71 +109,26 @@ export function deleteCategory(userId, categoryId) {
     promise.then(
       function (response) {
         console.log(response);
-        dispatch(fetchData(userId));
+
+        functions
+          .createExecution(
+            import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
+            JSON.stringify({
+              userId: userId,
+            }),
+            true
+          )
+          .then(
+            (updatedUserDocument) => {
+              dispatch(fetchData(userId));
+            },
+            (error) => console.log(error)
+          );
       },
       function (error) {
         console.log(error);
       }
     );
-  };
-}
-
-/* To revaluate the totalAmount of a category if any action like adding, editing or deleting expense happened in that particular category */
-export function reEvaluateCategoryTotalAmount(categoryId) {
-  return function (dispatch) {
-    const promise = databases.getDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_DB_CATEGORY_ID,
-      categoryId
-    );
-
-    promise.then((categoryDocument) => {
-      const initialValue = 0;
-      const totalAmount = categoryDocument.expenses.reduce(
-        (toalExpense, currExpense) =>
-          toalExpense + parseInt(currExpense.amount),
-        initialValue
-      );
-      const userId = categoryDocument.user.$id;
-
-      const promise = databases.updateDocument(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_DB_CATEGORY_ID,
-        categoryId,
-        {
-          totalAmount: totalAmount,
-        }
-      );
-
-      promise.then(
-        (updatedCategoryDocument) => {
-          console.log(updatedCategoryDocument);
-          dispatch(fetchData(userId));
-        },
-        (error) => console.log(error)
-      );
-    });
-  };
-}
-
-/*TO BE COMPLETED */
-export function reEvaluateCategoriesMonthAmount(userId) {
-  return function (dispatch) {
-    const promise = databases.getDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_DB_USER_ID,
-      userId
-    );
-
-    promise.then((userDocument) => {
-      const categories = userDocument.category;
-
-      categories.forEach(updateCategoryMonthAmount);
-
-      function updateCategoryMonthAmount(category) {
-        const id = category.$id;
-      }
-    });
   };
 }
 
@@ -192,6 +147,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
       year: "numeric",
     });
 
+    // creating a new expense document
     const promise = databases.createDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_EXPENSE_ID,
@@ -210,7 +166,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
 
     promise.then(
       (createdExpenseDocument) => {
-        // updating total amount in category db
+        // updating total amount in category collection
 
         console.log(createdExpenseDocument);
 
@@ -226,14 +182,26 @@ export function addExpense(userId, categoryId, expenseDetails) {
           )
           .then(
             (updatedCategoryDocument) => {
-              const userId = updatedCategoryDocument.user.$id;
               console.log(updatedCategoryDocument);
-              dispatch(fetchData(userId));
+
+              // updating the total amount in user collection
+              functions
+                .createExecution(
+                  import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
+                  JSON.stringify({
+                    userId: userId,
+                  }),
+                  true
+                )
+                .then(
+                  (updatedUserDocument) => {
+                    dispatch(fetchData(userId));
+                  },
+                  (error) => console.log(error)
+                );
             },
             (error) => console.log(error)
           );
-
-        // updating total amount in user db
       },
       (error) => console.log(error)
     );
@@ -243,6 +211,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
 /* To edit an expense details (aslo updates the corresponding category's totalAmount and fetches the updated data into the state) */
 export function editExpense(expenseId, expenseDetails, oldAmount) {
   return function (dispatch) {
+    // updating the expense document
     const promise = databases.updateDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_EXPENSE_ID,
@@ -267,6 +236,8 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
         const updateMonthAmount = month === currMonth;
 
         if (updateYearAmount || updateMonthAmount) {
+          // updating the category document's totalAmount
+
           functions
             .createExecution(
               import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
@@ -283,7 +254,21 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
             .then(
               (updatedCategoryDocument) => {
                 console.log(updatedCategoryDocument);
-                dispatch(fetchData(userId));
+
+                functions
+                  .createExecution(
+                    import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
+                    JSON.stringify({
+                      userId: userId,
+                    }),
+                    true
+                  )
+                  .then(
+                    (updatedUserDocument) => {
+                      dispatch(fetchData(userId));
+                    },
+                    (error) => console.log(error)
+                  );
               },
               (error) => console.log(error)
             );
@@ -298,6 +283,8 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
 export function removeExpense(expenseId, expenseDetails) {
   return function (dispatch) {
     const { year, month } = expenseDetails;
+
+    // deleting an expense document
     const promise = databases.deleteDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_EXPENSE_ID,
@@ -315,6 +302,8 @@ export function removeExpense(expenseId, expenseDetails) {
         const updateMonthAmount = month === currMonth;
 
         if (updateYearAmount || updateMonthAmount) {
+          // updating the totalExpense of category document
+
           functions
             .createExecution(
               import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
@@ -330,7 +319,31 @@ export function removeExpense(expenseId, expenseDetails) {
             .then(
               (updatedCategoryDocument) => {
                 console.log(updatedCategoryDocument);
-                dispatch(fetchData(userId));
+                let userId = null;
+
+                // getting the current logged in user's userId
+                account.get().then(
+                  (userObject) => {
+                    userId = userObject.userId;
+
+                    // updating the user document's totalExpense
+                    functions
+                      .createExecution(
+                        import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
+                        JSON.stringify({
+                          userId: userId,
+                        }),
+                        true
+                      )
+                      .then(
+                        (updatedUserDocument) => {
+                          dispatch(fetchData(userId));
+                        },
+                        (error) => console.log(error)
+                      );
+                  },
+                  (error) => console.log(error)
+                );
               },
               (error) => console.log(error)
             );
@@ -340,103 +353,3 @@ export function removeExpense(expenseId, expenseDetails) {
     );
   };
 }
-
-// utility functions
-/*
-to update category currMonthExpense and currYearExpense on add, edit and remove of an expense.
- if adding or removing, data required is expense amount and categoryId
- if editing, data required is categoryId and old and new expense amount
-*/
-
-export function updateCategoryTotalExpense(action, data) {
-  return function (dispatch) {
-    const { categoryId } = data;
-
-    const promise = databases.getDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_DB_CATEGORY_ID,
-      categoryId
-    );
-
-    promise.then((categoryDocument) => {
-      const { currYearExpense, currMonthExpense } = categoryDocument;
-      let updatedCurrYearExpense = currYearExpense;
-      let updatedcurrMonthExpense = currMonthExpense;
-
-      if (action === "ON_ADD_EXPENSE") {
-        const { amount } = data;
-
-        updatedCurrYearExpense += amount;
-        updatedcurrMonthExpense += amount;
-      } else if (action === "ON_REMOVE_EXPENSE") {
-        const currYear = new Date().getFullYear();
-
-        // if(currYear !== )
-        const currMonth = new Date().getMonth();
-      }
-
-      if (action === "ON_ADD_EXPENSE") {
-        const { amount } = data;
-
-        const promise = databases.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_CATEGORY_ID,
-          categoryId,
-          {
-            currYearExpense: currYearExpense + amount,
-            currMonthExpense: currMonthExpense + amount,
-          }
-        );
-
-        promise.then(
-          () => {},
-          (error) => console.log(error)
-        );
-      } else if (action === "ON_EDIT_EXPENSE") {
-        const { oldAmount, newAmount } = data;
-
-        const promise = databases.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_CATEGORY_ID,
-          categoryId,
-          {
-            currMonthExpense: currMonthExpense - oldAmount + newAmount,
-            currYearExpense: currYearExpense - oldAmount + newAmount,
-          }
-        );
-
-        promise.then(
-          (updatedDocument) => {},
-          (error) => console.log(error)
-        );
-      } else if (action === "ON_REMOVE_EXPENSE") {
-        const { amount } = data;
-        const currYear = new Date().getFullYear();
-        const currMonth = new Date().getMonth();
-
-        if (currYear !== categoryDocument.year) {
-          return;
-        }
-
-        let updatedcurrYearExpense = currYearExpense - amount;
-        let updatedcurrMonthExpense = currMonthExpense;
-
-        if (currMonth === categoryDocument.month) {
-          updatedcurrMonthExpense += amount;
-        }
-
-        const promise = databases.updateDocument(
-          import.meta.env.VITE_DB_ID,
-          import.meta.env.VITE_DB_CATEGORY_ID,
-          categoryId,
-          {
-            currMonthExpense: updatedcurrMonthExpense,
-            currYearExpense: updatedcurrYearExpense,
-          }
-        );
-      }
-    });
-  };
-}
-
-export function updateUserTotalExpense(action, data) {}
