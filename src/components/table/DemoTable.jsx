@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../../assets/MOCK_DATA.json";
 import {
   Checkbox,
@@ -18,8 +18,9 @@ import {
 } from "@chakra-ui/react";
 import { MoreVertical } from "lucide-react";
 import { useSelector } from "react-redux";
+import EditExpenseButton from "./EditExpenseButton";
 
-function DropdownActions({ expenseId, expenseName }) {
+function DropdownActions({ expense }) {
   return (
     <Menu>
       <MenuButton
@@ -31,9 +32,8 @@ function DropdownActions({ expenseId, expenseName }) {
         _active={{ bgColor: "lightgray" }}
       />
       <MenuList bgColor={"lightgray"}>
-        <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.600" }}>
-          Edit
-        </MenuItem>
+        <EditExpenseButton expense={expense} />
+
         <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.600" }}>
           Move
         </MenuItem>
@@ -47,26 +47,46 @@ function DropdownActions({ expenseId, expenseName }) {
 
 function DemoTable() {
   const data = useSelector((state) => state.data.expenses);
+
+  const [expenses, setExpenses] = useState(data);
+
   console.log(data);
 
   return (
-    <TableContainer w={"90%"} mx={"auto"}>
+    <TableContainer
+      w={"90%"}
+      mx={"auto"}
+      bgColor={"lightgray"}
+      p={"2rem"}
+      rounded={"lg"}
+      mb={"2rem"}
+    >
       <Table>
         <Thead>
           <Tr>
             {/* <Th>
               <Checkbox>Select</Checkbox>
             </Th> */}
-            <Th>EXPENSE NAME</Th>
-            <Th>AMOUNT (Rs.)</Th>
-            <Th display={{ base: "none", md: "table-cell" }}>CATEGORY</Th>
-            <Th display={{ base: "none", md: "table-cell" }}>DATE</Th>
-            <Th>Actions</Th>
+            <Th textColor={"blue.500"}>EXPENSE NAME</Th>
+            <Th textColor={"blue.500"}>AMOUNT (Rs.)</Th>
+            <Th
+              textColor={"blue.500"}
+              display={{ base: "none", md: "table-cell" }}
+            >
+              CATEGORY
+            </Th>
+            <Th
+              textColor={"blue.500"}
+              display={{ base: "none", md: "table-cell" }}
+            >
+              DATE
+            </Th>
+            <Th textColor={"blue.500"}>Actions</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {data.map((expense) => (
-            <Tr key={expense.$id}>
+          {expenses.map((expense) => (
+            <Tr key={expense.$id} _hover={{ bgColor: "dark" }}>
               {/* <Td>
                 <Checkbox colorScheme="teal" />
               </Td> */}
@@ -79,10 +99,7 @@ function DemoTable() {
                 {expense.date}
               </Td>
               <Td>
-                <DropdownActions
-                  expenseId={expense.$id}
-                  expenseName={expense.name}
-                />
+                <DropdownActions expense={expense} />
               </Td>
             </Tr>
           ))}
