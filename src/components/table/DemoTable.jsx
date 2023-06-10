@@ -19,6 +19,7 @@ import {
 import { MoreVertical } from "lucide-react";
 import { useSelector } from "react-redux";
 import EditExpenseButton from "./EditExpenseButton";
+import RemoveExpenseButton from "./RemoveExpenseButton";
 
 function DropdownActions({ expense }) {
   return (
@@ -33,13 +34,7 @@ function DropdownActions({ expense }) {
       />
       <MenuList bgColor={"lightgray"}>
         <EditExpenseButton expense={expense} />
-
-        <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.600" }}>
-          Move
-        </MenuItem>
-        <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.600" }}>
-          Delete
-        </MenuItem>
+        <RemoveExpenseButton expense={expense} />
       </MenuList>
     </Menu>
   );

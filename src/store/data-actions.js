@@ -311,7 +311,7 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
 /* To delete an expense (also fetches the updated data into the state) */
 export function removeExpense(expenseId, expenseDetails) {
   return function (dispatch) {
-    const { year, month } = expenseDetails;
+    const { year, month, categoryId, userId, amount } = expenseDetails;
 
     // deleting an expense document
     const promise = databases.deleteDocument(
@@ -348,31 +348,22 @@ export function removeExpense(expenseId, expenseDetails) {
             .then(
               (updatedCategoryDocument) => {
                 console.log(updatedCategoryDocument);
-                let userId = null;
 
-                // getting the current logged in user's userId
-                account.get().then(
-                  (userObject) => {
-                    userId = userObject.userId;
-
-                    // updating the user document's totalExpense
-                    functions
-                      .createExecution(
-                        import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
-                        JSON.stringify({
-                          userId: userId,
-                        }),
-                        true
-                      )
-                      .then(
-                        (updatedUserDocument) => {
-                          setTimeout(() => dispatch(fetchData(userId)), 3000);
-                        },
-                        (error) => console.log(error)
-                      );
-                  },
-                  (error) => console.log(error)
-                );
+                // removing expense from user's total Expense
+                functions
+                  .createExecution(
+                    import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
+                    JSON.stringify({
+                      userId: userId,
+                    }),
+                    true
+                  )
+                  .then(
+                    (updatedUserDocument) => {
+                      setTimeout(() => dispatch(fetchData(userId)), 3000);
+                    },
+                    (error) => console.log(error)
+                  );
               },
               (error) => console.log(error)
             );
