@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   categories: [],
   expenses: [],
+  userCurrYearExpense: null,
+  userCurrMonthExpense: null,
 };
 
 /* State to provide and set the updated categories and expenses data to all the app components */
@@ -15,6 +17,8 @@ const dataSlice = createSlice({
     setData(state, action) {
       state.categories = action.payload.categories;
       state.expenses = action.payload.expenses;
+      state.userCurrYearExpense = action.payload.userDocument.currYearExpense;
+      state.userCurrMonthExpense = action.payload.userDocument.currMonthExpense;
     },
   },
 });

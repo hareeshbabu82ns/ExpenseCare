@@ -1,4 +1,4 @@
-import { ID } from "appwrite";
+import { ID, Query } from "appwrite";
 import { account, databases, functions } from "../appwrite/appwrite-config";
 import { dataActions } from "./data-slice";
 
@@ -11,22 +11,57 @@ const actions = {
 /* To fetch data after any changes in the database or to fetch data into state on login*/
 export function fetchData(userId) {
   return function (dispatch) {
-    const promise = databases.getDocument(
-      import.meta.env.VITE_DB_ID,
-      import.meta.env.VITE_DB_USER_ID,
-      userId
-    );
+    // const promise = databases.getDocument(
+    //   import.meta.env.VITE_DB_ID,
+    //   import.meta.env.VITE_DB_USER_ID,
+    //   userId
+    // );
 
-    // extract current month
-    // category  ->  monthAmount -> compute data
+    // // extract current month
+    // // category  ->  monthAmount -> compute data
 
-    promise.then(
-      (userDocument) => {
-        console.log(userDocument);
-        dispatch(dataActions.setData(userDocument));
-      },
-      (error) => console.log(error)
-    );
+    // promise.then(
+    //   (userDocument) => {
+    //     console.log(userDocument);
+    //     dispatch(dataActions.setData(userDocument));
+    //   },
+    //   (error) => console.log(error)
+    // );
+
+    databases
+      .listDocuments(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_DB_CATEGORY_ID,
+        [Query.equal("userId", userId)]
+      )
+      .then((categories) => {
+        console.log(categories);
+        databases
+          .listDocuments(
+            import.meta.env.VITE_DB_ID,
+            import.meta.env.VITE_DB_EXPENSE_ID,
+            [Query.equal("userId", userId)]
+          )
+          .then((expenses) => {
+            console.log(expenses);
+
+            databases
+              .getDocument(
+                import.meta.env.VITE_DB_ID,
+                import.meta.env.VITE_DB_USER_ID,
+                userId
+              )
+              .then((userDocument) => {
+                dispatch(
+                  dataActions.setData({
+                    expenses: expenses.documents,
+                    categories: categories.documents,
+                    userDocument,
+                  })
+                );
+              });
+          });
+      });
   };
 }
 
@@ -58,13 +93,14 @@ export function addCategory(userId, categoryName) {
           {
             name: categoryName,
             user: userId,
+            userId: userId,
           }
         );
 
         promise.then(
           (updatedCategoryDocument) => {
             console.log(updatedCategoryDocument);
-            dispatch(fetchData(userId));
+            setTimeout(() => dispatch(fetchData(userId)), 3000);
           },
           (error) => console.log(error)
         );
@@ -90,7 +126,7 @@ export function editCategoryName(categoryId, newCategoryName) {
       (updatedCategoryDocument) => {
         console.log(updatedCategoryDocument);
         const userId = updatedCategoryDocument.user.$id;
-        dispatch(fetchData(userId));
+        setTimeout(() => dispatch(fetchData(userId)), 3000);
       },
       (error) => console.log(error)
     );
@@ -120,7 +156,7 @@ export function deleteCategory(userId, categoryId) {
           )
           .then(
             (updatedUserDocument) => {
-              dispatch(fetchData(userId));
+              setTimeout(() => dispatch(fetchData(userId)), 3000);
             },
             (error) => console.log(error)
           );
@@ -161,6 +197,8 @@ export function addExpense(userId, categoryId, expenseDetails) {
         month,
         category: categoryId,
         user: userId,
+        categoryId,
+        userId,
       }
     );
 
@@ -195,7 +233,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
                 )
                 .then(
                   (updatedUserDocument) => {
-                    dispatch(fetchData(userId));
+                    setTimeout(() => dispatch(fetchData(userId)), 3000);
                   },
                   (error) => console.log(error)
                 );
@@ -265,7 +303,7 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
                   )
                   .then(
                     (updatedUserDocument) => {
-                      dispatch(fetchData(userId));
+                      setTimeout(() => dispatch(fetchData(userId)), 3000);
                     },
                     (error) => console.log(error)
                   );
@@ -337,7 +375,7 @@ export function removeExpense(expenseId, expenseDetails) {
                       )
                       .then(
                         (updatedUserDocument) => {
-                          dispatch(fetchData(userId));
+                          setTimeout(() => dispatch(fetchData(userId)), 3000);
                         },
                         (error) => console.log(error)
                       );
