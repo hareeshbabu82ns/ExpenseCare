@@ -35,8 +35,11 @@ import {
 import { DeleteIcon } from "@chakra-ui/icons";
 import { MoreHorizontalIcon } from "lucide-react";
 import DropDownExpenseTable from "./DropDownExpenseTable";
+import { useSelector } from "react-redux";
 
 function DataTable() {
+  const data = useSelector((state) => state.data.expenses);
+
   const columns = [
     // {
     //   id: 1,
@@ -46,7 +49,7 @@ function DataTable() {
     {
       id: 2,
       Header: "Expense Name",
-      accessorKey: "expenseName",
+      accessorKey: "name",
     },
     {
       id: 3,
@@ -77,6 +80,7 @@ function DataTable() {
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
+    getSubRows: true,
     state: { columnVisibility },
   });
 

@@ -9,18 +9,19 @@ import {
 import { Table, Tbody, Td, Th, Thead, Tr, chakra } from "@chakra-ui/react";
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import { createColumnHelper } from "@tanstack/react-table";
+import { useSelector } from "react-redux";
 
 function ExpenseTable() {
   const columns = useMemo(() => [
-    {
-      id: 1,
-      Header: "id",
-      accessorKey: "id",
-    },
+    // {
+    //   id: 1,
+    //   Header: "id",
+    //   accessorKey: "id",
+    // },
     {
       id: 2,
       Header: "Expense Name",
-      accessorKey: "expenseName",
+      accessorKey: "name",
     },
     {
       id: 3,
@@ -40,6 +41,7 @@ function ExpenseTable() {
   ]);
 
   const [sorting, setSorting] = useState();
+  const data = useSelector((state) => state.data.expenses);
 
   const table = useReactTable({
     columns,

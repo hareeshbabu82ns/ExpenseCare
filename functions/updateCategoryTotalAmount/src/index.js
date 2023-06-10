@@ -50,7 +50,7 @@ module.exports = async function (req, res) {
           currYearExpense,
           currMonthExpense,
         ];
-        const { amount } = data;
+        const amount = parseInt(data.amount);
 
         if (action === "ON_ADD_EXPENSE") {
           updatedCurrYearExpense += amount;
