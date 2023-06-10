@@ -30,12 +30,16 @@ export const categories = [
 // export const categories = [];
 
 function Dashboard() {
-  const categories = useSelector((state) => state.data.categories);
+  const data = useSelector((state) => state.data);
 
+  const { categories, userCurrYearExpense, userCurrMonthExpense } = data;
   return (
     <Flex flexDir={"column"} gap={2} w={"100vw"} justifyContent={"center"}>
       <Header />
-      <TotalExpenseCard />
+      <TotalExpenseCard
+        userCurrYearExpense={userCurrYearExpense}
+        userCurrMonthExpense={userCurrMonthExpense}
+      />
       {/* <Container w={"100%"} mx={"auto"}> */}
       <Flex
         flexWrap={"wrap"}
@@ -49,7 +53,7 @@ function Dashboard() {
           <ExpenseCard
             key={category.$id}
             name={category.name}
-            totalAmount={category.totalAmount}
+            currMonthExpense={category.currMonthExpense}
             categoryId={category.$id}
           />
         ))}

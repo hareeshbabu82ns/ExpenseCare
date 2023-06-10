@@ -2,7 +2,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function TotalExpenseCard() {
+function TotalExpenseCard({ userCurrYearExpense, userCurrMonthExpense }) {
   return (
     <Flex
       bgColor={"lightgray"}
@@ -20,8 +20,8 @@ function TotalExpenseCard() {
       flexDir={{ base: "column", md: "row" }}
       gap={{ base: "10px" }}
     >
-      <Text>Current Year: Rs. 150000</Text>
-      <Text>Current Month: Rs. 50000</Text>
+      <Text>Current Year: Rs. {userCurrYearExpense}</Text>
+      <Text>Current Month: Rs. {userCurrMonthExpense}</Text>
       <Button as={Link} to="/charts" rounded={"lg"} colorScheme="pink">
         Current Month's Charts
       </Button>

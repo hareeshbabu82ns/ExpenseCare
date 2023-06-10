@@ -5,7 +5,7 @@ import DeleteExpenseButton from "../utility/DeleteExpenseButton";
 import EditExpenseNameButton from "../utility/EditExpenseNameButton";
 import { useSelector } from "react-redux";
 
-function ExpenseCard({ name, totalAmount, categoryId }) {
+function ExpenseCard({ name, currMonthExpense, categoryId }) {
   const [hover, setHover] = useState(false);
 
   return (
@@ -37,7 +37,7 @@ function ExpenseCard({ name, totalAmount, categoryId }) {
           <Text>{name}</Text>
         </CardHeader>
         <CardBody fontSize={"xl"} fontWeight={"semibold"}>
-          Rs. {totalAmount}
+          Rs. {currMonthExpense}
         </CardBody>
         <CardFooter>
           <AddExpenseButton
