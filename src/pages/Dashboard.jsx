@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Header from "../components/Header";
 import {
+  Button,
   Card,
   Container,
   Flex,
@@ -14,10 +15,11 @@ import { AddIcon } from "@chakra-ui/icons";
 import TotalExpenseCard from "../components/dashboard/TotalExpenseCard";
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import AddCategoryButton from "../components/dashboard/AddCategoryButton";
-import { Box } from "lucide-react";
+import { Box, RefreshCcw } from "lucide-react";
 import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../store/data-actions";
 
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },
@@ -31,6 +33,15 @@ export const categories = [
 
 function Dashboard() {
   const data = useSelector((state) => state.data);
+  const userId = useSelector((state) => state.auth.userId);
+  const dispatch = useDispatch();
+
+  const [refresh, setRefresh] = useState(false);
+  function refreshHandler() {
+    setRefresh(true);
+    dispatch(fetchData(userId));
+    setTimeout(() => setRefresh(false), 5000);
+  }
 
   const { categories, userCurrYearExpense, userCurrMonthExpense } = data;
   return (
@@ -59,6 +70,19 @@ function Dashboard() {
         ))}
       </Flex>
       {/* </Container> */}
+      <Button
+        position={"fixed"}
+        bottom={"1rem"}
+        left={"1rem"}
+        colorScheme="teal"
+        h={"4rem"}
+        w={"4rem"}
+        rounded={"full"}
+        onClick={refreshHandler}
+        isLoading={refresh}
+      >
+        <RefreshCcw />
+      </Button>
       <AddCategoryButton />
     </Flex>
   );

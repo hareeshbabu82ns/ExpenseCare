@@ -1,3 +1,4 @@
+import { ArrowForwardIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import { Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -22,7 +23,13 @@ function TotalExpenseCard({ userCurrYearExpense, userCurrMonthExpense }) {
     >
       <Text>Current Year: Rs. {userCurrYearExpense}</Text>
       <Text>Current Month: Rs. {userCurrMonthExpense}</Text>
-      <Button as={Link} to="/charts" rounded={"lg"} colorScheme="pink">
+      <Button
+        as={Link}
+        rightIcon={<ArrowForwardIcon />}
+        to="/charts"
+        rounded={"lg"}
+        colorScheme="pink"
+      >
         Current Month's Charts
       </Button>
     </Flex>

@@ -8,5 +8,5 @@ body {
   text-decoration: underline;
   text-underline-offset: 8px;
   text-decoration-color: teal;
-  text-decoration-style: double;
+  text-decoration-thickness: 6px;
 }

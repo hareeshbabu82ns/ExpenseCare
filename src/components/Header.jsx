@@ -89,9 +89,11 @@ function Header() {
             icon={<HamburgerIcon />}
             color={"text"}
             bgColor={"teal.500"}
+            _hover={{ bgColor: "teal.400" }}
+            _active={{ bgColor: "teal.400" }}
           />
           <MenuList bgColor={"lightgray"}>
-            <MenuItem bgColor={"lightgray"}>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
               <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
@@ -101,7 +103,7 @@ function Header() {
                 Dashboard
               </NavLink>
             </MenuItem>
-            <MenuItem bgColor={"lightgray"}>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
               <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
@@ -111,7 +113,7 @@ function Header() {
                 All Expenses
               </NavLink>
             </MenuItem>
-            <MenuItem bgColor={"lightgray"}>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
               <NavLink
                 as={RouteLink}
                 _hover={{ textDecor: "none", fontWeight: "medium" }}
@@ -121,8 +123,12 @@ function Header() {
                 Charts
               </NavLink>
             </MenuItem>
-            <MenuItem bgColor={"lightgray"}>Account</MenuItem>
-            <MenuItem bgColor={"lightgray"}>Logout</MenuItem>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
+              Account
+            </MenuItem>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
+              Logout
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>
