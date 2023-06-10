@@ -1,6 +1,7 @@
 import { ID, Query } from "appwrite";
 import { account, databases, functions } from "../appwrite/appwrite-config";
 import { dataActions } from "./data-slice";
+import { filterActions } from "./filter-slice";
 
 const actions = {
   ON_ADD_EXPENSE: "ON_ADD_EXPENSE",
@@ -11,23 +12,6 @@ const actions = {
 /* To fetch data after any changes in the database or to fetch data into state on login*/
 export function fetchData(userId) {
   return function (dispatch) {
-    // const promise = databases.getDocument(
-    //   import.meta.env.VITE_DB_ID,
-    //   import.meta.env.VITE_DB_USER_ID,
-    //   userId
-    // );
-
-    // // extract current month
-    // // category  ->  monthAmount -> compute data
-
-    // promise.then(
-    //   (userDocument) => {
-    //     console.log(userDocument);
-    //     dispatch(dataActions.setData(userDocument));
-    //   },
-    //   (error) => console.log(error)
-    // );
-
     databases
       .listDocuments(
         import.meta.env.VITE_DB_ID,
@@ -57,6 +41,11 @@ export function fetchData(userId) {
                     expenses: expenses.documents,
                     categories: categories.documents,
                     userDocument,
+                  })
+                );
+                dispatch(
+                  filterActions.setFilteredExpenses({
+                    documents: expenses.documents,
                   })
                 );
               });
@@ -176,6 +165,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
     let date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth();
+    const time = date.getTime();
 
     date = date.toLocaleDateString(undefined, {
       day: "numeric",
@@ -199,6 +189,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
         user: userId,
         categoryId,
         userId,
+        time: time,
       }
     );
 

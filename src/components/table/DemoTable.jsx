@@ -45,13 +45,7 @@ function DropdownActions({ expense }) {
   );
 }
 
-function DemoTable() {
-  const data = useSelector((state) => state.data.expenses);
-
-  const [expenses, setExpenses] = useState(data);
-
-  console.log(data);
-
+function DemoTable({ filteredExpenses }) {
   return (
     <TableContainer
       w={"90%"}
@@ -85,7 +79,7 @@ function DemoTable() {
           </Tr>
         </Thead>
         <Tbody>
-          {expenses.map((expense) => (
+          {filteredExpenses.map((expense) => (
             <Tr key={expense.$id} _hover={{ bgColor: "dark" }}>
               {/* <Td>
                 <Checkbox colorScheme="teal" />

@@ -15,98 +15,123 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { categories } from "../../pages/Dashboard";
 import { useDispatch, useSelector } from "react-redux";
-import { filterActions } from "../../store/filter-slice";
+import {
+  filterActions,
+  updateFilteredExpenses,
+} from "../../store/filter-slice";
 import { SlidersHorizontal } from "lucide-react";
-
-const priceRange = [
-  "0 - 100",
-  "100 - 500",
-  "500 - 1000",
-  "1000 - 10000",
-  "Above 10000",
-];
+import { fetchData } from "../../store/data-actions";
+import { account } from "../../appwrite/appwrite-config";
 
 export const yearRange = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
 
 export const months = [
   {
     option: "January",
-    value: 1,
+    value: 0,
   },
   {
     option: "February",
-    value: 2,
+    value: 1,
   },
   {
     option: "March",
-    value: 3,
+    value: 2,
   },
   {
     option: "April",
-    value: 4,
+    value: 3,
   },
   {
     option: "May",
-    value: 5,
+    value: 4,
   },
   {
     option: "June",
-    value: 6,
+    value: 5,
   },
   {
     option: "July",
-    value: 7,
+    value: 6,
   },
   {
     option: "August",
-    value: 8,
+    value: 7,
   },
   {
     option: "September",
-    value: 9,
+    value: 8,
   },
   {
     option: "October",
-    value: 10,
+    value: 9,
   },
   {
     option: "November",
-    value: 11,
+    value: 10,
   },
   {
     option: "December",
-    value: 12,
+    value: 11,
   },
 ];
 
-const initialState = {
-  category: null,
-  price: null,
-  year: null,
-  month: null,
-};
+const sortBy = [
+  { value: "amountAscending", option: "Amount (High to Low)" },
+  { value: "amountDescending", option: "Amount (Low to High)" },
+  { value: "dateAscending", option: "Date (Latest First)" },
+  { value: "dateDescending", option: "Date (Oldest first)" },
+];
 
-function Filters() {
+function Filters({ setFilteredExpenses }) {
+  const filters = useSelector((state) => state.filter.filterInputs);
   const dispatch = useDispatch();
-  const searchRef = useRef("");
   const [filtersVisibility, setFiltersVisibility] = useState(false);
 
-  const [filterInputs, setFilterInputs] = useState(initialState);
+  const [filterInputs, setFilterInputs] = useState(filters);
+  const [searchInput, setSearchInput] = useState("");
 
   const categories = useSelector((state) => state.data.categories);
 
   function searchHandler() {
-    console.log(searchRef.current.value);
+    setFilteredExpenses((expenses) =>
+      expenses.filter((expense) => expense.name.includes(searchInput))
+    );
   }
 
-  console.log(filterInputs.price);
+  function filterHandler() {
+    dispatch(filterActions.setFilterInputs(filterInputs));
+    dispatch(updateFilteredExpenses(filterInputs));
+  }
+
+  function resetHandler() {
+    setSearchInput("");
+    dispatch(filterActions.resetFilterInputs());
+    account.get().then(
+      (user) => {
+        dispatch(fetchData(user.$id));
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  function showAllColumnsHandler() {}
+
+  useEffect(() => {
+    setFilterInputs(filters);
+  }, [filters]);
 
   return (
     <>
-      <FormControl my={"2rem"} maxW={"90%"} mx={"auto"}>
+      <FormControl
+        mt={{ base: "1rem" }}
+        my={{ md: "2rem" }}
+        maxW={"90%"}
+        mx={"auto"}
+      >
         <Flex justifyContent={"center"}>
           <Button
             my={"1rem"}
@@ -131,21 +156,6 @@ function Filters() {
           bg={"dark"}
           alignItems={"center"}
         >
-          {/* Category Select */}
-          {/* <Select
-            placeholder="Category"
-            w={"225px"}
-            variant={"outline"}
-            onChange={(e) =>
-              dispatch(filterActions.setCategory(e.target.value))
-            }
-          >
-            {categories.map((category) => (
-              <option key={category.name} value={category.name}>
-                {category.name}
-              </option>
-            ))}
-          </Select> */}
           <Menu>
             <MenuButton
               bgColor={"lightgray"}
@@ -159,42 +169,32 @@ function Filters() {
               rightIcon={<ChevronDownIcon />}
               w={"225px"}
             >
-              {filterInputs.category || "Category"}
+              {filterInputs.categoryName || "Category"}
             </MenuButton>
             <MenuList bgColor={"lightgray"}>
               {categories.map((category) => (
                 <MenuItem
                   _hover={{ bgColor: "blue.600" }}
-                  key={category.name}
+                  key={category.$id}
+                  data-key={category.$id}
                   value={category.name}
                   bgColor={"lightgray"}
-                  onClick={(e) =>
+                  onClick={(e) => {
+                    console.log(e.target.getAttribute("data-key"));
+
                     setFilterInputs((prev) => ({
                       ...prev,
-                      category: e.target.value,
-                    }))
-                  }
+                      categoryId: e.target.getAttribute("data-key"),
+                      categoryName: e.target.value,
+                    }));
+                  }}
                 >
                   {category.name}
                 </MenuItem>
               ))}
             </MenuList>
           </Menu>
-
-          {/* Price Range Select */}
-          {/* <Select
-            placeholder="Price Range"
-            w={"225px"}
-            variant={"outline"}
-            onChange={(e) => dispatch(filterActions.setPrice(e.target.value))}
-          >
-            {priceRange.map((price) => (
-              <option key={price.value} value={price.value}>
-                {price.option}
-              </option>
-            ))}
-          </Select> */}
-          <Menu>
+          {/* <Menu>
             <MenuButton
               bgColor={"lightgray"}
               _hover={{
@@ -228,28 +228,7 @@ function Filters() {
                 </MenuItem>
               ))}
             </MenuList>
-          </Menu>
-
-          {/* Year Select */}
-          {/* <Select
-            placeholder="Year"
-            w={"225px"}
-            bgColor={"lightgray"}
-            border={"none"}
-            _hover={{
-              border: "solid",
-              borderWidth: "1px",
-              borderColor: "text",
-            }}
-            _active={{ bgColor: "lightgray" }}
-            onChange={(e) => dispatch(filterActions.setYear(e.target.value))}
-          >
-            {yearRange.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </Select> */}
+          </Menu> */}
 
           <Menu>
             <MenuButton
@@ -286,21 +265,6 @@ function Filters() {
               ))}
             </MenuList>
           </Menu>
-
-          {/* Month Select */}
-          {/* <Select
-            placeholder="Month"
-            w={"225px"}
-            variant={"outline"}
-            onChange={(e) => dispatch(filterActions.setMonth(e.target.value))}
-          >
-            {months.map((month) => (
-              <option key={month.value} value={month.value}>
-                {month.option}
-              </option>
-            ))}
-          </Select> */}
-
           <Menu>
             <MenuButton
               bgColor={"lightgray"}
@@ -315,19 +279,21 @@ function Filters() {
               // w={"max-content"}
               w={"225px"}
             >
-              {filterInputs.month || "Month"}
+              {filterInputs.monthName || "Month"}
             </MenuButton>
             <MenuList bgColor={"lightgray"}>
               {months.map((month) => (
                 <MenuItem
                   _hover={{ bgColor: "blue.600" }}
-                  key={month.option}
+                  key={month.value}
+                  data-key={month.value}
                   value={month.option}
                   bgColor={"lightgray"}
                   onClick={(e) =>
                     setFilterInputs((prev) => ({
                       ...prev,
-                      month: e.target.value,
+                      month: e.target.getAttribute("data-key"),
+                      monthName: e.target.value,
                     }))
                   }
                 >
@@ -336,20 +302,83 @@ function Filters() {
               ))}
             </MenuList>
           </Menu>
+          <Menu>
+            <MenuButton
+              bgColor={"lightgray"}
+              _hover={{
+                border: "solid",
+                borderWidth: "1px",
+                borderColor: "text",
+              }}
+              _active={{ bgColor: "lightgray" }}
+              as={Button}
+              rightIcon={<ChevronDownIcon />}
+              // w={"max-content"}
+              w={"225px"}
+            >
+              {filterInputs.sortByOption || "Sort By"}
+            </MenuButton>
+            <MenuList bgColor={"lightgray"}>
+              {sortBy.map((sort) => (
+                <MenuItem
+                  _hover={{ bgColor: "blue.600" }}
+                  key={sort.value}
+                  data-key={sort.value}
+                  value={sort.option}
+                  bgColor={"lightgray"}
+                  onClick={(e) =>
+                    setFilterInputs((prev) => ({
+                      ...prev,
+                      sortBy: e.target.getAttribute("data-key"),
+                      sortByOption: e.target.value,
+                    }))
+                  }
+                >
+                  {sort.option}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
 
-          <Button colorScheme="pink" maxW={"225px"} px={"8%"}>
+          <Button
+            colorScheme="pink"
+            maxW={"225px"}
+            px={"8%"}
+            onClick={filterHandler}
+          >
             Filter
+          </Button>
+          <Button
+            display={{ md: "none" }}
+            bgColor={"lightgray"}
+            _hover={{
+              border: "solid",
+              borderWidth: "1px",
+              borderColor: "text",
+            }}
+            _active={{ bgColor: "lightgray" }}
+            onClick={resetHandler}
+          >
+            Reset
           </Button>
         </Flex>
       </FormControl>
 
-      <Flex w={"90%"} mx={"auto"} my={"2rem"} justify={"space-between"}>
+      <Flex
+        flexDir={{ base: "column", md: "row" }}
+        w={"90%"}
+        mx={"auto"}
+        mb={"2rem"}
+        justify={{ base: "center", md: "space-between" }}
+        alignItems={{ base: "center" }}
+        gap={{ base: "4" }}
+      >
         {/* Search Input and Button */}
-        <Flex>
+        <Flex w={{ base: "90vw" }}>
           <Input
             placeholder="Search Expense Name"
-            _placeholder={{ color: "whiteAlpha.700" }}
-            w={{ base: "150px", md: "250px" }}
+            _placeholder={{ color: "whiteAlpha.700", textAlign: "center" }}
+            w={{ base: "100%", md: "250px" }}
             rounded={"none"}
             bgColor={"lightgray"}
             border={"none"}
@@ -359,8 +388,8 @@ function Filters() {
               borderColor: "text",
             }}
             _active={{ bgColor: "lightgray" }}
-            defaultValue=""
-            ref={searchRef}
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
           <IconButton
             colorScheme="pink"
@@ -377,8 +406,9 @@ function Filters() {
 
           {/* Sort by Select Menu */}
 
-          <Menu>
+          {/* <Menu>
             <MenuButton
+              display={{ base: "flex", md: "none" }}
               bgColor={"lightgray"}
               _hover={{
                 border: "solid",
@@ -399,7 +429,35 @@ function Filters() {
                 Date
               </MenuItem>
             </MenuList>
-          </Menu>
+          </Menu> */}
+
+          <Button
+            display={{ base: "flex", md: "none" }}
+            bgColor={"lightgray"}
+            _hover={{
+              border: "solid",
+              borderWidth: "1px",
+              borderColor: "text",
+            }}
+            _active={{ bgColor: "lightgray" }}
+            onClick={showAllColumnsHandler}
+            minW={{ base: "90vw" }}
+          >
+            Show All Columns
+          </Button>
+          <Button
+            display={{ base: "none", md: "flex" }}
+            bgColor={"lightgray"}
+            _hover={{
+              border: "solid",
+              borderWidth: "1px",
+              borderColor: "text",
+            }}
+            _active={{ bgColor: "lightgray" }}
+            onClick={resetHandler}
+          >
+            Reset Filters
+          </Button>
         </Flex>
       </Flex>
     </>
