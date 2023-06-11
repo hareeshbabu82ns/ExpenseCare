@@ -50,18 +50,8 @@ function Signup() {
           position: "top-right",
         });
 
-        const loginPromise = account.createEmailSession(
-          values.email,
-          values.password
-        );
-        loginPromise.then(
-          (response) => {
-            console.log(response);
-            createUserDocument(user.$id, user.email);
-            navigate("/dashboard");
-          },
-          (error) => console.log(error)
-        );
+        createUserDocument(user.$id, user.email);
+        navigate("/dashboard");
       },
       (error) => console.log(error)
     );

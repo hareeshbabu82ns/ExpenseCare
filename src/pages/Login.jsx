@@ -44,8 +44,9 @@ function Login() {
     promise.then(
       (response) => {
         // verifyEmail();
-        dispatch(authActions.setUserId(response.userId));
-        dispatch(authActions.setUserEmail(response.providerUid));
+        const { userId, $id: sessionId, providerUid: userEmail } = response;
+        console.log(response);
+        dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
         dispatch(fetchData(response.userId));
         navigate("/dashboard");
       },

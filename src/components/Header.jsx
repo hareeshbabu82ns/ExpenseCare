@@ -11,11 +11,22 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
-import { NavLink, Link as RouteLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, Link as RouteLink, useNavigate } from "react-router-dom";
+import { logout } from "../store/auth-slice";
 
 const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
 
 function Header() {
+  const sessionId = useSelector((state) => state.auth.sessionId);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function logoutHandler() {
+    dispatch(logout(sessionId));
+    navigate("/login");
+  }
+
   return (
     <Flex
       py={2}
@@ -78,7 +89,9 @@ function Header() {
           <MenuList bgColor={"lightgray"}>
             <MenuItem bgColor={"lightgray"}>Profile</MenuItem>
             <MenuItem bgColor={"lightgray"}>Help</MenuItem>
-            <MenuItem bgColor={"lightgray"}>Logout</MenuItem>
+            <MenuItem bgColor={"lightgray"} onClick={logoutHandler}>
+              Logout
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>
@@ -127,7 +140,11 @@ function Header() {
             <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
               Account
             </MenuItem>
-            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
+            <MenuItem
+              bgColor={"lightgray"}
+              _hover={{ bgColor: "teal.500" }}
+              onClick={logoutHandler}
+            >
               Logout
             </MenuItem>
           </MenuList>
