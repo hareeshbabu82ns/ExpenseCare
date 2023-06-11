@@ -1,8 +1,34 @@
-import { Button, Flex, FormControl, Select } from "@chakra-ui/react";
-import React from "react";
-import { yearRange, months } from "../table/Filters";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { chartDataActions } from "../../store/chart-data-slice";
+import {
+  Button,
+  Flex,
+  FormControl,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+import { months, yearRange } from "../table/Filters";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 function ExpenseChartFilter() {
+  const filterInputs = useSelector((state) => state.chartData.filterInputs);
+
+  const [chartFilterInputs, setChartFilterInputs] = useState(filterInputs);
+
+  const dispatch = useDispatch();
+
+  function showChartsHandler() {
+    dispatch(chartDataActions.setChartInputs(chartFilterInputs));
+    dispatch(updateChartData(chartFilterInputs));
+  }
+
+  useEffect(() => {
+    setChartFilterInputs(filterInputs);
+  }, [filterInputs]);
+
   return (
     <>
       <FormControl>
@@ -23,23 +49,84 @@ function ExpenseChartFilter() {
             w={{ base: "100%", md: "600px" }}
             justifyContent={{ base: "space-between", md: "space-evenly" }}
           >
-            <Select placeholder="Year" w={"225px"} variant={"outline"}>
-              {yearRange.map((year) => (
-                <option key={year} value={year}>
-                  {year}
-                </option>
-              ))}
-            </Select>
-            <Select placeholder="Month" w={"225px"} variant={"outline"}>
-              {months.map((month) => (
-                <option key={month.value} value={month.value}>
-                  {month.option}
-                </option>
-              ))}
-            </Select>
+            <Menu>
+              <MenuButton
+                bgColor={"lightgray"}
+                _hover={{
+                  border: "solid",
+                  borderWidth: "1px",
+                  borderColor: "text",
+                }}
+                _active={{ bgColor: "lightgray" }}
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+                w={"225px"}
+              >
+                {chartFilterInputs?.year || "Year"}
+              </MenuButton>
+              <MenuList bgColor={"lightgray"}>
+                {yearRange.map((year) => (
+                  <MenuItem
+                    _hover={{ bgColor: "blue.600" }}
+                    key={year}
+                    value={year}
+                    bgColor={"lightgray"}
+                    onClick={(e) =>
+                      setChartFilterInputs((prev) => ({
+                        ...prev,
+                        year: e.target.value,
+                      }))
+                    }
+                  >
+                    {year}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
+
+            <Menu>
+              <MenuButton
+                bgColor={"lightgray"}
+                _hover={{
+                  border: "solid",
+                  borderWidth: "1px",
+                  borderColor: "text",
+                }}
+                _active={{ bgColor: "lightgray" }}
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+                w={"225px"}
+              >
+                {chartFilterInputs?.monthName || "Month"}
+              </MenuButton>
+              <MenuList bgColor={"lightgray"}>
+                {months.map((month) => (
+                  <MenuItem
+                    _hover={{ bgColor: "blue.600" }}
+                    key={month.value}
+                    value={month.option}
+                    data-key={month.value}
+                    bgColor={"lightgray"}
+                    onClick={(e) =>
+                      setChartFilterInputs((prev) => ({
+                        ...prev,
+                        month: e.target.getAttribute("data-key"),
+                        monthName: e.target.value,
+                      }))
+                    }
+                  >
+                    {month.option}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
           </Flex>
 
-          <Button w={{ base: "80vw", md: "300px" }} colorScheme="pink">
+          <Button
+            w={{ base: "80vw", md: "300px" }}
+            colorScheme="pink"
+            onClick={showChartsHandler}
+          >
             Show Charts
           </Button>
         </Flex>
