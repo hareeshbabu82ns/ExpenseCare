@@ -21,6 +21,7 @@ import { account, databases } from "../../appwrite/appwrite-config";
 import { ID } from "appwrite";
 import { useDispatch, useSelector } from "react-redux";
 import { addCategory } from "../../store/data-actions";
+import { PropagateLoader } from "react-spinners";
 
 function AddCategoryButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,6 +37,7 @@ function AddCategoryButton() {
 
   function createCategoryHandler(e) {
     e.preventDefault();
+
     dispatch(addCategory(userId, categoryName));
     onClose();
   }

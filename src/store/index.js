@@ -3,6 +3,7 @@ import filterReducer from "./filter-slice";
 import authReducer from "./auth-slice";
 import dataReducer from "./data-slice";
 import chartDataReducer from "./chart-data-slice";
+import loadingReducer from "./loading-slice";
 
 /*
 reducer:
@@ -17,6 +18,7 @@ const store = configureStore({
     filter: filterReducer,
     data: dataReducer,
     chartData: chartDataReducer,
+    loading: loadingReducer,
   },
 });
 
