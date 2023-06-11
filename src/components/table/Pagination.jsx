@@ -4,8 +4,9 @@ import React from "react";
 
 function Pagination({ currentPage, setCurrentPage, totalPages }) {
   const pageNumbers = [];
-  currentPage = 4;
   for (let i = 1; i <= totalPages; i++) pageNumbers.push(i);
+
+  console.log(currentPage);
 
   return (
     <>
@@ -16,6 +17,7 @@ function Pagination({ currentPage, setCurrentPage, totalPages }) {
         alignItems={"center"}
         p={4}
         gap={"1px"}
+        mb={"1rem"}
       >
         <Flex
           h={12}
