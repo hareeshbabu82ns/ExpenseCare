@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { chartDataActions } from "../../store/chart-data-slice";
+import {
+  chartDataActions,
+  updateChartData,
+} from "../../store/chart-data-slice";
 import {
   Button,
   Flex,
@@ -74,7 +77,7 @@ function ExpenseChartFilter() {
                     onClick={(e) =>
                       setChartFilterInputs((prev) => ({
                         ...prev,
-                        year: e.target.value,
+                        year: parseInt(e.target.value),
                       }))
                     }
                   >
@@ -110,7 +113,7 @@ function ExpenseChartFilter() {
                     onClick={(e) =>
                       setChartFilterInputs((prev) => ({
                         ...prev,
-                        month: e.target.getAttribute("data-key"),
+                        month: parseInt(e.target.getAttribute("data-key")),
                         monthName: e.target.value,
                       }))
                     }

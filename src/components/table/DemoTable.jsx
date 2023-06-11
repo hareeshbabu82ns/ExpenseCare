@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import data from "../../assets/MOCK_DATA.json";
 import {
   Checkbox,
+  Flex,
   IconButton,
   Menu,
   MenuButton,
@@ -11,6 +11,7 @@ import {
   TableContainer,
   Tbody,
   Td,
+  Text,
   Tfoot,
   Th,
   Thead,
@@ -41,6 +42,21 @@ function DropdownActions({ expense }) {
 }
 
 function DemoTable({ filteredExpenses }) {
+  if (filteredExpenses.length === 0) {
+    return (
+      <Flex
+        bgColor={"lightgray"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        p={5}
+        w={"90vw"}
+        mx={"auto"}
+      >
+        <Text>No expense to display</Text>
+      </Flex>
+    );
+  }
+
   return (
     <TableContainer
       w={"90%"}
