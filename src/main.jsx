@@ -26,7 +26,20 @@ const theme = extendTheme({
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider
+        theme={theme}
+        toastOptions={{
+          defaultOptions: {
+            position: "top-right",
+            isClosable: true,
+            duration: 5000,
+            containerStyle: {
+              marginTop: "10vh",
+              borderRadius: "0",
+            },
+          },
+        }}
+      >
         <App />
       </ChakraProvider>
     </Provider>

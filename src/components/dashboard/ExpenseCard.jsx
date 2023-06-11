@@ -1,9 +1,8 @@
 import { Card, CardBody, CardFooter, CardHeader, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import AddExpenseButton from "./AddExpenseButton";
-import DeleteExpenseButton from "../utility/DeleteExpenseButton";
-import EditExpenseNameButton from "../utility/EditExpenseNameButton";
-import { useSelector } from "react-redux";
+import DeleteCategoryButton from "../utility/DeleteCategoryButton";
+import EditCategoryNameButton from "../utility/EditCategoryNameButton";
 
 function ExpenseCard({ name, currMonthExpense, categoryId }) {
   const [hover, setHover] = useState(false);
@@ -21,12 +20,12 @@ function ExpenseCard({ name, currMonthExpense, categoryId }) {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <DeleteExpenseButton
+        <DeleteCategoryButton
           hover={hover}
           setHover={setHover}
           categoryId={categoryId}
         />
-        <EditExpenseNameButton
+        <EditCategoryNameButton
           hover={hover}
           setHover={setHover}
           categoryName={name}

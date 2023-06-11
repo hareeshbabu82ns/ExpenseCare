@@ -46,59 +46,75 @@ function Signup() {
     dispatch(loadingActions.setLoading(true));
     const promise = account.create(ID.unique(), values.email, values.password);
 
-    promise.then((user) => {
-      console.log(user);
+    promise.then(
+      (user) => {
+        console.log(user);
 
-      toast({
-        title: "Account Created Successfully",
-        description: "Account has been created, You are logged in now",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-        position: "top-right",
-      });
+        const promise = account.createEmailSession(
+          values.email,
+          values.password
+        );
 
-      const promise = account.createEmailSession(values.email, values.password);
+        promise.then(
+          (response) => {
+            const { userId, $id: sessionId, providerUid: userEmail } = response;
+            dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
+            dispatch(fetchData(response.userId));
+            navigate("/dashboard");
 
-      promise.then(
-        (response) => {
-          const { userId, $id: sessionId, providerUid: userEmail } = response;
-          dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
-          dispatch(fetchData(response.userId));
-          navigate("/dashboard");
-
-          databases
-            .createDocument(
-              import.meta.env.VITE_DB_ID,
-              import.meta.env.VITE_DB_USER_ID,
-              user.$id,
-              {
-                email: values.email,
-              }
-            )
-            .then(
-              (response) => {
-                dispatch(loadingActions.setLoading(false));
-              },
-              (error) => {
-                dispatch(loadingActions.setLoading(false));
-                console.log(error);
-              }
-            );
-        },
-        (error) => {
-          dispatch(loadingActions.setLoading(false));
-          console.log(error);
-        }
-      );
-
-      // const verify = account.createVerification("http://localhost:3000/verify");
-
-      // verify.then(
-      //   (response) => console.log(response),
-      //   (error) => console.log(error)
-      // );
-    });
+            databases
+              .createDocument(
+                import.meta.env.VITE_DB_ID,
+                import.meta.env.VITE_DB_USER_ID,
+                user.$id,
+                {
+                  email: values.email,
+                }
+              )
+              .then(
+                (response) => {
+                  dispatch(loadingActions.setLoading(false));
+                  toast({
+                    title: "Account Created Successfully",
+                    description:
+                      "Account has been created, You are logged in now",
+                    status: "success",
+                    colorScheme: "teal",
+                  });
+                },
+                (error) => {
+                  dispatch(loadingActions.setLoading(false));
+                  console.log(error);
+                  toast({
+                    title: "An error occured",
+                    description: "Please provide valid inputs",
+                    status: "error",
+                    colorScheme: "red",
+                  });
+                }
+              );
+          },
+          (error) => {
+            dispatch(loadingActions.setLoading(false));
+            console.log(error);
+            toast({
+              title: "An error occured",
+              description: "Please provide valid inputs",
+              status: "error",
+              colorScheme: "red",
+            });
+          }
+        );
+      },
+      (error) => {
+        toast({
+          title: "An error occured",
+          description: "Please provide valid inputs",
+          status: "error",
+          colorScheme: "red",
+        });
+      }
+    );
   }
 
   function signUpUsingGoogleHandler() {

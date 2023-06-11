@@ -12,10 +12,12 @@ import {
   ModalOverlay,
   Textarea,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpense } from "../../store/data-actions";
+import { loadingActions } from "../../store/loading-slice";
 
 const initialState = {
   name: "",
@@ -38,9 +40,11 @@ function AddExpenseButton({ hover, categoryName, setHover, categoryId }) {
 
   function addExpenseHandler(e) {
     e.preventDefault();
+    dispatch(loadingActions.setLoading(true));
     dispatch(addExpense(userId, categoryId, expenseInputData));
     setExpenseInputData(initialState);
     onClose();
+    dispatch(loadingActions.setLoading(false));
   }
 
   return (

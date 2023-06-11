@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { months, yearRange } from "../table/Filters";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { loadingActions } from "../../store/loading-slice";
 
 function ExpenseChartFilter() {
   const filterInputs = useSelector((state) => state.chartData.filterInputs);
@@ -24,8 +25,10 @@ function ExpenseChartFilter() {
   const dispatch = useDispatch();
 
   function showChartsHandler() {
+    dispatch(loadingActions.setLoading(true));
     dispatch(chartDataActions.setChartInputs(chartFilterInputs));
     dispatch(updateChartData(chartFilterInputs));
+    dispatch(loadingActions.setLoading(false));
   }
 
   useEffect(() => {

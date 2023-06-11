@@ -13,7 +13,7 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCategory } from "../../store/data-actions";
 
-function DeleteExpenseButton({ hover, setHover, categoryId }) {
+function DeleteCategoryButton({ hover, setHover, categoryId }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
   const dispatch = useDispatch();
@@ -79,4 +79,4 @@ function DeleteExpenseButton({ hover, setHover, categoryId }) {
   );
 }
 
-export default DeleteExpenseButton;
+export default DeleteCategoryButton;

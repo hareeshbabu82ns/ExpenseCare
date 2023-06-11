@@ -25,6 +25,7 @@ import {
 import { SlidersHorizontal } from "lucide-react";
 import { fetchData } from "../../store/data-actions";
 import { account } from "../../appwrite/appwrite-config";
+import { loadingActions } from "../../store/loading-slice";
 
 export const yearRange = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
 
@@ -97,17 +98,22 @@ function Filters({ setFilteredExpenses }) {
   const categories = useSelector((state) => state.data.categories);
 
   function searchHandler() {
+    dispatch(loadingActions.setLoading(true));
     setFilteredExpenses((expenses) =>
       expenses.filter((expense) => expense.name.includes(searchInput))
     );
+    dispatch(loadingActions.setLoading(false));
   }
 
   function filterHandler() {
+    dispatch(loadingActions.setLoading(true));
     dispatch(filterActions.setFilterInputs(filterInputs));
     dispatch(updateFilteredExpenses(filterInputs));
+    dispatch(loadingActions.setLoading(false));
   }
 
   function resetHandler() {
+    dispatch(loadingActions.setLoading(true));
     setSearchInput("");
     dispatch(filterActions.resetFilterInputs());
     account.get().then(
@@ -116,12 +122,15 @@ function Filters({ setFilteredExpenses }) {
       },
       (error) => console.log(error)
     );
+    dispatch(loadingActions.setLoading(false));
   }
 
   function showAllColumnsHandler() {}
 
   useEffect(() => {
+    dispatch(loadingActions.setLoading(true));
     setFilterInputs(filters);
+    dispatch(loadingActions.setLoading(false));
   }, [filters]);
 
   return (

@@ -12,6 +12,7 @@ import {
   Input,
   Link,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
@@ -39,6 +40,7 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.loading.isLoading);
+  const toast = useToast();
 
   async function loginHandler(values) {
     dispatch(loadingActions.setLoading(true));
@@ -55,8 +57,21 @@ function Login() {
         dispatch(fetchData(response.userId));
         dispatch(loadingActions.setLoading(false));
         navigate("/dashboard");
+        toast({
+          title: "Logged in Successfully",
+          status: "success",
+          colorScheme: "teal",
+        });
       },
-      (error) => console.log(error)
+      (error) => {
+        console.log(error);
+        toast({
+          title: "Not able to Login",
+          description: "Please provide correct and password",
+          status: "error",
+          colorScheme: "red",
+        });
+      }
     );
 
     // async function verifyEmail() {

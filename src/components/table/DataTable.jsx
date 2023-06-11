@@ -1,5 +1,4 @@
-import React, { useMemo, useState } from "react";
-import data from "../../assets/MOCK_DATA.json";
+import React, { useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -24,28 +23,13 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import {
-  ChevronDownIcon,
-  EditIcon,
-  MoreVertical,
-  MoreVerticalIcon,
-  MoveIcon,
-  OptionIcon,
-} from "lucide-react";
-import { DeleteIcon } from "@chakra-ui/icons";
-import { MoreHorizontalIcon } from "lucide-react";
-import DropDownExpenseTable from "./DropDownExpenseTable";
+import { ChevronDownIcon } from "lucide-react";
 import { useSelector } from "react-redux";
 
 function DataTable() {
   const data = useSelector((state) => state.data.expenses);
 
   const columns = [
-    // {
-    //   id: 1,
-    //   Header: "id",
-    //   accessorKey: "id",
-    // },
     {
       id: 2,
       Header: "Expense Name",

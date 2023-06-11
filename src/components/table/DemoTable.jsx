@@ -23,6 +23,7 @@ import EditExpenseButton from "./EditExpenseButton";
 import RemoveExpenseButton from "./RemoveExpenseButton";
 import Pagination from "./Pagination";
 import { updateFilteredExpenses } from "../../store/filter-slice";
+import { loadingActions } from "../../store/loading-slice";
 
 function DropdownActions({ expense }) {
   return (
@@ -53,15 +54,10 @@ function DemoTable({ filteredExpenses }) {
   const [currentPage, setCurrentPage] = useState(1);
   const expensesPerPage = 5;
   const totalPages = Math.ceil(totalFilteredExpenses / 5);
-
-  const indexOfLastExpense =
-    currentPage === totalPages
-      ? totalFilteredExpenses + 1
-      : currentPage * expensesPerPage;
-
   const indexOfFirstExpense = currentPage * expensesPerPage - expensesPerPage;
 
   useEffect(() => {
+    dispatch(loadingActions.setLoading(true));
     dispatch(
       updateFilteredExpenses({
         ...filterInputs,
@@ -69,7 +65,7 @@ function DemoTable({ filteredExpenses }) {
         offset: indexOfFirstExpense,
       })
     );
-    console.log("here");
+    dispatch(loadingActions.setLoading(false));
   }, [currentPage]);
 
   if (filteredExpenses?.length === 0) {

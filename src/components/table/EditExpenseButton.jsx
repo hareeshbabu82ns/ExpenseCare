@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { addExpense, editExpense } from "../../store/data-actions";
+import { loadingActions } from "../../store/loading-slice";
 
 function EditExpenseButton({ expense }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,13 +29,14 @@ function EditExpenseButton({ expense }) {
   });
 
   const initialRef = useRef(null);
-  const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
 
   function editExpenseHandler(e) {
+    dispatch(loadingActions.setLoading(true));
     e.preventDefault();
     dispatch(editExpense(expense.$id, { ...expenseInputData }, expense.amount));
     onClose();
+    dispatch(loadingActions.setLoading(false));
   }
   return (
     <>

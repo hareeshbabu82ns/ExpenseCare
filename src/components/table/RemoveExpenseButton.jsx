@@ -13,6 +13,7 @@ import {
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCategory, removeExpense } from "../../store/data-actions";
+import { loadingActions } from "../../store/loading-slice";
 
 function RemoveExpenseButton({ expense }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,8 +21,10 @@ function RemoveExpenseButton({ expense }) {
   const dispatch = useDispatch();
 
   function deleteExpenseHandler() {
+    dispatch(loadingActions.setLoading(true));
     dispatch(removeExpense(expense.$id, expense));
     onClose();
+    dispatch(loadingActions.setLoading(false));
   }
 
   return (

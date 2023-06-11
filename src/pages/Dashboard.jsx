@@ -1,28 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
-import {
-  Button,
-  Card,
-  Container,
-  Flex,
-  Grid,
-  IconButton,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Button, Flex, useToast } from "@chakra-ui/react";
 import ExpenseCard from "../components/dashboard/ExpenseCard";
-import { wrap } from "framer-motion";
-import { AddIcon } from "@chakra-ui/icons";
 import TotalExpenseCard from "../components/dashboard/TotalExpenseCard";
-import { Wrap, WrapItem } from "@chakra-ui/react";
 import AddCategoryButton from "../components/dashboard/AddCategoryButton";
-import { Box, RefreshCcw } from "lucide-react";
-import { account, databases } from "../appwrite/appwrite-config";
-import { Query } from "appwrite";
+import { RefreshCcw } from "lucide-react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/data-actions";
-import { PropagateLoader } from "react-spinners";
-import Loading from "../components/utility/Loading";
 
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },
@@ -38,6 +23,7 @@ function Dashboard() {
   const data = useSelector((state) => state.data);
   const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const [refresh, setRefresh] = useState(false);
 
@@ -45,6 +31,11 @@ function Dashboard() {
     setRefresh(true);
     dispatch(fetchData(userId));
     setTimeout(() => setRefresh(false), 5000);
+    toast({
+      title: "Refreshed the data",
+      status: "info",
+      colorScheme: "blue",
+    });
   }
 
   const { categories, userCurrYearExpense, userCurrMonthExpense } = data;
@@ -56,6 +47,7 @@ function Dashboard() {
         userCurrYearExpense={userCurrYearExpense}
         userCurrMonthExpense={userCurrMonthExpense}
       />
+
       {/* <Container w={"100%"} mx={"auto"}> */}
       <Flex
         flexWrap={"wrap"}

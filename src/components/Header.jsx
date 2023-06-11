@@ -10,10 +10,12 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Link as RouteLink, useNavigate } from "react-router-dom";
 import { logout } from "../store/auth-slice";
+import { loadingActions } from "../store/loading-slice";
 
 const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
 
@@ -21,10 +23,18 @@ function Header() {
   const sessionId = useSelector((state) => state.auth.sessionId);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const toast = useToast();
 
   function logoutHandler() {
+    dispatch(loadingActions.setLoading(true));
     dispatch(logout(sessionId));
+    dispatch(loadingActions.setLoading(false));
     navigate("/login");
+    toast({
+      title: "Logged out successfully",
+      status: "success",
+      colorScheme: "teal",
+    });
   }
 
   return (
@@ -40,7 +50,13 @@ function Header() {
       w={"100vw"}
     >
       <Flex>
-        <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
+        <Text
+          fontSize={"3xl"}
+          fontWeight={"bold"}
+          color={"teal.400"}
+          onClick={() => navigate("/dashboard")}
+          cursor={"pointer"}
+        >
           ExpenseCare
         </Text>
       </Flex>
@@ -71,6 +87,7 @@ function Header() {
           as={RouteLink}
           _hover={{ textDecor: "none", fontWeight: "medium" }}
           to={"/charts"}
+          fontSize={"large "}
           className={activeClassName}
         >
           Charts
@@ -83,6 +100,7 @@ function Header() {
             rightIcon={<ChevronDownIcon />}
             fontSize={"large "}
             fontWeight={"normal"}
+            _active={{ bg: "inherit", fontWeight: "medium" }}
           >
             Account
           </MenuButton>

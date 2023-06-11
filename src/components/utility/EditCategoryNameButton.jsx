@@ -18,7 +18,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editCategoryName } from "../../store/data-actions";
 
-function EditExpenseNameButton({ hover, setHover, categoryName, categoryId }) {
+function EditCategoryNameButton({ hover, setHover, categoryName, categoryId }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [inputCategoryName, setInputCategoryName] = useState(categoryName);
@@ -92,4 +92,4 @@ function EditExpenseNameButton({ hover, setHover, categoryName, categoryId }) {
   );
 }
 
-export default EditExpenseNameButton;
+export default EditCategoryNameButton;
