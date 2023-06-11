@@ -22,6 +22,7 @@ import { Query } from "appwrite";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/data-actions";
 import { PropagateLoader } from "react-spinners";
+import Loading from "../components/utility/Loading";
 
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },
@@ -36,7 +37,6 @@ export const categories = [
 function Dashboard() {
   const data = useSelector((state) => state.data);
   const userId = useSelector((state) => state.auth.userId);
-  const loading = useSelector((state) => state.loading.loading);
   const dispatch = useDispatch();
 
   const [refresh, setRefresh] = useState(false);
@@ -48,28 +48,6 @@ function Dashboard() {
   }
 
   const { categories, userCurrYearExpense, userCurrMonthExpense } = data;
-
-  if (loading) {
-    return (
-      <Flex h={"100vh"} w={"100vw"} alignItems={"center"} flexDir={"column"}>
-        <Text
-          textColor={"teal.500"}
-          fontSize={{ base: "3xl", md: "6xl" }}
-          mt={"25vh"}
-          mb={"4rem"}
-        >
-          ExpenseCare
-        </Text>
-        <PropagateLoader
-          color="teal"
-          loading={loading}
-          size={20}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      </Flex>
-    );
-  }
 
   return (
     <Flex flexDir={"column"} gap={2} w={"100vw"} justifyContent={"center"}>

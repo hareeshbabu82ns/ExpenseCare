@@ -16,9 +16,11 @@ import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account, databases } from "../appwrite/appwrite-config";
 import { ID } from "appwrite";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/data-actions";
 import { authActions } from "../store/auth-slice";
+import Loading from "../components/utility/Loading";
+import { loadingActions } from "../store/loading-slice";
 
 function Signup() {
   const {
@@ -37,9 +39,11 @@ function Signup() {
 
   const toast = useToast();
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const isLoading = useSelector((state) => state.loading.isLoading);
 
   async function submitHandler(values) {
+    dispatch(loadingActions.setLoading(true));
     const promise = account.create(ID.unique(), values.email, values.password);
 
     promise.then((user) => {
@@ -73,11 +77,19 @@ function Signup() {
               }
             )
             .then(
-              (response) => {},
-              (error) => console.log(error)
+              (response) => {
+                dispatch(loadingActions.setLoading(false));
+              },
+              (error) => {
+                dispatch(loadingActions.setLoading(false));
+                console.log(error);
+              }
             );
         },
-        (error) => console.log(error)
+        (error) => {
+          dispatch(loadingActions.setLoading(false));
+          console.log(error);
+        }
       );
 
       // const verify = account.createVerification("http://localhost:3000/verify");
@@ -91,6 +103,10 @@ function Signup() {
 
   function signUpUsingGoogleHandler() {
     account.createOAuth2Session("google", "http://localhost:3000/dashboard");
+  }
+
+  if (isLoading) {
+    return <Loading loading={isLoading} />;
   }
 
   return (

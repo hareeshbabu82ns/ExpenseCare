@@ -21,6 +21,7 @@ import { authActions } from "../store/auth-slice";
 import { fetchData } from "../store/data-actions";
 import { PropagateLoader } from "react-spinners";
 import { loadingActions } from "../store/loading-slice";
+import Loading from "../components/utility/Loading";
 
 function Login() {
   const {
@@ -37,7 +38,7 @@ function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.loading.loading);
+  const isLoading = useSelector((state) => state.loading.isLoading);
 
   async function loginHandler(values) {
     dispatch(loadingActions.setLoading(true));
@@ -70,26 +71,8 @@ function Login() {
     // }
   }
 
-  if (loading) {
-    return (
-      <Flex h={"100vh"} w={"100vw"} alignItems={"center"} flexDir={"column"}>
-        <Text
-          textColor={"teal.500"}
-          fontSize={{ base: "3xl", md: "6xl" }}
-          mt={"25vh"}
-          mb={"4rem"}
-        >
-          ExpenseCare
-        </Text>
-        <PropagateLoader
-          color="teal"
-          loading={loading}
-          size={20}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      </Flex>
-    );
+  if (isLoading) {
+    return <Loading loading={isLoading} />;
   }
 
   return (
