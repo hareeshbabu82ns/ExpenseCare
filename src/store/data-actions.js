@@ -24,7 +24,7 @@ export function fetchData(userId) {
           .listDocuments(
             import.meta.env.VITE_DB_ID,
             import.meta.env.VITE_DB_EXPENSE_ID,
-            [Query.equal("userId", userId)]
+            [Query.equal("userId", userId), Query.limit(5)]
           )
           .then((expenses) => {
             console.log(expenses);
@@ -43,11 +43,7 @@ export function fetchData(userId) {
                     userDocument,
                   })
                 );
-                dispatch(
-                  filterActions.setFilteredExpenses({
-                    documents: expenses.documents,
-                  })
-                );
+                dispatch(filterActions.setFilteredExpenses(expenses));
               });
           });
       });

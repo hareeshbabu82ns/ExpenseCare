@@ -51,7 +51,14 @@ export const filterActions = filterSlice.actions;
 
 export default filterSlice.reducer;
 
-export function updateFilteredExpenses({ categoryId, sortBy, year, month }) {
+export function updateFilteredExpenses({
+  categoryId,
+  sortBy,
+  year,
+  month,
+  limit,
+  offset,
+}) {
   return function (dispatch) {
     const queries = [];
     let userId = null;
@@ -84,6 +91,12 @@ export function updateFilteredExpenses({ categoryId, sortBy, year, month }) {
             break;
         }
 
+        const limitQuery = [];
+        const offsetQuery = [];
+
+        if (limit) limitQuery.push(limit);
+        if (offset) offsetQuery.push(offset);
+
         databases
           .listDocuments(
             import.meta.env.VITE_DB_ID,
@@ -94,6 +107,8 @@ export function updateFilteredExpenses({ categoryId, sortBy, year, month }) {
               ),
               ...orderAscQuery.map((attribute) => Query.orderAsc(attribute)),
               ...orderDescQuery.map((attribute) => Query.orderDesc(attribute)),
+              ...limitQuery.map((limitValue) => Query.limit(limitValue)),
+              ...offsetQuery.map((offsetValue) => Query.offset(offsetValue)),
             ]
           )
           .then(
