@@ -15,6 +15,7 @@ function Charts() {
       <Flex
         mt={"2rem"}
         minH={"75vh"}
+        w={"100vw"}
         flexDir={{ base: "column", md: "row" }}
         justifyContent={"space-evenly"}
         alignItems={"center"}

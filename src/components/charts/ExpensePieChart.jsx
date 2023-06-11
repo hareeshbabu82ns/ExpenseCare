@@ -1,7 +1,7 @@
 import React from "react";
 import { categories } from "../../pages/Dashboard";
-import { Cell, Pie, PieChart, Tooltip } from "recharts";
-import { Container } from "@chakra-ui/react";
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+import { Container, Flex } from "@chakra-ui/react";
 
 const data = categories;
 export const COLORS = [
@@ -43,23 +43,51 @@ const renderCustomizedLabel = ({
 function ExpensePieChart() {
   return (
     <>
-      <PieChart height={500} width={500}>
-        <Pie
-          data={data}
-          cx={250}
-          cy={250}
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={200}
-          fill="#8884d8"
-          dataKey="totalExpense"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
+      <Flex display={{ base: "none", md: "flex" }}>
+        <PieChart height={500} width={500}>
+          <Pie
+            data={data}
+            cx={250}
+            cy={250}
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={200}
+            fill="#8884d8"
+            dataKey="totalExpense"
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </Flex>
+
+      <Flex display={{ base: "flex", md: "none" }}>
+        <PieChart height={325} width={325}>
+          <Pie
+            data={data}
+            cx={162}
+            cy={162}
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={150}
+            fill="#8884d8"
+            dataKey="totalExpense"
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </Flex>
     </>
   );
 }

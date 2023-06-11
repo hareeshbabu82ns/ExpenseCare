@@ -51,6 +51,8 @@ function ExpenseChartFilter() {
           <Flex
             w={{ base: "100%", md: "600px" }}
             justifyContent={{ base: "space-between", md: "space-evenly" }}
+            flexDir={{ base: "column", sm: "row" }}
+            gap={4}
           >
             <Menu>
               <MenuButton
@@ -63,7 +65,7 @@ function ExpenseChartFilter() {
                 _active={{ bgColor: "lightgray" }}
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
-                w={"225px"}
+                w={{ base: "100%", sm: "225px" }}
               >
                 {chartFilterInputs?.year || "Year"}
               </MenuButton>
@@ -98,7 +100,7 @@ function ExpenseChartFilter() {
                 _active={{ bgColor: "lightgray" }}
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
-                w={"225px"}
+                w={{ base: "100%", sm: "225px" }}
               >
                 {chartFilterInputs?.monthName || "Month"}
               </MenuButton>

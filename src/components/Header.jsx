@@ -26,6 +26,7 @@ function Header() {
       position={"sticky"}
       top={0}
       zIndex={"sticky"}
+      w={"100vw"}
     >
       <Flex>
         <Text fontSize={"3xl"} fontWeight={"bold"} color={"teal.400"}>
