@@ -8,6 +8,7 @@ import Charts from "./pages/Charts";
 import { Container } from "@chakra-ui/react";
 import Error from "./components/Error";
 import { account } from "./appwrite/appwrite-config";
+import Verification from "./pages/Verification";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,6 +19,10 @@ function App() {
     {
       path: "/login",
       Component: Login,
+    },
+    {
+      path: "/verification",
+      Component: Verification,
     },
     {
       path: "/",

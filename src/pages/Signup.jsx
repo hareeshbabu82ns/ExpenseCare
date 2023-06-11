@@ -16,6 +16,9 @@ import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account, databases } from "../appwrite/appwrite-config";
 import { ID } from "appwrite";
+import { useDispatch } from "react-redux";
+import { fetchData } from "../store/data-actions";
+import { authActions } from "../store/auth-slice";
 
 function Signup() {
   const {
@@ -33,46 +36,61 @@ function Signup() {
   });
 
   const toast = useToast();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   async function submitHandler(values) {
     const promise = account.create(ID.unique(), values.email, values.password);
 
-    promise.then(
-      (user) => {
-        console.log(user);
-        toast({
-          title: "Account Created Successfully",
-          description: "Email Verification will be required in future",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-          position: "top-right",
-        });
+    promise.then((user) => {
+      console.log(user);
 
-        createUserDocument(user.$id, user.email);
-        navigate("/dashboard");
-      },
-      (error) => console.log(error)
-    );
+      toast({
+        title: "Account Created Successfully",
+        description: "Account has been created, You are logged in now",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
 
-    // const verify = account.createVerification("http://localhost:3000/verify");
+      const promise = account.createEmailSession(values.email, values.password);
 
-    // verify.then(
-    //   (response) => console.log(response),
-    //   (error) => console.log(error)
-    // );
+      promise.then(
+        (response) => {
+          const { userId, $id: sessionId, providerUid: userEmail } = response;
+          dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
+          dispatch(fetchData(response.userId));
+          navigate("/dashboard");
 
-    async function createUserDocument(userId, userEmail) {
-      await databases.createDocument(
-        import.meta.env.VITE_DB_ID,
-        import.meta.env.VITE_DB_USER_ID,
-        userId,
-        {
-          email: userEmail,
-        }
+          databases
+            .createDocument(
+              import.meta.env.VITE_DB_ID,
+              import.meta.env.VITE_DB_USER_ID,
+              user.$id,
+              {
+                email: values.email,
+              }
+            )
+            .then(
+              (response) => {},
+              (error) => console.log(error)
+            );
+        },
+        (error) => console.log(error)
       );
-    }
+
+      // const verify = account.createVerification("http://localhost:3000/verify");
+
+      // verify.then(
+      //   (response) => console.log(response),
+      //   (error) => console.log(error)
+      // );
+    });
+  }
+
+  function signUpUsingGoogleHandler() {
+    account.createOAuth2Session("google", "http://localhost:3000/dashboard");
   }
 
   return (
@@ -167,7 +185,12 @@ function Signup() {
             <Text textAlign={"center"}>Or</Text>
 
             {/* Google Signup button */}
-            <Button colorScheme="blue" width={"full"} mb={4}>
+            <Button
+              colorScheme="blue"
+              width={"full"}
+              mb={4}
+              onClick={signUpUsingGoogleHandler}
+            >
               Signup using Google
             </Button>
 
