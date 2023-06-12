@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Link as RouteLink, useNavigate } from "react-router-dom";
 import { logout } from "../store/auth-slice";
 import { loadingActions } from "../store/loading-slice";
+import LogoutButton from "./utility/LogoutButton";
 
 const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
 
@@ -67,21 +68,15 @@ function Header() {
         fontWeight={"normal"}
         alignItems={"center"}
       >
-        <NavLink
-          as={RouteLink}
-          _hover={{ textDecor: "none", fontWeight: "medium" }}
-          to={"/dashboard"}
-          className={activeClassName}
-        >
-          Dashboard
+        <NavLink as={RouteLink} to={"/dashboard"} className={activeClassName}>
+          <Text _hover={{ textColor: "teal.400" }}> Dashboard </Text>
         </NavLink>
         <NavLink
           as={RouteLink}
-          _hover={{ textDecor: "none", fontWeight: "medium" }}
           to={"/all-expenses"}
           className={activeClassName}
         >
-          All Expenses
+          <Text _hover={{ textColor: "teal.400" }}> All Expenses </Text>
         </NavLink>
         <NavLink
           as={RouteLink}
@@ -90,9 +85,11 @@ function Header() {
           fontSize={"large "}
           className={activeClassName}
         >
-          Charts
+          <Text _hover={{ textColor: "teal.400" }}> Charts </Text>
         </NavLink>
-        <Menu>
+
+        <LogoutButton logoutHandler={logoutHandler} />
+        {/* <Menu>
           <MenuButton
             as={Button}
             bgColor={"inherit"}
@@ -111,7 +108,7 @@ function Header() {
               Logout
             </MenuItem>
           </MenuList>
-        </Menu>
+        </Menu> */}
       </Flex>
       <Flex display={{ md: "none" }}>
         <Menu>
@@ -155,16 +152,17 @@ function Header() {
                 Charts
               </NavLink>
             </MenuItem>
-            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
+            {/* <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
               Account
-            </MenuItem>
-            <MenuItem
+            </MenuItem> */}
+            {/* <MenuItem
               bgColor={"lightgray"}
               _hover={{ bgColor: "teal.500" }}
               onClick={logoutHandler}
             >
               Logout
-            </MenuItem>
+            </MenuItem> */}
+            <LogoutButton logoutHandler={logoutHandler} />
           </MenuList>
         </Menu>
       </Flex>
