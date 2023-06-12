@@ -29,6 +29,7 @@ function EditExpenseButton({ expense }) {
   });
 
   const initialRef = useRef(null);
+  const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
 
   function editExpenseHandler(e) {
@@ -46,7 +47,7 @@ function EditExpenseButton({ expense }) {
           //   setHover(false);
         }}
         bgColor={"lightgray"}
-        _hover={{ bgColor: "teal.600" }}
+        _hover={{ bgColor: "blue.600" }}
       >
         Edit
       </MenuItem>

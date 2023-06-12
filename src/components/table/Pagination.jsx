@@ -19,19 +19,19 @@ function Pagination({ currentPage, setCurrentPage, totalPages }) {
         gap={"1px"}
         mb={"1rem"}
       >
-        <Flex
+        <Button
           h={12}
           w={"20"}
           bgColor={"lightgray"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          borderRadius={0}
           mr={"1rem"}
           cursor={"pointer"}
           _hover={{ bgColor: "dark", border: "solid", borderColor: "white" }}
           onClick={() => setCurrentPage((prev) => prev - 1)}
+          isDisabled={!(currentPage !== 1)}
         >
           <ArrowBackIcon /> Prev
-        </Flex>
+        </Button>
         {pageNumbers.map((pageNumber) => (
           <Button
             key={pageNumber}
@@ -44,28 +44,27 @@ function Pagination({ currentPage, setCurrentPage, totalPages }) {
             borderWidth={currentPage === pageNumber ? 1 : undefined}
             borderRadius={"none"}
             value={pageNumber}
-            // justifyContent={"center"}
-            // alignItems={"center"}
-            // cursor={"pointer"}
             _hover={{ bgColor: "dark", border: "solid", borderColor: "white" }}
             onClick={(e) => setCurrentPage(parseInt(e.target.value))}
           >
             {pageNumber}
           </Button>
         ))}
-        <Flex
+        <Button
           h={12}
           w={"20"}
           bgColor={"lightgray"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          // justifyContent={"center"}
+          // alignItems={"center"}
+          borderRadius={0}
           ml={"1rem"}
           cursor={"pointer"}
           _hover={{ bgColor: "dark", border: "solid", borderColor: "white" }}
           onClick={() => setCurrentPage((prev) => prev + 1)}
+          isDisabled={currentPage === totalPages}
         >
           Next <ArrowForwardIcon />
-        </Flex>
+        </Button>
       </Flex>
     </>
   );

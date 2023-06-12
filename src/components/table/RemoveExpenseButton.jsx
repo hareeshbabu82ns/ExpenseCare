@@ -33,7 +33,7 @@ function RemoveExpenseButton({ expense }) {
         as={"button"}
         onClick={onOpen}
         bgColor={"lightgray"}
-        _hover={{ bgColor: "teal.600" }}
+        _hover={{ bgColor: "blue.600" }}
       >
         Delete
       </MenuItem>

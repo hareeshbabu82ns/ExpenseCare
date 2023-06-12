@@ -24,6 +24,7 @@ import RemoveExpenseButton from "./RemoveExpenseButton";
 import Pagination from "./Pagination";
 import { updateFilteredExpenses } from "../../store/filter-slice";
 import { loadingActions } from "../../store/loading-slice";
+import InfoExpenseButton from "./InfoExpenseButton";
 
 function DropdownActions({ expense }) {
   return (
@@ -39,12 +40,13 @@ function DropdownActions({ expense }) {
       <MenuList bgColor={"lightgray"}>
         <EditExpenseButton expense={expense} />
         <RemoveExpenseButton expense={expense} />
+        <InfoExpenseButton expense={expense} />
       </MenuList>
     </Menu>
   );
 }
 
-function DemoTable({ filteredExpenses }) {
+function DemoTable({ filteredExpenses, windowWidth, showAllColumns }) {
   // For Pagination
   const totalFilteredExpenses = useSelector(
     (state) => state.filter.totalFilteredExpenses
@@ -101,13 +103,13 @@ function DemoTable({ filteredExpenses }) {
               <Th textColor={"blue.500"}>AMOUNT (Rs.)</Th>
               <Th
                 textColor={"blue.500"}
-                display={{ base: "none", md: "table-cell" }}
+                display={showAllColumns ? "table-cell" : "none"}
               >
                 CATEGORY
               </Th>
               <Th
                 textColor={"blue.500"}
-                display={{ base: "none", md: "table-cell" }}
+                display={showAllColumns ? "table-cell" : "none"}
               >
                 DATE
               </Th>
@@ -122,10 +124,10 @@ function DemoTable({ filteredExpenses }) {
               </Td> */}
                 <Td>{expense.name}</Td>
                 <Td>{expense.amount}</Td>
-                <Td display={{ base: "none", md: "table-cell" }}>
+                <Td display={showAllColumns ? "table-cell" : "none"}>
                   {expense.category.name}
                 </Td>
-                <Td display={{ base: "none", md: "table-cell" }}>
+                <Td display={showAllColumns ? "table-cell" : "none"}>
                   {expense.date}
                 </Td>
                 <Td>

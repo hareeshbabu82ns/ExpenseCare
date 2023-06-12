@@ -87,7 +87,12 @@ const sortBy = [
   { value: "dateDescending", option: "Date (Oldest first)" },
 ];
 
-function Filters({ setFilteredExpenses }) {
+function Filters({
+  setFilteredExpenses,
+  windowWidth,
+  setShowAllColumns,
+  showAllColumns,
+}) {
   const filters = useSelector((state) => state.filter.filterInputs);
   const dispatch = useDispatch();
   const [filtersVisibility, setFiltersVisibility] = useState(false);
@@ -125,7 +130,9 @@ function Filters({ setFilteredExpenses }) {
     dispatch(loadingActions.setLoading(false));
   }
 
-  function showAllColumnsHandler() {}
+  function showAllColumnsHandler() {
+    setShowAllColumns((prev) => !prev);
+  }
 
   useEffect(() => {
     dispatch(loadingActions.setLoading(true));
@@ -203,41 +210,6 @@ function Filters({ setFilteredExpenses }) {
               ))}
             </MenuList>
           </Menu>
-          {/* <Menu>
-            <MenuButton
-              bgColor={"lightgray"}
-              _hover={{
-                border: "solid",
-                borderWidth: "1px",
-                borderColor: "text",
-              }}
-              _active={{ bgColor: "lightgray" }}
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              // w={"max-content"}
-              w={"225px"}
-            >
-              {filterInputs.price || "Price"}
-            </MenuButton>
-            <MenuList bgColor={"lightgray"}>
-              {priceRange.map((price) => (
-                <MenuItem
-                  _hover={{ bgColor: "blue.600" }}
-                  key={price}
-                  value={price}
-                  bgColor={"lightgray"}
-                  onClick={(e) =>
-                    setFilterInputs((prev) => ({
-                      ...prev,
-                      price: e.target.value,
-                    }))
-                  }
-                >
-                  {price}
-                </MenuItem>
-              ))}
-            </MenuList>
-          </Menu> */}
 
           <Menu>
             <MenuButton
@@ -411,37 +383,8 @@ function Filters({ setFilteredExpenses }) {
 
         {/* Category and Date Checkbox */}
         <Flex justifyContent={"center"} gap={2} alignItems={"center"}>
-          {/* <Checkbox colorScheme="pink">Show Category and Date</Checkbox> */}
-
-          {/* Sort by Select Menu */}
-
-          {/* <Menu>
-            <MenuButton
-              display={{ base: "flex", md: "none" }}
-              bgColor={"lightgray"}
-              _hover={{
-                border: "solid",
-                borderWidth: "1px",
-                borderColor: "text",
-              }}
-              _active={{ bgColor: "lightgray" }}
-              as={Button}
-              rightIcon={<SlidersHorizontal />}
-            >
-              View
-            </MenuButton>
-            <MenuList bgColor={"lightgray"}>
-              <MenuItem _hover={{ bgColor: "primary" }} bgColor={"lightgray"}>
-                Category
-              </MenuItem>
-              <MenuItem _hover={{ bgColor: "primary" }} bgColor={"lightgray"}>
-                Date
-              </MenuItem>
-            </MenuList>
-          </Menu> */}
-
           <Button
-            display={{ base: "flex", md: "none" }}
+            display={windowWidth < 768 ? "flex" : "none"}
             bgColor={"lightgray"}
             _hover={{
               border: "solid",
@@ -452,7 +395,7 @@ function Filters({ setFilteredExpenses }) {
             onClick={showAllColumnsHandler}
             minW={{ base: "90vw" }}
           >
-            Show All Columns
+            {showAllColumns ? "Hide Category & Date" : "Show Category & Date"}
           </Button>
           <Button
             display={{ base: "none", md: "flex" }}
