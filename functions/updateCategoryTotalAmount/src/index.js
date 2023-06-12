@@ -21,6 +21,8 @@ module.exports = async function (req, res) {
 
   const data = JSON.parse(req.payload);
 
+  // const { categoryId, userId } = JSON.parse(req.payload);
+
   if (
     !req.variables["APPWRITE_FUNCTION_ENDPOINT"] ||
     !req.variables["APPWRITE_FUNCTION_API_KEY"]
@@ -50,7 +52,8 @@ module.exports = async function (req, res) {
           currYearExpense,
           currMonthExpense,
         ];
-        const amount = parseInt(data.amount);
+        let { amount } = data;
+        amount = parseInt(amount);
 
         if (action === "ON_ADD_EXPENSE") {
           updatedCurrYearExpense += amount;
@@ -92,5 +95,54 @@ module.exports = async function (req, res) {
         return res.json({ error });
       }
     );
+
+    // const date = new Date();
+    // const currYear = parseInt(date.getFullYear());
+    // const currMonth = parseInt(date.getMonth());
+
+    // database
+    //   .getDocument(
+    //     req.variables["APPWRITE_DB_ID"],
+    //     req.variables["APPWRITE_DB_CATEGORY_ID"],
+    //     categoryId
+    //   )
+    //   .then(
+    //     (response) => {
+    //       const currExpenses = response.expenses;
+    //       let updatedCurrYearExpense = 0;
+    //       let updatedCurrMonthExpense = 0;
+
+    //       currExpenses.forEach((expense) => {
+    //         if (currYear == expense.year) {
+    //           updatedCurrYearExpense += expense.amount;
+
+    //           if (currMonth === expense.month)
+    //             updatedCurrMonthExpense += expense.amount;
+    //         }
+    //       });
+
+    //       database
+    //         .updateDocument(
+    //           req.variables["APPWRITE_DB_ID"],
+    //           req.variables["APPWRITE_DB_CATEGORY_ID"],
+    //           categoryId,
+    //           {
+    //             currYearExpense: updatedCurrYearExpense,
+    //             currMonthExpense: updatedCurrMonthExpense,
+    //           }
+    //         )
+    //         .then(
+    //           (response) => {
+    //             return res.json(response);
+    //           },
+    //           (error) => {
+    //             return res.json({ error });
+    //           }
+    //         );
+    //     },
+    //     (error) => {
+    //       return res.json({ error });
+    //     }
+    //   );
   }
 };

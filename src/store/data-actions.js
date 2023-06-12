@@ -153,22 +153,7 @@ export function deleteCategory(userId, categoryId) {
       function (response) {
         console.log(response);
 
-        functions
-          .createExecution(
-            import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
-            JSON.stringify({
-              userId: userId,
-            }),
-            true
-          )
-          .then(
-            (updatedUserDocument) => {
-              setTimeout(() => dispatch(fetchData(userId)), 3000);
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+        dispatch(updateUserTotalExpense(userId));
       },
       (error) => {
         console.log(error);
@@ -180,8 +165,9 @@ export function deleteCategory(userId, categoryId) {
 /* To add an expense to a particular category (also updates the totalAmount of that category and fetch the updated data into the state) */
 export function addExpense(userId, categoryId, expenseDetails, categoryName) {
   return function (dispatch) {
-    const { amount, name, description } = expenseDetails;
+    let { amount, name, description } = expenseDetails;
 
+    amount = parseInt(amount);
     let date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -220,42 +206,13 @@ export function addExpense(userId, categoryId, expenseDetails, categoryName) {
 
         console.log(createdExpenseDocument);
 
-        functions
-          .createExecution(
-            import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
-            JSON.stringify({
-              action: actions.ON_ADD_EXPENSE,
-              categoryId: categoryId,
-              amount: amount,
-            }),
-            true
-          )
-          .then(
-            (updatedCategoryDocument) => {
-              console.log(updatedCategoryDocument);
-
-              // updating the total amount in user collection
-              functions
-                .createExecution(
-                  import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
-                  JSON.stringify({
-                    userId: userId,
-                  }),
-                  true
-                )
-                .then(
-                  (updatedUserDocument) => {
-                    setTimeout(() => dispatch(fetchData(userId)), 3000);
-                  },
-                  (error) => {
-                    console.log(error);
-                  }
-                );
-            },
-            (error) => {
-              console.log(error);
-            }
-          );
+        dispatch(
+          updateCategoryTotalExpense(actions.ON_ADD_EXPENSE, {
+            userId,
+            categoryId,
+            amount,
+          })
+        );
       },
       (error) => {
         console.log(error);
@@ -282,6 +239,7 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
         console.log(updatedExpenseDocument);
         const categoryId = updatedExpenseDocument.category.$id;
         const userId = updatedExpenseDocument.user.$id;
+        const amount = parseInt(expenseDetails?.amount);
 
         const { year, month } = updatedExpenseDocument;
         const [currYear, currMonth] = [
@@ -291,48 +249,16 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
         const updateYearAmount = year === currYear;
         const updateMonthAmount = month === currMonth;
 
-        if (updateYearAmount || updateMonthAmount) {
-          // updating the category document's totalAmount
-
-          functions
-            .createExecution(
-              import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
-              JSON.stringify({
-                action: actions.ON_EDIT_EXPENSE,
-                categoryId: categoryId,
-                amount: oldAmount,
-                editedAmount: expenseDetails.amount,
-                updateYearAmount: updateYearAmount,
-                updateMonthAmount: updateMonthAmount,
-              }),
-              true
-            )
-            .then(
-              (updatedCategoryDocument) => {
-                console.log(updatedCategoryDocument);
-
-                functions
-                  .createExecution(
-                    import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
-                    JSON.stringify({
-                      userId: userId,
-                    }),
-                    true
-                  )
-                  .then(
-                    (updatedUserDocument) => {
-                      setTimeout(() => dispatch(fetchData(userId)), 3000);
-                    },
-                    (error) => {
-                      console.log(error);
-                    }
-                  );
-              },
-              (error) => {
-                console.log(error);
-              }
-            );
-        }
+        dispatch(
+          updateCategoryTotalExpense(actions.ON_EDIT_EXPENSE, {
+            userId,
+            categoryId,
+            amount,
+            oldAmount,
+            updateMonthAmount,
+            updateYearAmount,
+          })
+        );
       },
       (error) => {
         console.log(error);
@@ -344,7 +270,8 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
 /* To delete an expense (also fetches the updated data into the state) */
 export function removeExpense(expenseId, expenseDetails) {
   return function (dispatch) {
-    const { year, month, categoryId, userId, amount } = expenseDetails;
+    const { year, month, categoryId, userId } = expenseDetails;
+    const amount = parseInt(expenseDetails?.amount);
 
     // deleting an expense document
     const promise = databases.deleteDocument(
@@ -363,52 +290,121 @@ export function removeExpense(expenseId, expenseDetails) {
         const updateYearAmount = year === currYear;
         const updateMonthAmount = month === currMonth;
 
-        if (updateYearAmount || updateMonthAmount) {
-          // updating the totalExpense of category document
-
-          functions
-            .createExecution(
-              import.meta.env.VITE_FUNCTION_UPDATE_CATEGORY_ID,
-              JSON.stringify({
-                action: actions.ON_REMOVE_EXPENSE,
-                categoryId: categoryId,
-                amount: amount,
-                updateYearAmount: updateYearAmount,
-                updateMonthAmount: updateMonthAmount,
-              }),
-              true
-            )
-            .then(
-              (updatedCategoryDocument) => {
-                console.log(updatedCategoryDocument);
-
-                // removing expense from user's total Expense
-                functions
-                  .createExecution(
-                    import.meta.env.VITE_FUNCTION_UPDATE_USER_ID,
-                    JSON.stringify({
-                      userId: userId,
-                    }),
-                    true
-                  )
-                  .then(
-                    (updatedUserDocument) => {
-                      setTimeout(() => dispatch(fetchData(userId)), 3000);
-                    },
-                    (error) => {
-                      console.log(error);
-                    }
-                  );
-              },
-              (error) => {
-                console.log(error);
-              }
-            );
-        }
+        dispatch(
+          updateCategoryTotalExpense(actions.ON_REMOVE_EXPENSE, {
+            userId,
+            categoryId,
+            amount,
+            updateYearAmount,
+            updateMonthAmount,
+          })
+        );
       },
       (error) => {
         console.log(error);
       }
     );
+  };
+}
+
+export function updateCategoryTotalExpense(action, data) {
+  return function (dispatch) {
+    const { categoryId } = data;
+
+    const promise = databases.getDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_CATEGORY_ID,
+      categoryId
+    );
+
+    promise.then((categoryDocument) => {
+      let [updatedCurrYearExpense, updatedCurrMonthExpense] = [
+        categoryDocument.currYearExpense,
+        categoryDocument.currMonthExpense,
+      ];
+
+      const { amount } = data;
+
+      if (action === actions.ON_ADD_EXPENSE) {
+        updatedCurrYearExpense += amount;
+        updatedCurrMonthExpense += amount;
+      } else if (action === actions.ON_EDIT_EXPENSE) {
+        const { oldAmount, updateMonthAmount, updateYearAmount } = data;
+
+        if (updateYearAmount) {
+          updatedCurrYearExpense += amount - oldAmount;
+
+          if (updateMonthAmount) {
+            updatedCurrMonthExpense += amount - oldAmount;
+          }
+        }
+      } else if (action === actions.ON_REMOVE_EXPENSE) {
+        const { updateYearAmount, updateMonthAmount } = data;
+        if (updateYearAmount) {
+          updatedCurrYearExpense -= amount;
+          if (updateMonthAmount) {
+            updatedCurrMonthExpense -= amount;
+          }
+        }
+      }
+
+      const promise = databases.updateDocument(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_DB_CATEGORY_ID,
+        categoryId,
+        {
+          currYearExpense: updatedCurrYearExpense,
+          currMonthExpense: updatedCurrMonthExpense,
+        }
+      );
+
+      promise.then(
+        (updatedCategoryDocument) => {
+          console.log(updatedCategoryDocument);
+          const { userId } = data;
+          dispatch(updateUserTotalExpense(userId));
+        },
+        (error) => console.log(error)
+      );
+    });
+  };
+}
+
+export function updateUserTotalExpense(userId) {
+  return function (dispatch) {
+    const promise = databases.getDocument(
+      import.meta.env.VITE_DB_ID,
+      import.meta.env.VITE_DB_USER_ID,
+      userId
+    );
+
+    promise.then((userDocument) => {
+      const categories = userDocument?.categories;
+
+      let [updatedCurrYearExpense, updatedCurrMonthExpense] = [0, 0];
+
+      categories.forEach((category) => {
+        updatedCurrYearExpense += category.currYearExpense;
+        updatedCurrMonthExpense += category.currMonthExpense;
+      });
+
+      const promise = databases.updateDocument(
+        import.meta.env.VITE_DB_ID,
+        import.meta.env.VITE_DB_USER_ID,
+        userId,
+        {
+          currYearExpense: updatedCurrYearExpense,
+          currMonthExpense: updatedCurrMonthExpense,
+        }
+      );
+
+      promise.then(
+        (updatedUserDocument) => {
+          console.log(updatedUserDocument);
+          dispatch(fetchData(userId));
+        },
+        (error) => console.log(error)
+      );
+    });
   };
 }

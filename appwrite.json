@@ -31,6 +31,21 @@
             "events": [],
             "schedule": "",
             "timeout": 15
+        },
+        {
+            "$id": "6486e4fe77e5a7fe51dd",
+            "name": "UpdateCategoryTotalExpense",
+            "runtime": "node-16.0",
+            "path": "functions/UpdateCategoryTotalExpense",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
         }
     ]
 }
