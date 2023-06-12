@@ -105,9 +105,9 @@ function Header() {
             <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
               Help
             </MenuItem>
-            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
-              <LogoutButton logoutHandler={logoutHandler} />
-            </MenuItem>
+            {/* <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}> */}
+            <LogoutButton logoutHandler={logoutHandler} />
+            {/* </MenuItem> */}
           </MenuList>
         </Menu>
       </Flex>

@@ -81,10 +81,10 @@ export const months = [
 ];
 
 const sortBy = [
-  { value: "amountAscending", option: "Amount (High to Low)" },
-  { value: "amountDescending", option: "Amount (Low to High)" },
-  { value: "dateAscending", option: "Date (Latest First)" },
-  { value: "dateDescending", option: "Date (Oldest first)" },
+  { value: "amountAscending", option: "Amount (Lowest first)" },
+  { value: "amountDescending", option: "Amount (Highest first)" },
+  { value: "dateAscending", option: "Date (Oldest First)" },
+  { value: "dateDescending", option: "Date (Latest First)" },
 ];
 
 function Filters({

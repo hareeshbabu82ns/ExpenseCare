@@ -1,7 +1,8 @@
 import React from "react";
 import { categories } from "../../pages/Dashboard";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import { Container, Flex } from "@chakra-ui/react";
+import { Container, Flex, Text } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 const data = categories;
 export const COLORS = [
@@ -41,6 +42,18 @@ const renderCustomizedLabel = ({
 };
 
 function ExpensePieChart() {
+  const data = useSelector((state) => state.chartData.data);
+
+  const payload = data.map((item) => item.categoryName);
+
+  if (data.length === 0) {
+    return (
+      <>
+        <Text textAlign={"center"}>No data to display Pie Chart</Text>
+      </>
+    );
+  }
+
   return (
     <>
       <Flex display={{ base: "none", md: "flex" }}>
@@ -53,7 +66,7 @@ function ExpensePieChart() {
             label={renderCustomizedLabel}
             outerRadius={200}
             fill="#8884d8"
-            dataKey="totalExpense"
+            dataKey="expense"
           >
             {data.map((entry, index) => (
               <Cell
@@ -62,7 +75,7 @@ function ExpensePieChart() {
               />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip payload={data} />
         </PieChart>
       </Flex>
 
@@ -76,7 +89,7 @@ function ExpensePieChart() {
             label={renderCustomizedLabel}
             outerRadius={150}
             fill="#8884d8"
-            dataKey="totalExpense"
+            dataKey="expense"
           >
             {data.map((entry, index) => (
               <Cell
@@ -85,7 +98,7 @@ function ExpensePieChart() {
               />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip payload={data} />
         </PieChart>
       </Flex>
     </>

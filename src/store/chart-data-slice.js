@@ -4,6 +4,7 @@ import { Query } from "appwrite";
 import { loadingActions } from "./loading-slice";
 
 const initialState = {
+  data: [],
   year: new Date().getFullYear(),
   month: new Date().getMonth(),
   monthName: new Date().toLocaleDateString(undefined, { month: "long" }),

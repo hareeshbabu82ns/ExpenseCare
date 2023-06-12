@@ -90,12 +90,15 @@ export function updateFilteredExpenses({
           case "dateAscending":
             orderAscQuery.push("time");
             break;
+          default:
+            orderDescQuery.push("time");
+            break;
         }
 
         const limitQuery = [];
         const offsetQuery = [];
 
-        if (limit) limitQuery.push(limit);
+        limit ? limitQuery.push(limit) : limitQuery.push(5);
         if (offset) offsetQuery.push(offset);
 
         databases

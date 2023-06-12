@@ -10,7 +10,7 @@ function AllExpenses() {
 
   const [filteredExpenses, setFilteredExpenses] = useState(expenses);
 
-  const [showAllColumns, setShowAllColumns] = useState(false);
+  const [showAllColumns, setShowAllColumns] = useState(true);
 
   console.log("windowWidth", windowWidth);
 
