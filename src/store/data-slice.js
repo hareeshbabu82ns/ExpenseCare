@@ -5,6 +5,7 @@ const initialState = {
   expenses: [],
   userCurrYearExpense: null,
   userCurrMonthExpense: null,
+  yearlyExpensesOnCard: false,
 };
 
 /* State to provide and set the updated categories and expenses data to all the app components */
@@ -19,6 +20,9 @@ const dataSlice = createSlice({
       state.expenses = action.payload.expenses;
       state.userCurrYearExpense = action.payload.userDocument.currYearExpense;
       state.userCurrMonthExpense = action.payload.userDocument.currMonthExpense;
+    },
+    setYearlyExpensesOnCard(state, action) {
+      state.yearlyExpensesOnCard = action.payload;
     },
   },
 });

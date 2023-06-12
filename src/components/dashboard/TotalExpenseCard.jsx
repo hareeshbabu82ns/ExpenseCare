@@ -28,7 +28,9 @@ function TotalExpenseCard({ userCurrYearExpense, userCurrMonthExpense }) {
         rightIcon={<ArrowForwardIcon />}
         to="/charts"
         rounded={"lg"}
-        colorScheme="pink"
+        bgColor={"dark"}
+        // border={"1px"}
+        _hover={{ border: "1px" }}
       >
         Current Month's Charts
       </Button>

@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import AddExpenseButton from "./AddExpenseButton";
 import DeleteCategoryButton from "../utility/DeleteCategoryButton";
 import EditCategoryNameButton from "../utility/EditCategoryNameButton";
+import { useSelector } from "react-redux";
 
-function ExpenseCard({ name, currMonthExpense, categoryId }) {
+function ExpenseCard({ name, currYearExpense, currMonthExpense, categoryId }) {
   const [hover, setHover] = useState(false);
+  const showYearlyExpenses = useSelector(
+    (state) => state.data.yearlyExpenseOnCard
+  );
 
   return (
     <>
@@ -36,7 +40,7 @@ function ExpenseCard({ name, currMonthExpense, categoryId }) {
           <Text>{name}</Text>
         </CardHeader>
         <CardBody fontSize={"xl"} fontWeight={"semibold"}>
-          Rs. {currMonthExpense}
+          Rs. {showYearlyExpenses ? currYearExpense : currMonthExpense}
         </CardBody>
         <CardFooter>
           <AddExpenseButton

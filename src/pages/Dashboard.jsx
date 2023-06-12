@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { Button, Flex, useToast } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
+  Portal,
+  Text,
+  useDisclosure,
+  useToast,
+} from "@chakra-ui/react";
 import ExpenseCard from "../components/dashboard/ExpenseCard";
 import TotalExpenseCard from "../components/dashboard/TotalExpenseCard";
 import AddCategoryButton from "../components/dashboard/AddCategoryButton";
-import { RefreshCcw } from "lucide-react";
+import { MoreVertical, RefreshCcw, SlidersHorizontalIcon } from "lucide-react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/data-actions";
+import { dataActions } from "../store/data-slice";
 
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },
@@ -24,6 +39,11 @@ function Dashboard() {
   const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
   const toast = useToast();
+  const showYearlyExpenses = useSelector(
+    (state) => state.data.yearlyExpensesOnCard
+  );
+
+  const { isOpen, onToggle, onClose } = useDisclosure();
 
   const [refresh, setRefresh] = useState(false);
 
@@ -51,6 +71,15 @@ function Dashboard() {
       />
 
       {/* <Container w={"100%"} mx={"auto"}> */}
+      <Text
+        textColor={"whiteAlpha.700"}
+        fontStyle={"italic"}
+        textAlign={"center"}
+        mt={2}
+      >
+        Cards are showing current {showYearlyExpenses ? "year's" : "month's"}{" "}
+        expenses
+      </Text>
       <Flex
         flexWrap={"wrap"}
         gap={10}
@@ -68,8 +97,67 @@ function Dashboard() {
           />
         ))}
       </Flex>
+
+      <Popover
+        placement="top-end"
+        closeOnBlur
+        closeOnEsc
+        onClose={onClose}
+        isOpen={isOpen}
+      >
+        <PopoverTrigger>
+          <Button
+            position={"fixed"}
+            bottom={"1rem"}
+            left={"1rem"}
+            colorScheme="pink"
+            h={"4rem"}
+            w={"4rem"}
+            rounded={"full"}
+            onClick={onToggle}
+          >
+            <SlidersHorizontalIcon />{" "}
+          </Button>
+        </PopoverTrigger>
+        <Portal>
+          <PopoverContent bgColor={"lightgray"}>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader textAlign={"center"}>
+              Show Card Expenses
+            </PopoverHeader>
+            <PopoverBody display={"flex"} flexDir={"column"} gap={1}>
+              <Button
+                w={"100%"}
+                bgColor={showYearlyExpenses ? "pink.500" : "inherit"}
+                _hover={{ bgColor: "pink.600" }}
+                _active={{ bgColor: "pink.600" }}
+                onClick={() => {
+                  dispatch(dataActions.setYearlyExpensesOnCard(true));
+                  onToggle();
+                }}
+              >
+                Yearly
+              </Button>
+              <Button
+                w={"100%"}
+                bgColor={showYearlyExpenses ? "inherit" : "pink.500"}
+                _hover={{ bgColor: "pink.600" }}
+                _active={{ bgColor: "pink.600" }}
+                onClick={() => {
+                  dispatch(dataActions.setYearlyExpensesOnCard(false));
+                  onToggle();
+                }}
+              >
+                Monthly
+              </Button>
+            </PopoverBody>
+          </PopoverContent>
+        </Portal>
+      </Popover>
+
       {/* </Container> */}
-      <Button
+      {/* <Button
         position={"fixed"}
         bottom={"1rem"}
         left={"1rem"}
@@ -81,7 +169,7 @@ function Dashboard() {
         isLoading={refresh}
       >
         <RefreshCcw />
-      </Button>
+      </Button> */}
       <AddCategoryButton />
     </Flex>
   );
