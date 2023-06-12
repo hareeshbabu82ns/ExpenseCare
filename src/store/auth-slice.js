@@ -34,8 +34,6 @@ export default authSlice.reducer;
 
 export function logout(sessionId) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
-
     const promise = account.deleteSession(sessionId);
 
     promise.then(

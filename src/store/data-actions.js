@@ -13,7 +13,6 @@ const actions = {
 /* To fetch data after any changes in the database or to fetch data into state on login*/
 export function fetchData(userId) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     databases
       .listDocuments(
         import.meta.env.VITE_DB_ID,
@@ -49,23 +48,19 @@ export function fetchData(userId) {
                         })
                       );
                       dispatch(filterActions.setFilteredExpenses(expenses));
-                      dispatch(loadingActions.setLoading(false));
                     },
                     (error) => {
                       console.log(error);
-                      dispatch(loadingActions.setLoading(false));
                     }
                   );
               },
               (error) => {
                 console.log(error);
-                dispatch(loadingActions.setLoading(false));
               }
             );
         },
         (error) => {
           console.log(error);
-          dispatch(loadingActions.setLoading(false));
         }
       );
   };
@@ -74,7 +69,6 @@ export function fetchData(userId) {
 /* To add a new category */
 export function addCategory(userId, categoryName) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     const promise = databases.getDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_USER_ID,
@@ -108,17 +102,14 @@ export function addCategory(userId, categoryName) {
           (updatedCategoryDocument) => {
             console.log(updatedCategoryDocument);
             setTimeout(() => dispatch(fetchData(userId)), 3000);
-            dispatch(loadingActions.setLoading(false));
           },
           (error) => {
             console.log(error);
-            dispatch(loadingActions.setLoading(false));
           }
         );
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };
@@ -127,7 +118,6 @@ export function addCategory(userId, categoryName) {
 /* To edit an existing category name */
 export function editCategoryName(categoryId, newCategoryName) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     const promise = databases.updateDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_CATEGORY_ID,
@@ -142,11 +132,9 @@ export function editCategoryName(categoryId, newCategoryName) {
         console.log(updatedCategoryDocument);
         const userId = updatedCategoryDocument.user.$id;
         setTimeout(() => dispatch(fetchData(userId)), 3000);
-        dispatch(loadingActions.setLoading(false));
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };
@@ -155,7 +143,6 @@ export function editCategoryName(categoryId, newCategoryName) {
 /* To delete a category and all its related documents i.e. expenses and its reference in user collection */
 export function deleteCategory(userId, categoryId) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     const promise = databases.deleteDocument(
       import.meta.env.VITE_DB_ID,
       import.meta.env.VITE_DB_CATEGORY_ID,
@@ -177,26 +164,22 @@ export function deleteCategory(userId, categoryId) {
           .then(
             (updatedUserDocument) => {
               setTimeout(() => dispatch(fetchData(userId)), 3000);
-              dispatch(loadingActions.setLoading(false));
             },
             (error) => {
               console.log(error);
-              dispatch(loadingActions.setLoading(false));
             }
           );
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };
 }
 
 /* To add an expense to a particular category (also updates the totalAmount of that category and fetch the updated data into the state) */
-export function addExpense(userId, categoryId, expenseDetails) {
+export function addExpense(userId, categoryId, expenseDetails, categoryName) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     const { amount, name, description } = expenseDetails;
 
     let date = new Date();
@@ -227,6 +210,7 @@ export function addExpense(userId, categoryId, expenseDetails) {
         categoryId,
         userId,
         time: time,
+        categoryName,
       }
     );
 
@@ -262,23 +246,19 @@ export function addExpense(userId, categoryId, expenseDetails) {
                 .then(
                   (updatedUserDocument) => {
                     setTimeout(() => dispatch(fetchData(userId)), 3000);
-                    dispatch(loadingActions.setLoading(false));
                   },
                   (error) => {
                     console.log(error);
-                    dispatch(loadingActions.setLoading(false));
                   }
                 );
             },
             (error) => {
               console.log(error);
-              dispatch(loadingActions.setLoading(false));
             }
           );
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };
@@ -287,7 +267,6 @@ export function addExpense(userId, categoryId, expenseDetails) {
 /* To edit an expense details (aslo updates the corresponding category's totalAmount and fetches the updated data into the state) */
 export function editExpense(expenseId, expenseDetails, oldAmount) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     // updating the expense document
     const promise = databases.updateDocument(
       import.meta.env.VITE_DB_ID,
@@ -343,24 +322,20 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
                   .then(
                     (updatedUserDocument) => {
                       setTimeout(() => dispatch(fetchData(userId)), 3000);
-                      dispatch(loadingActions.setLoading(false));
                     },
                     (error) => {
                       console.log(error);
-                      dispatch(loadingActions.setLoading(false));
                     }
                   );
               },
               (error) => {
                 console.log(error);
-                dispatch(loadingActions.setLoading(false));
               }
             );
         }
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };
@@ -369,7 +344,6 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
 /* To delete an expense (also fetches the updated data into the state) */
 export function removeExpense(expenseId, expenseDetails) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
     const { year, month, categoryId, userId, amount } = expenseDetails;
 
     // deleting an expense document
@@ -420,24 +394,20 @@ export function removeExpense(expenseId, expenseDetails) {
                   .then(
                     (updatedUserDocument) => {
                       setTimeout(() => dispatch(fetchData(userId)), 3000);
-                      dispatch(loadingActions.setLoading(false));
                     },
                     (error) => {
                       console.log(error);
-                      dispatch(loadingActions.setLoading(false));
                     }
                   );
               },
               (error) => {
                 console.log(error);
-                dispatch(loadingActions.setLoading(false));
               }
             );
         }
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };

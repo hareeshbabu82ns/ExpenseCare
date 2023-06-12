@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";
+import { loadingActions } from "./loading-slice";
 
 const initialState = {
   filteredExpenses: [],
@@ -60,8 +61,6 @@ export function updateFilteredExpenses({
   offset,
 }) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
-
     const queries = [];
     let userId = null;
 
@@ -127,7 +126,6 @@ export function updateFilteredExpenses({
       },
       (error) => {
         console.log(error);
-        dispatch(loadingActions.setLoading(false));
       }
     );
   };

@@ -57,7 +57,6 @@ function DemoTable({ filteredExpenses }) {
   const indexOfFirstExpense = currentPage * expensesPerPage - expensesPerPage;
 
   useEffect(() => {
-    dispatch(loadingActions.setLoading(true));
     dispatch(
       updateFilteredExpenses({
         ...filterInputs,
@@ -65,7 +64,6 @@ function DemoTable({ filteredExpenses }) {
         offset: indexOfFirstExpense,
       })
     );
-    dispatch(loadingActions.setLoading(false));
   }, [currentPage]);
 
   if (filteredExpenses?.length === 0) {

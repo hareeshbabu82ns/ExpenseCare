@@ -30,12 +30,14 @@ function Dashboard() {
   function refreshHandler() {
     setRefresh(true);
     dispatch(fetchData(userId));
-    setTimeout(() => setRefresh(false), 5000);
-    toast({
-      title: "Refreshed the data",
-      status: "info",
-      colorScheme: "blue",
-    });
+    setTimeout(() => {
+      setRefresh(false);
+      toast({
+        title: "Refreshed the data",
+        status: "info",
+        colorScheme: "blue",
+      });
+    }, 3000);
   }
 
   const { categories, userCurrYearExpense, userCurrMonthExpense } = data;

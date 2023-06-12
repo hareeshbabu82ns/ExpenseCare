@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { account, databases } from "../appwrite/appwrite-config";
 import { Query } from "appwrite";
+import { loadingActions } from "./loading-slice";
 
 const initialState = {
   year: new Date().getFullYear(),
@@ -30,8 +31,6 @@ export default chartDataSlice.reducer;
 
 export function updateChartData({ year, month }) {
   return function (dispatch) {
-    dispatch(loadingActions.setLoading(true));
-
     account.get().then(
       (user) => {
         const userId = user.$id;
