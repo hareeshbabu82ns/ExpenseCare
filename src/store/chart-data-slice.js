@@ -30,6 +30,8 @@ export default chartDataSlice.reducer;
 
 export function updateChartData({ year, month }) {
   return function (dispatch) {
+    dispatch(loadingActions.setLoading(true));
+
     account.get().then(
       (user) => {
         const userId = user.$id;
@@ -72,11 +74,18 @@ export function updateChartData({ year, month }) {
               console.log("chartData", chartData);
 
               dispatch(chartDataActions.setChartData(chartData));
+              dispatch(loadingActions.setLoading(false));
             },
-            (error) => console.log(error)
+            (error) => {
+              console.log(error);
+              dispatch(loadingActions.setLoading(false));
+            }
           );
       },
-      (error) => console.log(error)
+      (error) => {
+        console.log(error);
+        dispatch(loadingActions.setLoading(false));
+      }
     );
   };
 }

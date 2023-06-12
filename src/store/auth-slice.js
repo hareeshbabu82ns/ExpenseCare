@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { account } from "../appwrite/appwrite-config";
+import { loadingActions } from "./loading-slice";
 
 const initialState = {
   userId: null,
@@ -33,14 +34,20 @@ export default authSlice.reducer;
 
 export function logout(sessionId) {
   return function (dispatch) {
+    dispatch(loadingActions.setLoading(true));
+
     const promise = account.deleteSession(sessionId);
 
     promise.then(
       (response) => {
         console.log("Logged out successfully");
         dispatch(authActions.setUserData(initialState));
+        dispatch(loadingActions.setLoading(false));
       },
-      (error) => console.log(error)
+      (error) => {
+        console.log(error);
+        dispatch(loadingActions.setLoading(false));
+      }
     );
   };
 }

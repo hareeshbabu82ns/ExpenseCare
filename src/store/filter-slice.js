@@ -60,6 +60,8 @@ export function updateFilteredExpenses({
   offset,
 }) {
   return function (dispatch) {
+    dispatch(loadingActions.setLoading(true));
+
     const queries = [];
     let userId = null;
 
@@ -115,11 +117,18 @@ export function updateFilteredExpenses({
             (response) => {
               console.log(response);
               dispatch(filterActions.setFilteredExpenses(response));
+              dispatch(loadingActions.setLoading(false));
             },
-            (error) => console.log(error)
+            (error) => {
+              console.log(error);
+              dispatch(loadingActions.setLoading(false));
+            }
           );
       },
-      (error) => console.log(error)
+      (error) => {
+        console.log(error);
+        dispatch(loadingActions.setLoading(false));
+      }
     );
   };
 }
