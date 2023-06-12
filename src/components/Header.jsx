@@ -88,8 +88,7 @@ function Header() {
           <Text _hover={{ textColor: "teal.400" }}> Charts </Text>
         </NavLink>
 
-        <LogoutButton logoutHandler={logoutHandler} />
-        {/* <Menu>
+        <Menu>
           <MenuButton
             as={Button}
             bgColor={"inherit"}
@@ -102,13 +101,15 @@ function Header() {
             Account
           </MenuButton>
           <MenuList bgColor={"lightgray"}>
-            <MenuItem bgColor={"lightgray"}>Profile</MenuItem>
-            <MenuItem bgColor={"lightgray"}>Help</MenuItem>
-            <MenuItem bgColor={"lightgray"} onClick={logoutHandler}>
-              Logout
+            {/* <MenuItem bgColor={"lightgray"}>Profile</MenuItem> */}
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
+              Help
+            </MenuItem>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
+              <LogoutButton logoutHandler={logoutHandler} />
             </MenuItem>
           </MenuList>
-        </Menu> */}
+        </Menu>
       </Flex>
       <Flex display={{ md: "none" }}>
         <Menu>
@@ -150,6 +151,16 @@ function Header() {
                 className={activeClassName}
               >
                 Charts
+              </NavLink>
+            </MenuItem>
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>
+              <NavLink
+                as={RouteLink}
+                _hover={{ textDecor: "none", fontWeight: "medium" }}
+                to={"/help"}
+                className={activeClassName}
+              >
+                Help
               </NavLink>
             </MenuItem>
             {/* <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.500" }}>

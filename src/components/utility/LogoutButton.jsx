@@ -30,8 +30,11 @@ function LogoutButton({ logoutHandler }) {
           onOpen();
         }}
         rightIcon={<LogOutIcon />}
-        _hover={{ bgColor: "inherit", textColor: "teal.400" }}
-        _active={{ bgColor: "inherit" }}
+        _hover={{ bgColor: "teal.400" }}
+        _active={{ bgColor: "teal.400" }}
+        fontWeight={"semibold"}
+        pl={{ md: 0 }}
+        textDecor={"none"}
       >
         Logout
       </Button>
