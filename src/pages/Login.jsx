@@ -28,12 +28,12 @@ function Login() {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
       email: "",
       password: "",
-      confirmPassword: "",
     },
   });
 
@@ -65,12 +65,14 @@ function Login() {
       },
       (error) => {
         console.log(error);
+        reset();
         toast({
           title: "Not able to Login",
-          description: "Please provide correct and password",
+          description: "Please provide correct email ID and password",
           status: "error",
           colorScheme: "red",
         });
+        dispatch(loadingActions.setLoading(false));
       }
     );
 
@@ -116,7 +118,7 @@ function Login() {
           {/* email */}
           <Flex
             flexDir={"column"}
-            gap={2}
+            gap={4}
             bgColor={"lightgray"}
             color={"whiteAlpha.900"}
             p={10}
@@ -125,6 +127,7 @@ function Login() {
             <FormControl isInvalid={errors.email}>
               <FormLabel htmlFor="email">Email</FormLabel>
               <Input
+                placeholder="Registered Email ID"
                 w={"xs"}
                 type="email"
                 {...register("email", { required: "email is required" })}
@@ -133,7 +136,7 @@ function Login() {
               {errors.email ? (
                 <FormErrorMessage>{errors.email.message}</FormErrorMessage>
               ) : (
-                <FormHelperText>Enter registered email address</FormHelperText>
+                <FormHelperText textColor={"whiteAlpha.800"}></FormHelperText>
               )}
             </FormControl>
 
@@ -151,7 +154,7 @@ function Login() {
               {errors.password ? (
                 <FormErrorMessage>{errors.password.message}</FormErrorMessage>
               ) : (
-                <FormHelperText>password can be alphanumeric</FormHelperText>
+                <FormHelperText textColor={"whiteAlpha.700"}></FormHelperText>
               )}
             </FormControl>
 

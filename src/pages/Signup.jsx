@@ -107,6 +107,7 @@ function Signup() {
         );
       },
       (error) => {
+        dispatch(loadingActions.setLoading(false));
         toast({
           title: "An error occured",
           description: "Please provide valid inputs",
@@ -168,9 +169,7 @@ function Signup() {
               {errors.email ? (
                 <FormErrorMessage>{errors.email.message}</FormErrorMessage>
               ) : (
-                <FormHelperText>
-                  The email address will be used for verification
-                </FormHelperText>
+                <FormHelperText textColor={"whiteAlpha.700"}></FormHelperText>
               )}
             </FormControl>
 
@@ -188,7 +187,9 @@ function Signup() {
               {errors.password ? (
                 <FormErrorMessage>{errors.password.message}</FormErrorMessage>
               ) : (
-                <FormHelperText>password can be alphanumeric</FormHelperText>
+                <FormHelperText textColor={"whiteAlpha.800"}>
+                  Must be atleast 8 characters long
+                </FormHelperText>
               )}
             </FormControl>
 
