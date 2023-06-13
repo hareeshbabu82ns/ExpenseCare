@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, useToast } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { account } from "../appwrite/appwrite-config";
 import { useNavigate } from "react-router-dom";
@@ -22,10 +22,17 @@ function Verification() {
   const googleSession = useSelector((state) => state.auth.googleSession);
   const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
+  const toast = useToast();
 
   useEffect(() => {
     if (googleSession !== true) dispatch(googleSignin());
-    else navigate("/dashboard");
+    else {
+      toast({
+        status: "success",
+        title: "Logged in successfully",
+      });
+      navigate("/dashboard");
+    }
   }, [googleSession, userId]);
 
   return (

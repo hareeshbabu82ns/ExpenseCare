@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { account, databases } from "../appwrite/appwrite-config";
 import { loadingActions } from "./loading-slice";
+import { fetchData } from "./data-actions";
 
 const initialState = {
   userId: null,
@@ -69,15 +70,17 @@ export function googleSignin() {
             googleSession: true,
           })
         );
+        const userId = response.$id;
 
         databases
           .getDocument(
             import.meta.env.VITE_DB_ID,
             import.meta.env.VITE_DB_USER_ID,
-            response.$id
+            userId
           )
           .then(
             () => {
+              dispatch(fetchData(userId));
               return true;
             },
             (error) => {
@@ -85,7 +88,7 @@ export function googleSignin() {
                 .createDocument(
                   import.meta.env.VITE_DB_ID,
                   import.meta.env.VITE_DB_USER_ID,
-                  response.$id,
+                  userId,
                   {
                     email: response.email,
                   }
