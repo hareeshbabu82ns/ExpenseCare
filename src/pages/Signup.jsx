@@ -57,42 +57,60 @@ function Signup() {
 
         promise.then(
           (response) => {
-            const { userId, $id: sessionId, providerUid: userEmail } = response;
-            dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
-            dispatch(fetchData(response.userId));
-            navigate("/dashboard");
+            const promise = account.createVerification(
+              "http://localhost:3000/signup-verification"
+            );
 
-            databases
-              .createDocument(
-                import.meta.env.VITE_DB_ID,
-                import.meta.env.VITE_DB_USER_ID,
-                user.$id,
-                {
-                  email: values.email,
-                }
-              )
-              .then(
-                (response) => {
-                  dispatch(loadingActions.setLoading(false));
-                  toast({
-                    title: "Account Created Successfully",
-                    description:
-                      "Account has been created, You are logged in now",
-                    status: "success",
-                    colorScheme: "teal",
-                  });
-                },
-                (error) => {
-                  dispatch(loadingActions.setLoading(false));
-                  console.log(error);
-                  toast({
-                    title: "An error occured",
-                    description: "Please provide valid inputs",
-                    status: "error",
-                    colorScheme: "red",
-                  });
-                }
-              );
+            promise.then(
+              () => {
+                console.log("verification");
+
+                const {
+                  userId,
+                  $id: sessionId,
+                  providerUid: userEmail,
+                } = response;
+                dispatch(
+                  authActions.setUserData({ userId, sessionId, userEmail })
+                );
+                dispatch(fetchData(response.userId));
+                // setTimeout(() => navigate("/dashboard"), 2000);
+                // navigate("/dashboard");
+
+                databases
+                  .createDocument(
+                    import.meta.env.VITE_DB_ID,
+                    import.meta.env.VITE_DB_USER_ID,
+                    user.$id,
+                    {
+                      email: values.email,
+                    }
+                  )
+                  .then(
+                    (response) => {
+                      dispatch(loadingActions.setLoading(false));
+                      toast({
+                        title: "Account Created Successfully",
+                        description:
+                          "Account has been created, You are logged in now",
+                        status: "success",
+                        colorScheme: "teal",
+                      });
+                    },
+                    (error) => {
+                      dispatch(loadingActions.setLoading(false));
+                      console.log(error);
+                      toast({
+                        title: "An error occured",
+                        description: "Please provide valid inputs",
+                        status: "error",
+                        colorScheme: "red",
+                      });
+                    }
+                  );
+              },
+              (error) => console.log(error)
+            );
           },
           (error) => {
             dispatch(loadingActions.setLoading(false));
@@ -122,8 +140,8 @@ function Signup() {
     dispatch(loadingActions.setLoading(true));
     account.createOAuth2Session(
       "google",
-      "https://expense-care.vercel.app/verification",
-      "https://expense-care.vercel.app/login"
+      "http://localhost:3000/verification",
+      "http://localhost:3000/login"
     );
 
     dispatch(loadingActions.setLoading(false));

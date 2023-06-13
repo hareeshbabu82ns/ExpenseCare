@@ -82,8 +82,8 @@ function Login() {
     dispatch(loadingActions.setLoading(true));
     account.createOAuth2Session(
       "google",
-      "https://expense-care.vercel.app/verification",
-      "https://expense-care.vercel.app/login"
+      "http://localhost:3000/verification",
+      "http://localhost:3000/login"
     );
 
     dispatch(loadingActions.setLoading(false));

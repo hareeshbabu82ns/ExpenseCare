@@ -121,8 +121,7 @@ export function updateCurrYearAndMonth(userId) {
       import.meta.env.VITE_FUNCTION_UPDATE_YEAR_AND_MONTH_ID,
       JSON.stringify({
         userId: userId,
-      }),
-      true
+      })
     );
 
     promise.then(

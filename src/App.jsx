@@ -9,6 +9,7 @@ import { Container } from "@chakra-ui/react";
 import Error from "./components/Error";
 import { account } from "./appwrite/appwrite-config";
 import Verification from "./pages/Verification";
+import SignupVerification from "./pages/SignupVerification";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/verification",
       Component: Verification,
+    },
+    {
+      path: "/signup-verification",
+      Component: SignupVerification,
     },
     {
       path: "/",

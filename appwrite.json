@@ -76,6 +76,21 @@
             "events": [],
             "schedule": "",
             "timeout": 15
+        },
+        {
+            "$id": "64886ba18006a471d05e",
+            "name": "updateYearAndMonth",
+            "runtime": "node-16.0",
+            "path": "functions/updateYearAndMonth",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
         }
     ]
 }
