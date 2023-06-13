@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { account, databases } from "../appwrite/appwrite-config";
+import { account, databases, functions } from "../appwrite/appwrite-config";
 import { loadingActions } from "./loading-slice";
 import { fetchData } from "./data-actions";
 
@@ -80,6 +80,7 @@ export function googleSignin() {
           )
           .then(
             () => {
+              dispatch(updateCurrYearAndMonth(userId));
               dispatch(fetchData(userId));
               return true;
             },
@@ -95,6 +96,8 @@ export function googleSignin() {
                 )
                 .then(
                   (response) => {
+                    updateCurrYearAndMonth(userId);
+                    dispatch(fetchData(userId));
                     return true;
                   },
                   (error) => {
@@ -112,6 +115,19 @@ export function googleSignin() {
   };
 }
 
-export function googleSignup() {
-  return function (dispatch) {};
+export function updateCurrYearAndMonth(userId) {
+  return function (dispatch) {
+    const promise = functions.createExecution(
+      import.meta.env.VITE_FUNCTION_UPDATE_YEAR_AND_MONTH_ID,
+      JSON.stringify({
+        userId: userId,
+      }),
+      true
+    );
+
+    promise.then(
+      (response) => {},
+      (error) => console.log(error)
+    );
+  };
 }

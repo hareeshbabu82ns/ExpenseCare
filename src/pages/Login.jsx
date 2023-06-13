@@ -18,8 +18,8 @@ import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account } from "../appwrite/appwrite-config";
 import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../store/auth-slice";
-import { fetchData } from "../store/data-actions";
+import { authActions, updateCurrYearAndMonth } from "../store/auth-slice";
+import { fetchData, updateCategoryTotalExpense } from "../store/data-actions";
 import { PropagateLoader } from "react-spinners";
 import { loadingActions } from "../store/loading-slice";
 import Loading from "../components/utility/Loading";
@@ -54,6 +54,7 @@ function Login() {
         const { userId, $id: sessionId, providerUid: userEmail } = response;
         console.log(response);
         dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
+        dispatch(updateCurrYearAndMonth(response.userId));
         dispatch(fetchData(response.userId));
         dispatch(loadingActions.setLoading(false));
         navigate("/dashboard");
@@ -81,8 +82,8 @@ function Login() {
     dispatch(loadingActions.setLoading(true));
     account.createOAuth2Session(
       "google",
-      "http://localhost:3000/verification",
-      "https://localhost:3000/login"
+      "https://expense-care.vercel.app/verification",
+      "https://expense-care.vercel.app/login"
     );
 
     dispatch(loadingActions.setLoading(false));

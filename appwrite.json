@@ -61,6 +61,21 @@
             "events": [],
             "schedule": "",
             "timeout": 15
+        },
+        {
+            "$id": "648820aae2e5702bd6b7",
+            "name": "UpdateCurrYearAndMonth",
+            "runtime": "node-16.0",
+            "path": "functions/UpdateCurrYearAndMonth",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
         }
     ]
 }

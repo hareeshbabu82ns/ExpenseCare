@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { account } from "../appwrite/appwrite-config";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { googleSignin, googleSignup } from "../store/auth-slice";
+import { googleSignin } from "../store/auth-slice";
 
 function Verification() {
   const navigate = useNavigate();
