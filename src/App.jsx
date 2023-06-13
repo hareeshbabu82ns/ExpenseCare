@@ -10,6 +10,7 @@ import Error from "./components/Error";
 import { account } from "./appwrite/appwrite-config";
 import Verification from "./pages/Verification";
 import SignupVerification from "./pages/SignupVerification";
+import Help from "./pages/Help";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ function App() {
     {
       path: "/login",
       Component: Login,
+    },
+    {
+      path: "/help",
+      Component: Help,
     },
     {
       path: "/verification",
