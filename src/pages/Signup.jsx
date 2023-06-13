@@ -119,7 +119,42 @@ function Signup() {
   }
 
   function signUpUsingGoogleHandler() {
-    account.createOAuth2Session("google", "http://localhost:3000/dashboard");
+    dispatch(loadingActions.setLoading(true));
+
+    account.createOAuth2Session("google", "http://localhost:3000/verification");
+    dispatch(authActions.setUserId("google-sign-up"));
+    dispatch(loadingActions.setLoading(false));
+    navigate("/dashboard");
+
+    // const promise = account.get();
+
+    // promise.then(
+    //   (user) => {
+    //     const userId = user.userId;
+    //     const email = user.providerUid;
+
+    //     dispatch(authActions.setUserId(userId));
+    //     dispatch(authActions.setUserEmail(email));
+
+    //     databases
+    //       .createDocument(
+    //         import.meta.env.VITE_DB_ID,
+    //         import.meta.env.VITE_DB_USER_ID,
+    //         userId,
+    //         {
+    //           email,
+    //         }
+    //       )
+    //       .then(
+    //         (createdDocument) => {
+    //           console.log(createdDocument);
+    //           navigate("/dashboard");
+    //         },
+    //         (error) => console.log(error)
+    //       );
+    //   },
+    //   (error) => console.log(error)
+    // );
   }
 
   if (isLoading) {

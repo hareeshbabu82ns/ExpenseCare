@@ -22,13 +22,18 @@ const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
 
 function Header() {
   const sessionId = useSelector((state) => state.auth.sessionId);
+  const userId = useSelector((state) => state.auth.userId);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
 
   function logoutHandler() {
     dispatch(loadingActions.setLoading(true));
-    dispatch(logout(sessionId));
+    if (sessionId) {
+      dispatch(logout(sessionId));
+    } else {
+      dispatch(logout(null, userId));
+    }
     dispatch(loadingActions.setLoading(false));
     navigate("/login");
     toast({

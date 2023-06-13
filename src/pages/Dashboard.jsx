@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
   Button,
@@ -23,6 +23,7 @@ import { MoreVertical, RefreshCcw, SlidersHorizontalIcon } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../store/data-actions";
 import { dataActions } from "../store/data-slice";
+import { account } from "../appwrite/appwrite-config";
 
 export const categories = [
   { name: "Groceries", totalExpense: 4000 },

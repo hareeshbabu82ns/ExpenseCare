@@ -75,17 +75,17 @@ function Login() {
         dispatch(loadingActions.setLoading(false));
       }
     );
+  }
 
-    // async function verifyEmail() {
-    //   const promise = account.createVerification(
-    //     "http://localhost:3000/dashboard"
-    //   );
+  function loginUsingGoogle() {
+    dispatch(loadingActions.setLoading(true));
+    account.createOAuth2Session(
+      "google",
+      "http://localhost:3000/verification",
+      "https://localhost:3000/login"
+    );
 
-    //   promise.then(
-    //     (response) => console.log(response),
-    //     (error) => console.log(error)
-    //   );
-    // }
+    dispatch(loadingActions.setLoading(false));
   }
 
   if (isLoading) {
@@ -165,7 +165,12 @@ function Login() {
             <Text textAlign={"center"}>Or</Text>
 
             {/* Google Login button */}
-            <Button colorScheme="blue" width={"full"} mb={4}>
+            <Button
+              colorScheme="blue"
+              width={"full"}
+              mb={4}
+              onClick={loginUsingGoogle}
+            >
               Login using Google
             </Button>
 

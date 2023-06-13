@@ -46,6 +46,21 @@
             "events": [],
             "schedule": "",
             "timeout": 15
+        },
+        {
+            "$id": "64878df88c53d3017937",
+            "name": "SignupUsingGoogle",
+            "runtime": "node-16.0",
+            "path": "functions/SignupUsingGoogle",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
         }
     ]
 }
