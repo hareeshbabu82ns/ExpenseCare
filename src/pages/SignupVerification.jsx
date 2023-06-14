@@ -11,17 +11,21 @@ function SignupVerification() {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = urlParams.get("userId");
     const secret = urlParams.get("secret");
+    const id = "toast-id";
 
     const promise = account.updateVerification(userId, secret);
 
     promise.then(
       (response) => {
         console.log("verified");
-        toast({
-          status: "success",
-          title: "Signed up successfully",
-          description: "Please Login now",
-        });
+        if (!toast.isActive(id)) {
+          toast({
+            id,
+            status: "success",
+            title: "Signed up successfully",
+            description: "Please Login now",
+          });
+        }
         navigate("/login");
       },
       (error) => console.log(error)

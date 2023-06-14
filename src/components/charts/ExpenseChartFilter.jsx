@@ -18,7 +18,9 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { loadingActions } from "../../store/loading-slice";
 
 function ExpenseChartFilter() {
-  const filterInputs = useSelector((state) => state.chartData.filterInputs);
+  const { year, month, monthName } = useSelector((state) => state.chartData);
+
+  const filterInputs = { year, month, monthName };
 
   const [chartFilterInputs, setChartFilterInputs] = useState(filterInputs);
 
@@ -32,8 +34,9 @@ function ExpenseChartFilter() {
   }
 
   useEffect(() => {
-    setChartFilterInputs(filterInputs);
-  }, [filterInputs]);
+    setChartFilterInputs({ ...filterInputs });
+    dispatch(updateChartData({ month, year }));
+  }, [month, year]);
 
   return (
     <>

@@ -46,7 +46,7 @@ function DropdownActions({ expense }) {
   );
 }
 
-function DemoTable({ filteredExpenses, windowWidth, showAllColumns }) {
+function ExpensesTable({ filteredExpenses, windowWidth, showAllColumns }) {
   // For Pagination
   const totalFilteredExpenses = useSelector(
     (state) => state.filter.totalFilteredExpenses
@@ -166,4 +166,4 @@ function DemoTable({ filteredExpenses, windowWidth, showAllColumns }) {
   );
 }
 
-export default DemoTable;
+export default ExpensesTable;

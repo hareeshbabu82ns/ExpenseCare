@@ -90,9 +90,9 @@ function Signup() {
                     (response) => {
                       dispatch(loadingActions.setLoading(false));
                       toast({
-                        title: "Account Created Successfully",
+                        title: "Mail Sent Successfully",
                         description:
-                          "Account has been created, You are logged in now",
+                          "An email to te provided email address for verification",
                         status: "success",
                         colorScheme: "teal",
                       });

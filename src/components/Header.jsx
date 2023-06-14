@@ -107,7 +107,12 @@ function Header() {
           </MenuButton>
           <MenuList bgColor={"lightgray"}>
             {/* <MenuItem bgColor={"lightgray"}>Profile</MenuItem> */}
-            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
+            <MenuItem
+              as={RouteLink}
+              to={"/help"}
+              bgColor={"lightgray"}
+              _hover={{ bgColor: "teal.400" }}
+            >
               Help
             </MenuItem>
             {/* <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}> */}

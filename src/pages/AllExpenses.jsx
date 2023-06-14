@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
-import DemoTable from "../components/table/DemoTable";
+import ExpensesTable from "../components/table/ExpensesTable";
 import Filters from "../components/table/Filters";
 import { useSelector } from "react-redux";
 
@@ -41,7 +41,7 @@ function AllExpenses() {
         setShowAllColumns={setShowAllColumns}
         showAllColumns={showAllColumns}
       />
-      <DemoTable
+      <ExpensesTable
         filteredExpenses={filteredExpenses}
         windowWidth={windowWidth}
         showAllColumns={showAllColumns}

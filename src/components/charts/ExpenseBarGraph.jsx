@@ -33,15 +33,15 @@ function ExpenseBarGraph() {
     if (data.length === 0) {
       const id = "no-data-toast";
 
-      if (!toast.isActive(id)) {
-        toast({
-          id,
-          title: "No Data Present",
-          description: "No expenses are present as per selected year and month",
-          status: "info",
-          colorScheme: "blue",
-        });
-      }
+      // if (!toast.isActive(id)) {
+      //   toast({
+      //     id,
+      //     title: "No Data Present",
+      //     description: "No expenses are present as per selected year and month",
+      //     status: "info",
+      //     colorScheme: "blue",
+      //   });
+      // }
     }
     return (
       <>

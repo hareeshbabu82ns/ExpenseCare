@@ -50,7 +50,7 @@ function InfoExpenseButton({ expense }) {
                 Description:{" "}
                 {expense.description.length === 0
                   ? "No description was given at the time of creation"
-                  : "expense.description"}
+                  : expense.description}
               </Text>
             </Flex>
           </ModalBody>
