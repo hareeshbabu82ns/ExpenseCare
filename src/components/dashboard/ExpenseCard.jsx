@@ -3,13 +3,45 @@ import React, { useState } from "react";
 import AddExpenseButton from "./AddExpenseButton";
 import DeleteCategoryButton from "../utility/DeleteCategoryButton";
 import EditCategoryNameButton from "../utility/EditCategoryNameButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  filterActions,
+  updateFilteredExpenses,
+} from "../../store/filter-slice";
+import { months } from "../table/Filters";
+import { useNavigate } from "react-router-dom";
 
-function ExpenseCard({ name, currYearExpense, currMonthExpense, categoryId }) {
+function ExpenseCard({ category }) {
+  const { name, currYearExpense, currMonthExpense, $id: categoryId } = category;
   const [hover, setHover] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const filterInputs = useSelector((state) => state.filter.filterInputs);
   const showYearlyExpenses = useSelector(
     (state) => state.data.yearlyExpenseOnCard
   );
+
+  function clickHandler() {
+    const [currYear, currMonth] = [
+      new Date().getFullYear(),
+      new Date().getMonth(),
+    ];
+    dispatch(
+      filterActions.setFilterInputs({
+        categoryId,
+        categoryName: name,
+        sortBy: null,
+        sortByOption: null,
+        year: currYear,
+        month: currMonth,
+        monthName: months.find((month) => month.value === currMonth).option,
+      })
+    );
+
+    dispatch(updateFilteredExpenses(filterInputs));
+
+    navigate("/all-expenses");
+  }
 
   return (
     <>
@@ -39,7 +71,12 @@ function ExpenseCard({ name, currYearExpense, currMonthExpense, categoryId }) {
         <CardHeader fontSize={"3xl"} fontWeight={"semibold"}>
           <Text>{name}</Text>
         </CardHeader>
-        <CardBody fontSize={"xl"} fontWeight={"semibold"}>
+        <CardBody
+          fontSize={"xl"}
+          fontWeight={"semibold"}
+          onClick={clickHandler}
+          cursor={"pointer"}
+        >
           Rs. {showYearlyExpenses ? currYearExpense : currMonthExpense}
         </CardBody>
         <CardFooter>

@@ -39,6 +39,8 @@ function AddExpenseButton({ hover, categoryName, setHover, categoryId }) {
   const dispatch = useDispatch();
 
   function addExpenseHandler(e) {
+    // e.stopImmediatePropagation();
+    e.stopPropagation();
     e.preventDefault();
     dispatch(loadingActions.setLoading(true));
     dispatch(addExpense(userId, categoryId, expenseInputData, categoryName));

@@ -90,12 +90,7 @@ function Dashboard() {
         justifyContent={"center"}
       >
         {categories?.map((category) => (
-          <ExpenseCard
-            key={category.$id}
-            name={category.name}
-            currMonthExpense={category.currMonthExpense}
-            categoryId={category.$id}
-          />
+          <ExpenseCard key={category.$id} category={category} />
         ))}
       </Flex>
 
