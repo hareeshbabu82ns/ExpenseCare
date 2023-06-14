@@ -81,17 +81,14 @@ module.exports = async function (req, res) {
 
         promise.then(
           (updatedDocument) => {
-            console.log(updatedDocument);
             return res.json(updatedDocument);
           },
           (error) => {
-            console.log(error);
             return res.json({ error });
           }
         );
       },
       (error) => {
-        console.log(error);
         return res.json({ error });
       }
     );

@@ -6,8 +6,6 @@ function Pagination({ currentPage, setCurrentPage, totalPages }) {
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) pageNumbers.push(i);
 
-  console.log(currentPage);
-
   return (
     <>
       <Flex

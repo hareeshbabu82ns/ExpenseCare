@@ -7,17 +7,6 @@ import { googleSignin } from "../store/auth-slice";
 
 function Verification() {
   const navigate = useNavigate();
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const userId = urlParams.get("userId");
-  // const secret = urlParams.get("secret");
-
-  // account.updateVerification(userId, secret).then(
-  //   (success) => {
-  //     console.log("User Verified");
-  //     navigate("/dashboard");
-  //   },
-  //   (error) => console.log(error)
-  // );
 
   const googleSession = useSelector((state) => state.auth.googleSession);
   const userId = useSelector((state) => state.auth.userId);

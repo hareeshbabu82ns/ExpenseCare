@@ -52,7 +52,6 @@ export function updateChartData({ year, month }) {
           .then(
             (response) => {
               const expenses = response.documents;
-              console.log("expenses", expenses);
               const data = new Map();
 
               //   summing up the amount of every category
@@ -73,7 +72,6 @@ export function updateChartData({ year, month }) {
               data.forEach((value, categoryName) => {
                 chartData.push({ categoryName: categoryName, expense: value });
               });
-              console.log("chartData", chartData);
 
               dispatch(chartDataActions.setChartData(chartData));
               dispatch(loadingActions.setLoading(false));

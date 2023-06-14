@@ -117,7 +117,6 @@ export function updateFilteredExpenses({
           )
           .then(
             (response) => {
-              console.log(response);
               dispatch(filterActions.setFilteredExpenses(response));
               dispatch(loadingActions.setLoading(false));
             },

@@ -12,8 +12,6 @@ function AllExpenses() {
 
   const [showAllColumns, setShowAllColumns] = useState(true);
 
-  console.log("windowWidth", windowWidth);
-
   useEffect(() => {
     const handleWindowWidth = () => {
       setWindowWidth(window.innerWidth);

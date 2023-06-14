@@ -65,7 +65,6 @@ module.exports = async function (req, res) {
             return res.json(updatedUserDocument);
           },
           (error) => {
-            console.log(error);
             return res.json({ error });
           }
         );

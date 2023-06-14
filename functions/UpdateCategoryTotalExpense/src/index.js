@@ -71,9 +71,6 @@ module.exports = async function (req, res) {
           }
         });
 
-        console.log(updatedCurrYearExpense);
-        console.log(updatedCurrMonthExpense);
-
         const promise = database.updateDocument(
           req.variables["APPWRITE_DB_ID"],
           req.variables["APPWRITE_CATEGORY_ID"],

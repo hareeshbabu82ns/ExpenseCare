@@ -42,7 +42,6 @@ export function logout(sessionId, userId) {
 
       promise.then(
         (response) => {
-          console.log("Logged out successfully");
           dispatch(authActions.setUserData(initialState));
           dispatch(loadingActions.setLoading(false));
         },

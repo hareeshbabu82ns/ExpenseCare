@@ -48,8 +48,6 @@ function Signup() {
 
     promise.then(
       (user) => {
-        console.log(user);
-
         const promise = account.createEmailSession(
           values.email,
           values.password
@@ -63,8 +61,6 @@ function Signup() {
 
             promise.then(
               () => {
-                console.log("verification");
-
                 const {
                   userId,
                   $id: sessionId,
@@ -92,10 +88,11 @@ function Signup() {
                       toast({
                         title: "Mail Sent Successfully",
                         description:
-                          "An email to te provided email address for verification",
+                          "An email for verification has been sent to the provided email address.",
                         status: "success",
                         colorScheme: "teal",
                       });
+                      reset();
                     },
                     (error) => {
                       dispatch(loadingActions.setLoading(false));

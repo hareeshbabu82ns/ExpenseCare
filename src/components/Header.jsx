@@ -97,7 +97,7 @@ function Header() {
           <MenuButton
             as={Button}
             bgColor={"inherit"}
-            _hover={{ bg: "inherit", fontWeight: "medium" }}
+            _hover={{ bgColor: "inherit", fontWeight: "medium" }}
             rightIcon={<ChevronDownIcon />}
             fontSize={"large "}
             fontWeight={"normal"}
@@ -115,9 +115,9 @@ function Header() {
             >
               Help
             </MenuItem>
-            {/* <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}> */}
-            <LogoutButton logoutHandler={logoutHandler} />
-            {/* </MenuItem> */}
+            <MenuItem bgColor={"lightgray"} _hover={{ bgColor: "teal.400" }}>
+              <LogoutButton logoutHandler={logoutHandler} />
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>

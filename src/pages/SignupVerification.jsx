@@ -17,7 +17,6 @@ function SignupVerification() {
 
     promise.then(
       (response) => {
-        console.log("verified");
         if (!toast.isActive(id)) {
           toast({
             id,

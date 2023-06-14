@@ -21,7 +21,6 @@ export function fetchData(userId) {
       )
       .then(
         (categories) => {
-          console.log(categories);
           databases
             .listDocuments(
               import.meta.env.VITE_DB_ID,
@@ -30,8 +29,6 @@ export function fetchData(userId) {
             )
             .then(
               (expenses) => {
-                console.log(expenses);
-
                 databases
                   .getDocument(
                     import.meta.env.VITE_DB_ID,
@@ -83,7 +80,6 @@ export function addCategory(userId, categoryName) {
         );
 
         if (categoryExists) {
-          console.log("category already exists");
           return userDocument;
         }
 
@@ -100,7 +96,6 @@ export function addCategory(userId, categoryName) {
 
         promise.then(
           (updatedCategoryDocument) => {
-            console.log(updatedCategoryDocument);
             setTimeout(() => dispatch(fetchData(userId)), 3000);
           },
           (error) => {
@@ -129,7 +124,6 @@ export function editCategoryName(categoryId, newCategoryName) {
 
     promise.then(
       (updatedCategoryDocument) => {
-        console.log(updatedCategoryDocument);
         const userId = updatedCategoryDocument.user.$id;
         setTimeout(() => dispatch(fetchData(userId)), 3000);
       },
@@ -151,8 +145,6 @@ export function deleteCategory(userId, categoryId) {
 
     promise.then(
       function (response) {
-        console.log(response);
-
         dispatch(updateUserTotalExpense(userId));
       },
       (error) => {
@@ -204,8 +196,6 @@ export function addExpense(userId, categoryId, expenseDetails, categoryName) {
       (createdExpenseDocument) => {
         // updating total amount in category collection
 
-        console.log(createdExpenseDocument);
-
         dispatch(
           updateCategoryTotalExpense(actions.ON_ADD_EXPENSE, {
             userId,
@@ -236,7 +226,6 @@ export function editExpense(expenseId, expenseDetails, oldAmount) {
 
     promise.then(
       (updatedExpenseDocument) => {
-        console.log(updatedExpenseDocument);
         const categoryId = updatedExpenseDocument.category.$id;
         const userId = updatedExpenseDocument.user.$id;
         const amount = parseInt(expenseDetails?.amount);
@@ -360,7 +349,6 @@ export function updateCategoryTotalExpense(action, data) {
 
       promise.then(
         (updatedCategoryDocument) => {
-          console.log(updatedCategoryDocument);
           const { userId } = data;
           dispatch(updateUserTotalExpense(userId));
         },
@@ -400,7 +388,6 @@ export function updateUserTotalExpense(userId) {
 
       promise.then(
         (updatedUserDocument) => {
-          console.log(updatedUserDocument);
           dispatch(fetchData(userId));
         },
         (error) => console.log(error)

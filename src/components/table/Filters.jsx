@@ -196,8 +196,6 @@ function Filters({
                   value={category.name}
                   bgColor={"lightgray"}
                   onClick={(e) => {
-                    console.log(e.target.getAttribute("data-key"));
-
                     setFilterInputs((prev) => ({
                       ...prev,
                       categoryId: e.target.getAttribute("data-key"),

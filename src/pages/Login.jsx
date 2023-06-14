@@ -44,7 +44,6 @@ function Login() {
 
   async function loginHandler(values) {
     dispatch(loadingActions.setLoading(true));
-    console.log(values);
 
     const promise = account.createEmailSession(values.email, values.password);
 
@@ -52,7 +51,6 @@ function Login() {
       (response) => {
         // verifyEmail();
         const { userId, $id: sessionId, providerUid: userEmail } = response;
-        console.log(response);
         dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
         dispatch(updateCurrYearAndMonth(response.userId));
         dispatch(fetchData(response.userId));
@@ -183,7 +181,7 @@ function Login() {
               mb={4}
               onClick={loginUsingGoogle}
             >
-              Login using Google
+              Signin using Google
             </Button>
 
             {/* Link to Signup */}
