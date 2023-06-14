@@ -163,6 +163,17 @@ function Login() {
             <Button colorScheme="pink" width={"full"} type="submit" my={2}>
               Login
             </Button>
+            <Text textAlign={"center"} fontSize={"large"}>
+              Forgot Passwword?{" "}
+              <Link
+                as={RouteLink}
+                to={"/forgot-password"}
+                color={"teal.400"}
+                fontWeight={"semibold"}
+              >
+                Reset
+              </Link>
+            </Text>
             <Text textAlign={"center"}>Or</Text>
 
             {/* Google Login button */}

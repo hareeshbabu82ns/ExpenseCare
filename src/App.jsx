@@ -11,6 +11,8 @@ import { account } from "./appwrite/appwrite-config";
 import Verification from "./pages/Verification";
 import SignupVerification from "./pages/SignupVerification";
 import Help from "./pages/Help";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +35,14 @@ function App() {
     {
       path: "/signup-verification",
       Component: SignupVerification,
+    },
+    {
+      path: "/forgot-password",
+      Component: ForgotPassword,
+    },
+    {
+      path: "/reset-password",
+      Component: ResetPassword,
     },
     {
       path: "/",
