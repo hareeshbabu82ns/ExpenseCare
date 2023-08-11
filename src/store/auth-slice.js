@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { account, databases, functions } from "../appwrite/appwrite-config";
 import { loadingActions } from "./loading-slice";
 import { fetchData } from "./data-actions";
+import { createAsyncThunk } from "@reduxjs/toolkit/dist";
 
 const initialState = {
   userId: null,
@@ -9,6 +10,21 @@ const initialState = {
   userEmail: null,
   googleSession: false,
 };
+
+export const fetchUser = createAsyncThunk(
+  "auth/fetchUser",
+  async (_, { dispatch }) => {
+    dispatch(loadingActions.setLoading(true));
+    try {
+      const response = await account.get();
+      // console.log(response);
+      return response;
+    } finally {
+      // setTimeout(() => dispatch(loadingActions.setLoading(false)), 5000);
+      dispatch(loadingActions.setLoading(false));
+    }
+  }
+);
 
 /* State to provide and set the logged in user's userId and email */
 
@@ -28,6 +44,20 @@ const authSlice = createSlice({
     setUserEmail(state, action) {
       state.userEmail = action?.payload;
     },
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(fetchUser.pending, (state) => {
+        state.userId = null;
+      })
+      .addCase(fetchUser.fulfilled, (state, action) => {
+        // console.log(action.payload.$id);
+        state.userId = action.payload.$id;
+      })
+      .addCase(fetchUser.rejected, (state, action) => {
+        state.userId = null;
+        state.error = action.error.message;
+      });
   },
 });
 

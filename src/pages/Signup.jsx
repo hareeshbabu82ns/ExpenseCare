@@ -29,122 +29,172 @@ function Signup() {
     reset,
     resetField,
     formState: { errors },
-  } = useForm({
+  } = useForm( {
     defaultValues: {
       email: "",
       password: "",
       confirmPassword: "",
     },
-  });
+  } );
 
   const toast = useToast();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLoading = useSelector((state) => state.loading.isLoading);
+  const isLoading = useSelector( ( state ) => state.loading.isLoading );
 
-  async function submitHandler(values) {
-    dispatch(loadingActions.setLoading(true));
-    const promise = account.create(ID.unique(), values.email, values.password);
+  async function submitHandler( values ) {
+    dispatch( loadingActions.setLoading( true ) );
+    const promise = account.create( ID.unique(), values.email, values.password );
 
     promise.then(
-      (user) => {
+      ( user ) => {
         const promise = account.createEmailSession(
           values.email,
           values.password
         );
 
         promise.then(
-          (response) => {
-            const promise = account.createVerification(
-              "http://localhost:3000/signup-verification"
+          ( response ) => {
+            const {
+              userId,
+              $id: sessionId,
+              providerUid: userEmail,
+            } = response;
+            dispatch(
+              authActions.setUserData( { userId, sessionId, userEmail } )
             );
+            dispatch( fetchData( response.userId ) );
+            // setTimeout(() => navigate("/dashboard"), 2000);
+            // navigate("/dashboard");
 
-            promise.then(
-              () => {
-                const {
-                  userId,
-                  $id: sessionId,
-                  providerUid: userEmail,
-                } = response;
-                dispatch(
-                  authActions.setUserData({ userId, sessionId, userEmail })
-                );
-                dispatch(fetchData(response.userId));
-                // setTimeout(() => navigate("/dashboard"), 2000);
-                // navigate("/dashboard");
-
-                databases
-                  .createDocument(
-                    import.meta.env.VITE_DB_ID,
-                    import.meta.env.VITE_DB_USER_ID,
-                    user.$id,
-                    {
-                      email: values.email,
-                    }
-                  )
-                  .then(
-                    (response) => {
-                      dispatch(loadingActions.setLoading(false));
-                      toast({
-                        title: "Mail Sent Successfully",
-                        description:
-                          "An email for verification has been sent to the provided email address.",
-                        status: "success",
-                        colorScheme: "teal",
-                      });
-                      reset();
-                    },
-                    (error) => {
-                      dispatch(loadingActions.setLoading(false));
-                      console.log(error);
-                      toast({
-                        title: "An error occured",
-                        description: "Please provide valid inputs",
-                        status: "error",
-                        colorScheme: "red",
-                      });
-                    }
-                  );
-              },
-              (error) => console.log(error)
-            );
+            databases
+              .createDocument(
+                import.meta.env.VITE_DB_ID,
+                import.meta.env.VITE_DB_USER_ID,
+                user.$id,
+                {
+                  email: values.email,
+                }
+              )
+              .then(
+                ( response ) => {
+                  dispatch( loadingActions.setLoading( false ) );
+                  toast( {
+                    title: "Mail Sent Successfully",
+                    description:
+                      "An email for verification has been sent to the provided email address.",
+                    status: "success",
+                    colorScheme: "teal",
+                  } );
+                  reset();
+                },
+                ( error ) => {
+                  dispatch( loadingActions.setLoading( false ) );
+                  console.log( error );
+                  toast( {
+                    title: "An error occured",
+                    description: "Please provide valid inputs",
+                    status: "error",
+                    colorScheme: "red",
+                  } );
+                }
+              );
           },
-          (error) => {
-            dispatch(loadingActions.setLoading(false));
-            console.log(error);
-            toast({
-              title: "An error occured",
-              description: "Please provide valid inputs",
-              status: "error",
-              colorScheme: "red",
-            });
-          }
+          ( error ) => console.log( error )
         );
+
+        // promise.then(
+        //   ( response ) => {
+        //     const promise = account.createVerification(
+        //       "http://localhost:3000/signup-verification"
+        //     );
+
+        //     promise.then(
+        //       () => {
+        //         const {
+        //           userId,
+        //           $id: sessionId,
+        //           providerUid: userEmail,
+        //         } = response;
+        //         dispatch(
+        //           authActions.setUserData( { userId, sessionId, userEmail } )
+        //         );
+        //         dispatch( fetchData( response.userId ) );
+        //         // setTimeout(() => navigate("/dashboard"), 2000);
+        //         // navigate("/dashboard");
+
+        //         databases
+        //           .createDocument(
+        //             import.meta.env.VITE_DB_ID,
+        //             import.meta.env.VITE_DB_USER_ID,
+        //             user.$id,
+        //             {
+        //               email: values.email,
+        //             }
+        //           )
+        //           .then(
+        //             ( response ) => {
+        //               dispatch( loadingActions.setLoading( false ) );
+        //               toast( {
+        //                 title: "Mail Sent Successfully",
+        //                 description:
+        //                   "An email for verification has been sent to the provided email address.",
+        //                 status: "success",
+        //                 colorScheme: "teal",
+        //               } );
+        //               reset();
+        //             },
+        //             ( error ) => {
+        //               dispatch( loadingActions.setLoading( false ) );
+        //               console.log( error );
+        //               toast( {
+        //                 title: "An error occured",
+        //                 description: "Please provide valid inputs",
+        //                 status: "error",
+        //                 colorScheme: "red",
+        //               } );
+        //             }
+        //           );
+        //       },
+        //       ( error ) => console.log( error )
+        //     );
+        //   },
+        //   ( error ) => {
+        //     dispatch( loadingActions.setLoading( false ) );
+        //     console.log( error );
+        //     toast( {
+        //       title: "An error occured",
+        //       description: "Please provide valid inputs",
+        //       status: "error",
+        //       colorScheme: "red",
+        //     } );
+        //   }
+        // );
       },
-      (error) => {
-        dispatch(loadingActions.setLoading(false));
-        toast({
+      ( error ) => {
+        dispatch( loadingActions.setLoading( false ) );
+        toast( {
           title: "An error occured",
           description: "Please provide valid inputs",
           status: "error",
           colorScheme: "red",
-        });
+        } );
       }
     );
   }
 
   function signinUsingGoogleHandler() {
-    dispatch(loadingActions.setLoading(true));
+    dispatch( loadingActions.setLoading( true ) );
     account.createOAuth2Session(
       "google",
       "http://localhost:3000/verification",
       "http://localhost:3000/login"
     );
 
-    dispatch(loadingActions.setLoading(false));
+    dispatch( loadingActions.setLoading( false ) );
   }
 
-  if (isLoading) {
+  if ( isLoading ) {
     return <Loading loading={isLoading} />;
   }
 
@@ -170,7 +220,7 @@ function Signup() {
 
         {/* Form */}
 
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form onSubmit={handleSubmit( submitHandler )}>
           {/* email */}
           <Flex
             flexDir={"column"}
@@ -185,7 +235,7 @@ function Signup() {
               <Input
                 w={"xs"}
                 type="email"
-                {...register("email", { required: "email is required" })}
+                {...register( "email", { required: "email is required" } )}
               />
 
               {errors.email ? (
@@ -201,10 +251,10 @@ function Signup() {
               <FormLabel htmlFor="password">Set Password</FormLabel>
               <Input
                 type="password"
-                {...register("password", {
+                {...register( "password", {
                   required: "password must not be empty",
                   minLength: "minimum password length must be eight",
-                })}
+                } )}
               />
               {errors.password ? (
                 <FormErrorMessage>{errors.password.message}</FormErrorMessage>
@@ -221,10 +271,10 @@ function Signup() {
               <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
               <Input
                 type="password"
-                {...register("confirmPassword", {
+                {...register( "confirmPassword", {
                   required: "password must not be empty",
                   minLength: "minimum password length must be eight",
-                })}
+                } )}
               />
               {errors.password && (
                 <FormErrorMessage>
