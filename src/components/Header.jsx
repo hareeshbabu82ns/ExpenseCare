@@ -1,10 +1,8 @@
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Button,
-  Container,
   Flex,
   IconButton,
-  Link,
   Menu,
   MenuButton,
   MenuItem,
@@ -14,33 +12,37 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Link as RouteLink, useNavigate } from "react-router-dom";
-import { logout } from "../store/auth-slice";
-import { loadingActions } from "../store/loading-slice";
+import { logoutUser } from "../store/auth-slice";
 import LogoutButton from "./utility/LogoutButton";
 
-const activeClassName = ({ isActive }) => (isActive ? "active" : undefined);
+const activeClassName = ( { isActive } ) => ( isActive ? "active" : undefined );
 
 function Header() {
-  const sessionId = useSelector((state) => state.auth.sessionId);
-  const userId = useSelector((state) => state.auth.userId);
+  const sessionId = useSelector( ( state ) => state.auth.sessionId );
+  const userId = useSelector( ( state ) => state.auth.userId );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
 
   function logoutHandler() {
-    dispatch(loadingActions.setLoading(true));
-    if (sessionId) {
-      dispatch(logout(sessionId));
-    } else {
-      dispatch(logout(null, userId));
-    }
-    dispatch(loadingActions.setLoading(false));
-    navigate("/login");
-    toast({
-      title: "Logged out successfully",
-      status: "success",
-      colorScheme: "teal",
-    });
+    dispatch( logoutUser( { sessionId, userId } ) )
+      .then( ( { error } ) => {
+        if ( error ) {
+          console.log( error )
+          toast( {
+            title: "Logged out failed",
+            status: "error",
+            colorScheme: "red",
+          } );
+        } else {
+          navigate( "/login" );
+          toast( {
+            title: "Logged out successfully",
+            status: "success",
+            colorScheme: "teal",
+          } );
+        }
+      } )
   }
 
   return (
@@ -60,7 +62,7 @@ function Header() {
           fontSize={"3xl"}
           fontWeight={"bold"}
           color={"teal.400"}
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate( "/dashboard" )}
           cursor={"pointer"}
         >
           ExpenseCare

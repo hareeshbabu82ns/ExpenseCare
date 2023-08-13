@@ -1,8 +1,5 @@
-import React from "react";
-
 import {
   Button,
-  Container,
   Flex,
   FormControl,
   FormErrorMessage,
@@ -18,9 +15,7 @@ import { useForm } from "react-hook-form";
 import { Link as RouteLink, useNavigate } from "react-router-dom";
 import { account } from "../appwrite/appwrite-config";
 import { useDispatch, useSelector } from "react-redux";
-import { authActions, updateCurrYearAndMonth } from "../store/auth-slice";
-import { fetchData, updateCategoryTotalExpense } from "../store/data-actions";
-import { PropagateLoader } from "react-spinners";
+import { loginUser } from "../store/auth-slice";
 import { loadingActions } from "../store/loading-slice";
 import Loading from "../components/utility/Loading";
 
@@ -30,64 +25,52 @@ function Login() {
     register,
     reset,
     formState: { errors },
-  } = useForm({
+  } = useForm( {
     defaultValues: {
       email: "",
       password: "",
     },
-  });
+  } );
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loading.isLoading);
+  const isLoading = useSelector( ( state ) => state.loading.isLoading );
   const toast = useToast();
 
-  async function loginHandler(values) {
-    dispatch(loadingActions.setLoading(true));
-
-    const promise = account.createEmailSession(values.email, values.password);
-
-    promise.then(
-      (response) => {
-        // verifyEmail();
-        const { userId, $id: sessionId, providerUid: userEmail } = response;
-        dispatch(authActions.setUserData({ userId, sessionId, userEmail }));
-        dispatch(updateCurrYearAndMonth(response.userId));
-        dispatch(fetchData(response.userId));
-        dispatch(loadingActions.setLoading(false));
-        navigate("/dashboard");
-        toast({
-          title: "Logged in Successfully",
-          status: "success",
-          colorScheme: "teal",
-        });
-      },
-      (error) => {
-        console.log(error);
+  async function loginHandler( { email, password } ) {
+    dispatch( loginUser( { email, password } ) ).then( ( { error } ) => {
+      if ( error ) {
+        console.log( error );
         reset();
-        toast({
+        toast( {
           title: "Not able to Login",
           description: "Please provide correct email ID and password",
           status: "error",
           colorScheme: "red",
-        });
-        dispatch(loadingActions.setLoading(false));
+        } );
+      } else {
+        navigate( "/dashboard" );
+        toast( {
+          title: "Logged in Successfully",
+          status: "success",
+          colorScheme: "teal",
+        } );
       }
-    );
+    } )
   }
 
   function loginUsingGoogle() {
-    dispatch(loadingActions.setLoading(true));
+    dispatch( loadingActions.setLoading( true ) );
     account.createOAuth2Session(
       "google",
       "http://localhost:3000/verification",
       "http://localhost:3000/login"
     );
 
-    dispatch(loadingActions.setLoading(false));
+    dispatch( loadingActions.setLoading( false ) );
   }
 
-  if (isLoading) {
+  if ( isLoading ) {
     return <Loading loading={isLoading} />;
   }
 
@@ -113,7 +96,7 @@ function Login() {
 
         {/* Form */}
 
-        <form onSubmit={handleSubmit(loginHandler)}>
+        <form onSubmit={handleSubmit( loginHandler )}>
           {/* email */}
           <Flex
             flexDir={"column"}
@@ -129,7 +112,7 @@ function Login() {
                 placeholder="Registered Email ID"
                 w={"xs"}
                 type="email"
-                {...register("email", { required: "email is required" })}
+                {...register( "email", { required: "email is required" } )}
               />
 
               {errors.email ? (
@@ -145,10 +128,10 @@ function Login() {
               <FormLabel htmlFor="password">Password</FormLabel>
               <Input
                 type="password"
-                {...register("password", {
+                {...register( "password", {
                   required: "password must not be empty",
                   minLength: "minimum password length must be eight",
-                })}
+                } )}
               />
               {errors.password ? (
                 <FormErrorMessage>{errors.password.message}</FormErrorMessage>
